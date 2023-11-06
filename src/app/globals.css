@@ -1,0 +1,52 @@
+body {
+  font-family: "Noto Sans Japanese", "YuGothic", "Yu Gothic", "游ゴシック",
+    "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p,
+span,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* swiper setting */
+.swiper {
+  padding: 0 16px !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #333 !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 24px !important;
+}
+
+.swiper-slide figure {
+  text-align: center !important;
+}
