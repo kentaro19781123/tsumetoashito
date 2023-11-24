@@ -34,9 +34,9 @@ const title = style({
 
 const mainTitle = style([
   {
-    fontSize: vars.font.F32,
+    fontSize: vars.font.F24,
     fontWeight: "normal",
-    fontFamily: "Josefin Sans",
+    // fontFamily: "Josefin Sans",
     display: "block",
   },
   pcStyle({
@@ -48,10 +48,22 @@ const subTitle = style({
   fontSize: vars.font.F14,
 });
 
+const buttonWrap = style([
+  {
+    width: "60%",
+    margin: "0 auto 16px",
+  },
+  pcStyle({
+    width: "300px",
+    margin: "0 auto 32px",
+  }),
+]);
+
 export const cssStyle = {
   titleWrap,
   iconWrap,
   title,
   mainTitle,
   subTitle,
+  buttonWrap,
 };

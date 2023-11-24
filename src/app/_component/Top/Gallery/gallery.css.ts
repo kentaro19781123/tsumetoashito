@@ -5,11 +5,13 @@ import { vars } from "@/app/_styles/var.css";
 /* index */
 const section = style([
   {
-    padding: "16px 0",
+    padding: vars.padding.secSP,
     borderBottom: "1px solid #ccc",
+    marginBottom: "24px",
   },
   pcStyle({
-    padding: "48px 0",
+    padding: vars.padding.secPC,
+    marginBottom: "0",
   }),
 ]);
 
@@ -41,17 +43,27 @@ const swiper = style([
 const swiperSlide = style([
   {
     width: "150px !important",
-    height: "150px !important",
+    // height: "150px !important",
   },
   pcStyle({
     width: "200px !important",
-    height: "200px !important",
+    // height: "200px !important",
   }),
 ]);
 
 const swiperButton = style({
   color: vars.color.base,
 });
+
+const ButtonWrap = style([
+  {
+    width: "80%",
+    margin: "16px auto 0",
+  },
+  pcStyle({
+    margin: "24px auto 0",
+  }),
+]);
 
 const dialog = style([
   {
@@ -69,8 +81,18 @@ const dialog = style([
     },
   },
   pcStyle({
-    width: "60%",
+    width: "500px",
     height: "80%",
+  }),
+]);
+
+const dialogMoreButtonWrap = style([
+  {
+    width: "60%",
+    margin: "16px auto 24px",
+  },
+  pcStyle({
+    margin: "24px auto",
   }),
 ]);
 
@@ -86,6 +108,7 @@ const swiperItem = style([
     whiteSpace: "pre-wrap",
     textAlign: "center",
     backgroundColor: "#eee",
+    fontWeight: "normal",
   },
   pcStyle({
     width: "200px",
@@ -96,10 +119,10 @@ const swiperItem = style([
 const container = style({
   width: "100%",
   height: "100%",
-  overflow: "auto",
   lineHeight: "1.5",
   padding: "0 16px",
   boxSizing: "border-box",
+  overflow: "scroll",
 });
 
 globalStyle(`${container} img`, {
@@ -109,6 +132,22 @@ globalStyle(`${container} img`, {
 
 globalStyle(`${container} p + p`, {
   marginTop: "16px",
+});
+
+const containerItem = style({});
+globalStyle(`${containerItem} + ${containerItem}`, {
+  marginTop: "24px",
+  paddingTop: "24px",
+  borderTop: "1px solid #ccc",
+});
+
+const itemTitle = style({
+  fontSize: vars.font.F18,
+  marginBottom: "16px",
+});
+
+const itemImage = style({
+  marginBottom: "16px",
 });
 
 const closeButtonPseudo = {
@@ -145,9 +184,14 @@ export const cssStyle = {
   swiper,
   swiperSlide,
   swiperButton,
+  ButtonWrap,
   dialog,
+  dialogMoreButtonWrap,
   swiperItem,
   container,
+  containerItem,
+  itemTitle,
+  itemImage,
   closeButton,
 };
 

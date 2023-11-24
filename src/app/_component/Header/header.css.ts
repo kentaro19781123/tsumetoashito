@@ -56,16 +56,20 @@ const pcMenuUl = style({
 });
 
 const pcMenuLi = style({
-  width: "120px",
   textAlign: "center",
-  fontSize: vars.font.F12,
+  fontSize: vars.font.F14,
 });
 
 const pcMenuA = style({
+  width: "120px",
+  height: "60px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   color: vars.color.base,
-  display: "block",
   textDecoration: "none",
   padding: "8px",
+  cursor: "pointer",
   ":hover": {
     opacity: 0.8,
     background: vars.color.grayLight,

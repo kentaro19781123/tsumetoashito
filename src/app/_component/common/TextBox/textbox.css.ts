@@ -6,7 +6,7 @@ const textPosition = createVar();
 const wrap = style([
   {
     textAlign: textPosition,
-    lineHeight: 2,
+    lineHeight: 1.5,
     marginBottom: "16px",
     whiteSpace: "pre-wrap",
   },

@@ -7,12 +7,14 @@ export const Reserved: React.FC = () => {
     <section className={cssStyle.section}>
       <div className={cssStyle.inner}>
         <IconTitleBox
-          titleArray={[
-            {
-              text: "RESERVED",
-              subText: "ご予約・問合せ",
-            },
-          ]}
+          // titleArray={[
+          //   {
+          //     text: "RESERVED",
+          //     subText: "ご予約・問合せ",
+          //   },
+          // ]}
+          text="RESERVED"
+          subText="ご予約"
           icon="icon_title.jpg"
           buttonText="more"
           url="./"

@@ -19,7 +19,7 @@ export const vars = createGlobalTheme(":root", {
     F38: "38px",
   },
   padding: {
-    secSP: "16px 0",
+    secSP: "24px 0",
     secPC: "48px 0",
   },
 });

@@ -6,6 +6,7 @@ export const inner = style([
   {
     ...innerStyle,
     padding: "16px",
+    border: `1px solid ${vars.color.grayLight}`,
   },
   pcStyle({
     padding: "48px",
@@ -15,7 +16,7 @@ export const inner = style([
 export const section = style([
   {
     borderBottom: "1px solid #ccc",
-    padding: vars.padding.secSP,
+    padding: "16px",
   },
   pcStyle({
     padding: vars.padding.secPC,

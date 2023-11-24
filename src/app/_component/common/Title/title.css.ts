@@ -4,14 +4,14 @@ import { vars } from "@/app/_styles/var.css";
 
 export const title = style([
   {
-    fontSize: vars.font.F32,
+    fontSize: vars.font.F24,
     fontWeight: "normal",
-    fontFamily: "Josefin Sans",
-    marginBottom: "32px",
+    // fontFamily: "Josefin Sans",
+    marginBottom: "16px",
   },
   pcStyle({
     fontSize: vars.font.F38,
-    marginBottom: "16px",
+    marginBottom: "24px",
   }),
 ]);
 

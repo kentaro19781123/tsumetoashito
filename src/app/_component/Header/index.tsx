@@ -5,8 +5,13 @@ import React, { useState } from "react";
 import { cssStyle } from "./header.css";
 import { menuList } from "@/app/_const/menu";
 import { useOverflow } from "@/app/_hooks/useOverflow";
+import { anchorScroll } from "@/app/_utils/anchorScroll";
 
-export const Header: React.FC = () => {
+type Props = {
+  pageId: string;
+};
+export const Header: React.FC<Props> = ({ pageId }) => {
+  console.log(pageId);
   const [isOpen, setIsOpen] = useState(false);
   useOverflow(isOpen);
 
@@ -34,9 +39,18 @@ export const Header: React.FC = () => {
               <ul className={cssStyle.pcMenuUl}>
                 {menuList.map((x) => (
                   <li key={x.title} className={cssStyle.pcMenuLi}>
-                    <a href={x.link} className={cssStyle.pcMenuA}>
-                      {x.title}
-                    </a>
+                    {pageId === "top" && x.title === "サロンについて" ? (
+                      <div
+                        className={cssStyle.pcMenuA}
+                        onClick={(event) => anchorScroll(event, "#about", 60)}
+                      >
+                        {x.title}
+                      </div>
+                    ) : (
+                      <a href={x.link} className={cssStyle.pcMenuA}>
+                        {x.title}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

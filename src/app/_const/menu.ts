@@ -1,26 +1,26 @@
 export const menuList = [
   {
-    title: "当サロンについて",
-    link: "/",
+    title: "サロンについて",
+    link: "/?pageId=about",
   },
   {
-    title: "ギャラリー（症例）",
+    title: "施術例",
     link: "/gallery/",
   },
   {
-    title: "ケアの流れ",
+    title: "メニュー料金",
     link: "/flow/",
   },
   {
-    title: "予約・問合せ",
-    link: "/flow/",
-  },
-  {
-    title: "店舗情報・営業カレンダー・お知らせ",
+    title: "ご予約",
     link: "/info/",
   },
   {
     title: "アクセス",
     link: "/access/",
+  },
+  {
+    title: "お問合せ",
+    link: "/flow/",
   },
 ];

@@ -1,18 +1,20 @@
 import React from "react";
-import { cssStyle } from "./access.css";
+import { cssStyle } from "./menu.css";
 import { IconTitleBox } from "@/app/_component/common/IconTitleBox";
 
-export const Access: React.FC = () => {
+export const Menu: React.FC = () => {
   return (
     <section className={cssStyle.section}>
       <div className={cssStyle.inner}>
         <IconTitleBox
-          titleArray={[
-            {
-              text: "ACCESS",
-              subText: "アクセス",
-            },
-          ]}
+          // titleArray={[
+          //   {
+          //     text: "MENU・PRICE",
+          //     subText: "メニュー料金",
+          //   },
+          // ]}
+          text="MENU・PRICE"
+          subText="メニュー料金"
           icon="icon_title.jpg"
           buttonText="more"
           url="./"

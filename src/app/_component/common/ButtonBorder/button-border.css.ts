@@ -11,11 +11,11 @@ const wrap = style([
     flexDirection: "column",
     alignItems: "center",
     gap: "16px",
-    marginBottom: "16px",
+    // marginBottom: "16px",
   },
   pcStyle({
     flexDirection: "column",
-    marginBottom: "32px",
+    // marginBottom: "32px",
   }),
 ]);
 
@@ -25,12 +25,13 @@ const buttonStyle = style([
     textDecoration: "none",
     color: vars.color.base,
     border: `1px solid ${vars.color.base}`,
+    borderRadius: "4px",
     padding: "16px",
     textAlign: "center",
-    width: "60%",
+    width: "100%",
   },
   pcStyle({
-    width: "300px",
+    width: "100%",
   }),
 ]);
 
