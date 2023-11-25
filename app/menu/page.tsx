@@ -79,12 +79,7 @@ export default function Home() {
             <section className={cssStyle.menuItem}>
               <div className={cssStyle.titleArea}>
                 <h2 className={cssStyle.title}>
-                  <ruby>
-                    甲甲甲甲甲
-                    <rt className={cssStyle.titleRuby}>
-                      そうこうこうわんしょう
-                    </rt>
-                  </ruby>
+                  <ruby>甲甲甲甲甲</ruby>
                   ケアコース
                 </h2>
                 <div className={cssStyle.priceArea}>

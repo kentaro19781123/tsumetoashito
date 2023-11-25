@@ -31,6 +31,7 @@ export const menuItem = style([
     },
     ":last-child": {
       paddingBottom: "0",
+      borderBottom: "none",
     },
   },
   pcStyle({
@@ -101,10 +102,11 @@ export const price = style([
 export const contentArea = style([
   {
     marginTop: "8px",
-    backgroundColor: vars.color.gray,
+    border: `1px solid ${vars.color.grayLight}`,
+    // backgroundColor: vars.color.gray,
     padding: "16px",
     lineHeight: "1.5",
-    borderRadius: "4px",
+    // borderRadius: "4px",
   },
   pcStyle({}),
 ]);
