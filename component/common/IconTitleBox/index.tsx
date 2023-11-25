@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { IconTitle } from "./IconTitle";
 import { cssStyle } from "./icon-title-box.css";
@@ -35,7 +36,7 @@ export const IconTitleBox: React.FC<Props> = ({
         ))} */}
       </div>
       <div className={cssStyle.iconWrap}>
-        <img src={`img/${icon}`} />
+        <Image src={`/img/${icon}`} alt={subText} width="310" height="214" />
       </div>
       <div className={cssStyle.buttonWrap}>
         <ButtonBorder buttonText={buttonText} url={url} />
