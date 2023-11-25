@@ -44,7 +44,7 @@ export default function Home() {
               <div className={cssStyle.imageArea}>
                 <h3 className={cssStyle.title}>ケアの流れ</h3>
                 <Image
-                  src="img/flow.jpg"
+                  src="/img/flow.jpg"
                   alt="ケアの流れ"
                   width="852"
                   height="424"

@@ -6,6 +6,7 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig = {
   output: "export",
   images: { unoptimized: true },
+  trailingSlash: true,
 };
 
 module.exports = withVanillaExtract(nextConfig);

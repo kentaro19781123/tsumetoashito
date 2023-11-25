@@ -35,8 +35,8 @@ const logo = style({
 });
 
 const logoImage = style({
-  height: "60px",
-  width: "auto",
+  height: "auto",
+  width: "108px",
 });
 
 const pcMenu = style([
