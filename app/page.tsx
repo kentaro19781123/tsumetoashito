@@ -1,4 +1,4 @@
-import { cssStyle } from "./page.css";
+// import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { Header } from "@/component/Header";
 import { About } from "@/component/Top/About";

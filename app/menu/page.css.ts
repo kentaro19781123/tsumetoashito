@@ -1,4 +1,4 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { innerStyle, pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
