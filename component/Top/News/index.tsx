@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { cssStyle } from "./news.css";
 // import { TextBox } from "@/component/common/TextBox";
@@ -15,9 +16,9 @@ export const News: React.FC = () => {
               <li key={x.title} className={cssStyle.newsLi}>
                 <div>{x.date}</div>
                 <div>
-                  <a href={x.link} className={cssStyle.newsA}>
+                  <Link href={x.link} className={cssStyle.newsA}>
                     {x.title}
-                  </a>
+                  </Link>
                 </div>
               </li>
             ))}

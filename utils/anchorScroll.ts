@@ -2,9 +2,9 @@
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
 export const anchorScroll = (
-  event: React.MouseEvent | null,
   selector: string,
-  offset: number
+  offset: number,
+  event?: React.MouseEvent | null
 ) => {
   if (event) event.preventDefault();
 

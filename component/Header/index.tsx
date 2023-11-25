@@ -2,7 +2,9 @@
 
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import Image from "next/image";
-import React, { useState } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { cssStyle } from "./header.css";
 import { menuList } from "@/const/menu";
 import { useOverflow } from "@/hooks/useOverflow";
@@ -13,12 +15,15 @@ type Props = {
 };
 export const Header: React.FC<Props> = ({ pageId }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const search = searchParams.get("pageId");
   useOverflow(isOpen);
 
-  // useEffect(() => {
-  //   const el = document.body;
-  //   el.style.overflow = isOpen ? "hidden" : "inherit";
-  // }, [isOpen]);
+  useEffect(() => {
+    if (search === "about") {
+      anchorScroll("#about", 60);
+    }
+  }, [search]);
 
   return (
     <header className={cssStyle.headerWrap}>
@@ -43,14 +48,14 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                     {pageId === "top" && x.title === "サロンについて" ? (
                       <div
                         className={cssStyle.pcMenuA}
-                        onClick={(event) => anchorScroll(event, "#about", 60)}
+                        onClick={(event) => anchorScroll("#about", 60, event)}
                       >
                         {x.title}
                       </div>
                     ) : (
-                      <a href={x.link} className={cssStyle.pcMenuA}>
+                      <Link href={x.link} className={cssStyle.pcMenuA}>
                         {x.title}
-                      </a>
+                      </Link>
                     )}
                   </li>
                 ))}
@@ -88,16 +93,16 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                           <div
                             className={cssStyle.spMenuItemsA}
                             onClick={(event) => {
-                              anchorScroll(event, "#about", 60);
+                              anchorScroll("#about", 60, event);
                               setIsOpen(!isOpen);
                             }}
                           >
                             {x.title}
                           </div>
                         ) : (
-                          <a href={x.link} className={cssStyle.spMenuItemsA}>
+                          <Link href={x.link} className={cssStyle.spMenuItemsA}>
                             {x.title}
-                          </a>
+                          </Link>
                         )}
                       </li>
                     ))}

@@ -134,13 +134,14 @@ const spMenuItems = style({
 });
 
 const spMenuItemsLi = style({
-  padding: "16px",
   borderBottom: `1px dashed ${vars.color.grayLight}`,
 });
 
 const spMenuItemsA = style({
   color: `${vars.color.base}`,
   textDecoration: "none",
+  padding: "16px",
+  display: "block",
 });
 
 const displayProp = createVar();

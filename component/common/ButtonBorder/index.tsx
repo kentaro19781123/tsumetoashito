@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { cssStyle } from "./button-border.css";
 
@@ -9,9 +10,9 @@ type Props = {
 export const ButtonBorder: React.FC<Props> = ({ buttonText, url }) => {
   return (
     <div className={cssStyle.wrap}>
-      <a href={url} className={cssStyle.buttonStyle}>
+      <Link href={url} className={cssStyle.buttonStyle}>
         {buttonText}
-      </a>
+      </Link>
     </div>
   );
 };

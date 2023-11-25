@@ -22,7 +22,6 @@ export default function Home() {
             <section className={cssStyle.menuItem}>
               <div className={cssStyle.titleArea}>
                 <h2 className={cssStyle.title}>
-                  ●
                   <ruby>
                     甲甲甲甲甲
                     <rt className={cssStyle.titleRuby}>
@@ -43,7 +42,7 @@ export default function Home() {
                 <p>あああああああああああああああああああああああ</p>
               </div>
               <div className={cssStyle.imageArea}>
-                <h2 className={cssStyle.title}>【ケアの流れ】</h2>
+                <h3 className={cssStyle.title}>ケアの流れ</h3>
                 <Image
                   src="img/flow.jpg"
                   alt="ケアの流れ"
@@ -57,7 +56,6 @@ export default function Home() {
             <section className={cssStyle.menuItem}>
               <div className={cssStyle.titleArea}>
                 <h2 className={cssStyle.title}>
-                  ●
                   <ruby>
                     甲甲甲甲甲
                     <rt className={cssStyle.titleRuby}>
@@ -81,7 +79,6 @@ export default function Home() {
             <section className={cssStyle.menuItem}>
               <div className={cssStyle.titleArea}>
                 <h2 className={cssStyle.title}>
-                  ●
                   <ruby>
                     甲甲甲甲甲
                     <rt className={cssStyle.titleRuby}>
