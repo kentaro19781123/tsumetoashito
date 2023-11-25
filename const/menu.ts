@@ -9,7 +9,7 @@ export const menuList = [
   },
   {
     title: "メニュー料金",
-    link: "/flow/",
+    link: "/menu/",
   },
   {
     title: "ご予約",

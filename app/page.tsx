@@ -13,7 +13,7 @@ import { Reserved } from "@/component/Top/Reserved";
 export default function Home() {
   return (
     <>
-      <main className={cssStyle.main}>
+      <main>
         <Header pageId="top" />
         <Mv />
         <News />
