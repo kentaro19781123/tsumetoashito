@@ -1,6 +1,7 @@
 "use client";
 
 import { assignInlineVars } from "@vanilla-extract/dynamic";
+import Image from "next/image";
 import React, { useState } from "react";
 import { cssStyle } from "./header.css";
 import { menuList } from "@/const/menu";
@@ -11,7 +12,6 @@ type Props = {
   pageId: string;
 };
 export const Header: React.FC<Props> = ({ pageId }) => {
-  console.log(pageId);
   const [isOpen, setIsOpen] = useState(false);
   useOverflow(isOpen);
 
@@ -26,10 +26,11 @@ export const Header: React.FC<Props> = ({ pageId }) => {
         <div className={cssStyle.headerMain}>
           <div className={cssStyle.logoWrap}>
             <h1 className={cssStyle.logo}>
-              <img
+              <Image
                 src="img/logo.jpg"
                 alt="ロゴ"
                 width="200"
+                height="60"
                 className={cssStyle.logoImage}
               />
             </h1>
@@ -83,9 +84,21 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                   <ul>
                     {menuList.map((x) => (
                       <li key={x.title} className={cssStyle.spMenuItemsLi}>
-                        <a href={x.link} className={cssStyle.spMenuItemsA}>
-                          {x.title}
-                        </a>
+                        {pageId === "top" && x.title === "サロンについて" ? (
+                          <div
+                            className={cssStyle.spMenuItemsA}
+                            onClick={(event) => {
+                              anchorScroll(event, "#about", 60);
+                              setIsOpen(!isOpen);
+                            }}
+                          >
+                            {x.title}
+                          </div>
+                        ) : (
+                          <a href={x.link} className={cssStyle.spMenuItemsA}>
+                            {x.title}
+                          </a>
+                        )}
                       </li>
                     ))}
                   </ul>
