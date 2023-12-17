@@ -1,4 +1,4 @@
-import { style, globalStyle } from "@vanilla-extract/css";
+import { style, globalStyle, composeStyles } from "@vanilla-extract/css";
 import { innerStyle, pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
@@ -43,13 +43,22 @@ const swiper = style([
 const swiperSlide = style([
   {
     width: "150px !important",
-    // height: "150px !important",
   },
   pcStyle({
-    width: "200px !important",
-    // height: "200px !important",
+    width: "180px !important",
   }),
 ]);
+
+export const swiperSlideNoEvent = composeStyles(
+  swiperSlide,
+  style([
+    { display: "none !important" },
+    pcStyle({
+      pointerEvents: "none",
+      display: "block !important",
+    }),
+  ])
+);
 
 const swiperButton = style({
   color: vars.color.base,
@@ -109,10 +118,11 @@ const swiperItem = style([
     textAlign: "center",
     backgroundColor: "#eee",
     fontWeight: "normal",
+    padding: "16px",
   },
   pcStyle({
-    width: "200px",
-    height: "200px",
+    width: "180px",
+    height: "180px",
   }),
 ]);
 
@@ -183,6 +193,7 @@ export const cssStyle = {
   inner,
   swiper,
   swiperSlide,
+  swiperSlideNoEvent,
   swiperButton,
   ButtonWrap,
   dialog,

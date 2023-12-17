@@ -71,8 +71,11 @@ const pcMenuA = style({
   padding: "8px",
   cursor: "pointer",
   ":hover": {
-    opacity: 0.8,
-    background: vars.color.grayLight,
+    // opacity: 0.8,
+    // background: vars.color.grayLight,
+    background: "rgba(0,0,0,.3)",
+    border: `1px solid ${vars.color.white}`,
+    color: vars.color.white,
   },
 });
 

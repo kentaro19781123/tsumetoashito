@@ -1,17 +1,33 @@
 import React from "react";
 import { cssStyle } from "./about.css";
-import { TextBox } from "@/component/common/TextBox";
+// import { TextBox } from "@/component/common/TextBox";
 import { Title } from "@/component/common/Title";
+import { client } from "@/libs/client";
+import { aboutType } from "@/types";
 
-export const About: React.FC = () => {
+const getContents = async () => {
+  const response = await client.get<aboutType>({
+    customRequestInit: {
+      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
+    },
+    endpoint: "shopinfo",
+    contentId: "wf7x4le9bp3m",
+  });
+  return response;
+};
+
+export const About: React.FC = async () => {
+  const data = await getContents();
   return (
     <section className={cssStyle.section} id="about">
       <div className={cssStyle.inner}>
-        <Title text="当サロンについて" />
-        <TextBox
-          text={`テキストテキストテキストテキストテキストテキストテキスト\nテキストテキストテキストテキストテキス\n\nテキストテキストテキストテキストテキストテキストテキスト`}
+        <Title text={data.title} />
+        <div
+          className="richEditor"
+          dangerouslySetInnerHTML={{
+            __html: data.contentBlock[0].aboutText,
+          }}
         />
-        <div className="kentaro">ああああああ</div>
         {/* <ButtonBox button={["ボタン", "ボタン"]} /> */}
       </div>
     </section>

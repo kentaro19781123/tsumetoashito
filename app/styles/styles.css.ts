@@ -22,3 +22,7 @@ export const innerStyle = {
   ...innerStyleSP,
   ...pcStyle(innerStylePC),
 };
+
+export const topIconMenu = {
+  width: "250px",
+};

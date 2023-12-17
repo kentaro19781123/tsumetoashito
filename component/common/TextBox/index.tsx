@@ -17,7 +17,11 @@ export const TextBox: React.FC<Props> = ({ text, align }) => {
       className={cssStyle.wrap}
       style={assignInlineVars({ [cssStyle.textPosition]: textAlign })}
     >
-      <p>{text}</p>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: text,
+        }}
+      />
     </div>
   );
 };

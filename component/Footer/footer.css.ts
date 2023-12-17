@@ -3,7 +3,7 @@ import { vars } from "@/app/styles/var.css";
 
 export const section = style([
   {
-    borderTop: `1px solid ${vars.color.grayLight}`,
+    // borderTop: `1px solid ${vars.color.grayLight}`,
     padding: "32px 0",
   },
 ]);

@@ -51,3 +51,27 @@ a {
 .swiper-slide figure {
   text-align: center !important;
 }
+
+/* リッチエディタ */
+.richEditor p {
+  min-height: 1em;
+  line-height: 1.5;
+}
+
+.richEditor a {
+  text-decoration: underline;
+}
+
+/* case */
+.caseTextEllipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* 店舗情報 */
+#shopInfo iframe {
+  width: 100%;
+}

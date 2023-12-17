@@ -24,8 +24,19 @@ globalStyle(`${titleWrap} h2 + h2::before`, {
   width: "1em",
 });
 
-const iconWrap = style({
-  textAlign: "center",
+const iconWrap = style([
+  {
+    width: "140px",
+    margin: "8px auto 16px",
+  },
+  pcStyle({
+    margin: "32px auto",
+  }),
+]);
+
+const icon = style({
+  width: "100%",
+  height: "100%",
 });
 
 const title = style({
@@ -54,7 +65,7 @@ const buttonWrap = style([
     margin: "0 auto 16px",
   },
   pcStyle({
-    width: "300px",
+    width: "80%",
     margin: "0 auto 32px",
   }),
 ]);
@@ -62,6 +73,7 @@ const buttonWrap = style([
 export const cssStyle = {
   titleWrap,
   iconWrap,
+  icon,
   title,
   mainTitle,
   subTitle,

@@ -124,7 +124,7 @@ export const menuImage = style([
     marginTop: "16px",
   },
   pcStyle({
-    width: "auto",
+    width: "100%",
     height: "auto",
   }),
 ]);

@@ -19,19 +19,12 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   const search = searchParams.get("pageId");
   // const pathname = usePathname();
   useOverflow(isOpen);
-  // console.log(pathname);
 
   useEffect(() => {
-    if (search === "about") {
-      anchorScroll("#about", 60);
+    if (search) {
+      anchorScroll(`#${search}`, 60);
     }
   }, [search]);
-
-  // useEffect(() => {
-  //   if (pathname === `/${pageId}/`) {
-  //     setIsOpen(false);
-  //   }
-  // }, [pageId, pathname]);
 
   return (
     <header className={cssStyle.headerWrap}>
@@ -39,13 +32,15 @@ export const Header: React.FC<Props> = ({ pageId }) => {
         <div className={cssStyle.headerMain}>
           <div className={cssStyle.logoWrap}>
             <h1 className={cssStyle.logo}>
-              <Image
-                src="/img/logo.jpg"
-                alt="ロゴ"
-                width="108"
-                height="60"
-                className={cssStyle.logoImage}
-              />
+              <a href="/">
+                <Image
+                  src="/img/logo.jpg"
+                  alt="ロゴ"
+                  width="108"
+                  height="60"
+                  className={cssStyle.logoImage}
+                />
+              </a>
             </h1>
           </div>
           <div className={cssStyle.pcMenu}>

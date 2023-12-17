@@ -36,7 +36,13 @@ export const IconTitleBox: React.FC<Props> = ({
         ))} */}
       </div>
       <div className={cssStyle.iconWrap}>
-        <Image src={`/img/${icon}`} alt={subText} width="310" height="214" />
+        <Image
+          src={`/img/${icon}`}
+          alt={subText}
+          width="165"
+          height="165"
+          className={cssStyle.icon}
+        />
       </div>
       <div className={cssStyle.buttonWrap}>
         <ButtonBorder buttonText={buttonText} url={url} />

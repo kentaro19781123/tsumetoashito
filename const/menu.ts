@@ -1,26 +1,38 @@
+export const metaAbout = {
+  title: "サロンについて",
+  link: "/?pageId=about",
+};
+
+export const metaCase = {
+  title: "施術例",
+  link: "/case/",
+};
+
+export const metaMenu = {
+  title: "メニュー",
+  link: "/menu/",
+};
+
+export const metaShopInfo = {
+  title: "店舗情報",
+  link: "/shopinfo/",
+};
+
+export const metaReserve = {
+  title: "ご予約",
+  link: "/reserve/",
+};
+
+export const metaContact = {
+  title: "お問合せ",
+  link: "/contact/",
+};
+
 export const menuList = [
-  {
-    title: "サロンについて",
-    link: "/?pageId=about",
-  },
-  {
-    title: "施術例",
-    link: "/gallery/",
-  },
-  {
-    title: "メニュー料金",
-    link: "/menu/",
-  },
-  {
-    title: "ご予約",
-    link: "/info/",
-  },
-  {
-    title: "アクセス",
-    link: "/access/",
-  },
-  {
-    title: "お問合せ",
-    link: "/flow/",
-  },
+  metaAbout,
+  metaCase,
+  metaMenu,
+  metaShopInfo,
+  metaReserve,
+  metaContact,
 ];

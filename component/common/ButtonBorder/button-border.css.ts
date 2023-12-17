@@ -35,8 +35,10 @@ const buttonStyle = style([
   }),
 ]);
 
-globalStyle(`${buttonStyle}::hover`, {
-  opacity: "0.8",
+globalStyle(`${buttonStyle}:hover`, {
+  background: "rgba(0,0,0,.3)",
+  border: `1px solid ${vars.color.white}`,
+  color: vars.color.white,
 });
 
 export const cssStyle = {

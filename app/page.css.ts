@@ -7,6 +7,21 @@ export const main = style(
   })
 );
 
+export const menuWrap = style([
+  {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  pcStyle({
+    paddingTop: "16px",
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: "16px",
+  }),
+]);
+
 export const cssStyle = {
   main,
+  menuWrap,
 };
