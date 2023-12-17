@@ -7,9 +7,6 @@ import { menuType } from "@/types";
 
 const getContents = async () => {
   const response = await client.get<menuType>({
-    customRequestInit: {
-      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
-    },
     endpoint: "menu",
   });
   return response.contents;

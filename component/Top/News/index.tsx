@@ -10,9 +10,6 @@ import { ConvertDate } from "@/utils/convertdate";
 
 const getContents = async () => {
   const response = await client.get<newsType>({
-    customRequestInit: {
-      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
-    },
     endpoint: "shopinfo",
     contentId: "rwrk90-xc7e",
   });

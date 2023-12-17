@@ -8,9 +8,6 @@ import { treatmentCategoryType, treatmentType } from "@/types";
 
 const getContents = async () => {
   const response = await client.get<treatmentType>({
-    customRequestInit: {
-      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
-    },
     endpoint: "treatment",
   });
   return response.contents;
@@ -18,9 +15,6 @@ const getContents = async () => {
 
 const getCategoryContents = async () => {
   const response = await client.get<treatmentCategoryType>({
-    customRequestInit: {
-      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
-    },
     endpoint: "shopinfo",
     contentId: "7zu-0755dx",
     queries: { fields: "contentBlock" },

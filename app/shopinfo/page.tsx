@@ -7,9 +7,6 @@ import { shopInfoType } from "@/types";
 
 const getContents = async () => {
   const response = await client.get<shopInfoType>({
-    customRequestInit: {
-      cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
-    },
     endpoint: "shopinfo",
     contentId: "6aabm9kpl1",
   });
