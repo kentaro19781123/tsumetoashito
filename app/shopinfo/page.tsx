@@ -18,7 +18,6 @@ const getContents = async () => {
 
 export default async function ShopInfo() {
   const { title, contentBlock } = await getContents();
-
   const zoomMap = contentBlock[0].shopMapUrl.replace("4f13.1", "4f10");
 
   return (
