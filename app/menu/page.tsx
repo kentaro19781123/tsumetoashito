@@ -15,10 +15,15 @@ const getContents = async () => {
 export default async function Menu() {
   const data = await getContents();
   const rubyReplace = (text: string) => {
-    const rtText = text
-      .replace("[", "<rt className={cssStyle.titleRuby}>")
-      .replace("]", "</rt>");
-    return `<ruby>${rtText}</ruby>`;
+    const regex = /\[*\]/g;
+    if (regex.test(text)) {
+      const rtText = text
+        .replace("[", "<rt className={cssStyle.titleRuby}>")
+        .replace("]", "</rt>");
+      return `<ruby>${rtText}</ruby>`;
+    } else {
+      return `<span>${text}</span>`;
+    }
   };
   return (
     <>

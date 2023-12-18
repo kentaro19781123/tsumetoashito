@@ -32,6 +32,7 @@ const logo = style({
   width: "110px",
   height: "60px",
   fontSize: "18px",
+  margin: 0,
 });
 
 const logoImage = style({
