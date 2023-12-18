@@ -75,5 +75,6 @@ type menuItemType = {
   price: string;
   caption: string;
   text: string;
+  photoTitle: string;
   photo: MicroCMSImage;
 };

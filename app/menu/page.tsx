@@ -37,7 +37,7 @@ export default async function Menu() {
                   />
                   <div className={cssStyle.priceArea}>
                     {x.caption && (
-                      <p className={cssStyle.priceCaution}>注釈注釈注釈</p>
+                      <p className={cssStyle.priceCaution}>{x.caption}</p>
                     )}
                     <p className={cssStyle.price}>{x.price}</p>
                   </div>
@@ -50,7 +50,9 @@ export default async function Menu() {
                 />
                 {x.photo && (
                   <div className={cssStyle.imageArea}>
-                    <h3 className={cssStyle.title}>ケアの流れ</h3>
+                    {x.photoTitle && (
+                      <h3 className={cssStyle.title}>{x.photoTitle}</h3>
+                    )}
                     <Image
                       src="/img/flow.jpg"
                       alt="ケアの流れ"
