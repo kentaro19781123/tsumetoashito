@@ -62,6 +62,27 @@ a {
   text-decoration: underline;
 }
 
+.richEditor table,
+.richEditor table th,
+.richEditor table tr,
+.richEditor table td {
+  border: 1px solid #ccc;
+  border-spacing: 0;
+}
+
+.richEditor table {
+  width: 100%;
+}
+
+.richEditor table th {
+  padding: 10px;
+  background-color: #e6e6e6;
+}
+.richEditor table td {
+  padding: 10px;
+  width: calc(100% / 7);
+}
+
 /* case */
 .caseTextEllipsis {
   overflow: hidden;

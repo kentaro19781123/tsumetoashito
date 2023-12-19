@@ -40,10 +40,10 @@ export type treatmentContentsType = {
 };
 
 export type treatmentCategoryType = {
-  contentBlock: category[];
+  contentBlock: categoryContentType[];
 };
 
-type category = {
+type categoryContentType = {
   fieldId: "treatmentList";
   categoryList: categoryItem[];
 };
@@ -54,27 +54,37 @@ type categoryItem = {
 };
 
 export type menuType = {
-  contents: menuItemType[];
+  contents: menuContentsType[];
 } & MicroCMSContentId &
   MicroCMSDate;
 
-export type shopInfoType = {
-  contentBlock: shopInfoItemType[];
-  title: string;
-} & MicroCMSContentId &
-  MicroCMSDate;
-
-type shopInfoItemType = {
-  fieldId: string;
-  shopAddress: string;
-  shopMapUrl: string;
-};
-
-type menuItemType = {
+type menuContentsType = {
   title: string;
   price: string;
   caption: string;
   text: string;
   photoTitle: string;
   photo: MicroCMSImage;
+};
+
+export type shopInfoType = {
+  contentBlock: shopInfoContentType[];
+  title: string;
+} & MicroCMSContentId &
+  MicroCMSDate;
+
+type shopInfoContentType = {
+  fieldId: "shop";
+  shopAddress: string;
+  shopMapUrl: string;
+};
+
+export type reserveType = {
+  contentBlock: reserveContentType[];
+  title: string;
+};
+
+type reserveContentType = {
+  fieldId: "reserve";
+  calendar: string;
 };
