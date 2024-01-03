@@ -1,6 +1,7 @@
 "use client";
 
 import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { useAtom } from "jotai";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -8,12 +9,14 @@ import React, { useEffect, useState } from "react";
 import { cssStyle } from "./header.css";
 import { menuList } from "@/const/menu";
 import { useOverflow } from "@/hooks/useOverflow";
+import { mvInViewAtom } from "@/store/atom";
 import { anchorScroll } from "@/utils/anchorScroll";
 
 type Props = {
   pageId: string;
 };
 export const Header: React.FC<Props> = ({ pageId }) => {
+  const [mvInView] = useAtom(mvInViewAtom);
   const [isOpen, setIsOpen] = useState(false);
   const searchParams = useSearchParams();
   const search = searchParams.get("pageId");
@@ -27,7 +30,11 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   }, [search]);
 
   return (
-    <header className={cssStyle.headerWrap}>
+    <header
+      className={cssStyle.headerWrap}
+      data-mvinview={mvInView}
+      id={pageId}
+    >
       <div className={cssStyle.header}>
         <div className={cssStyle.headerMain}>
           <div className={cssStyle.logoWrap}>
@@ -69,8 +76,9 @@ export const Header: React.FC<Props> = ({ pageId }) => {
             <div
               className={cssStyle.menuBtn}
               onClick={() => setIsOpen(!isOpen)}
+              data-open={isOpen}
             >
-              <span className={cssStyle.menuBtnSpan}></span>
+              <span className={cssStyle.menuBtnSpan} data-open={isOpen}></span>
             </div>
             {menuList && (
               <>
@@ -89,7 +97,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                       : "translate3d(100%, 0, 0)",
                   })}
                 >
-                  <ul>
+                  <ul className={cssStyle.spMenuItemsUl}>
                     {menuList.map((x) => (
                       <li key={x.title} className={cssStyle.spMenuItemsLi}>
                         {pageId === "top" && x.title === "サロンについて" ? (

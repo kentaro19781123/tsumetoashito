@@ -38,7 +38,7 @@ export default async function ShopInfo() {
             />
           </div>
         </div>
-        <Footer />
+        <Footer pageId="shopinfo" />
       </main>
     </>
   );

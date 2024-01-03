@@ -13,13 +13,13 @@ const getContents = async () => {
   return response;
 };
 
-export default async function Reserve() {
+export default async function Flow() {
   const { title, contentBlock } = await getContents();
   return (
     <>
       <main>
-        <Header pageId="shopInfo" />
-        <div className={cssStyle.section} id="shopInfo">
+        <Header pageId="flow" />
+        <div className={cssStyle.section} id="flow">
           <div className={cssStyle.inner}>
             <Title text={title} />
             <div
@@ -30,7 +30,7 @@ export default async function Reserve() {
             />
           </div>
         </div>
-        <Footer />
+        <Footer pageId="flow" />
       </main>
     </>
   );

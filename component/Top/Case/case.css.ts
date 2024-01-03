@@ -52,7 +52,7 @@ const swiperSlide = style([
 export const swiperSlideNoEvent = composeStyles(
   swiperSlide,
   style([
-    { display: "none !important" },
+    // { display: "none !important" },
     pcStyle({
       pointerEvents: "none",
       display: "block !important",
@@ -105,25 +105,59 @@ const dialogMoreButtonWrap = style([
   }),
 ]);
 
-const swiperItem = style([
+const circle = style([
   {
-    cursor: "pointer",
     width: "150px",
     height: "150px",
     borderRadius: "100px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    whiteSpace: "pre-wrap",
-    textAlign: "center",
+    flexDirection: "column",
     backgroundColor: "#eee",
-    fontWeight: "normal",
+    cursor: "pointer",
     padding: "16px",
   },
   pcStyle({
     width: "180px",
     height: "180px",
   }),
+]);
+const swiperImgWrap = style([
+  {
+    borderRadius: "35px",
+    border: "5px solid #fff",
+    overflow: "hidden",
+    width: "70px",
+    height: "70px",
+    marginBottom: "4px",
+  },
+  pcStyle({
+    borderRadius: "40px",
+    width: "80px",
+    height: "80px",
+    marginBottom: "8px",
+  }),
+]);
+
+const swiperImg = style({
+  width: "100%",
+  height: "auto",
+});
+
+const swiperItem = style([
+  {
+    whiteSpace: "pre-wrap",
+    textAlign: "center",
+    fontWeight: "normal",
+  },
+]);
+
+const swiperItemKana = style([
+  {
+    fontSize: `${vars.font.F10}`,
+    marginTop: "4px",
+  },
 ]);
 
 const container = style({
@@ -198,7 +232,11 @@ export const cssStyle = {
   ButtonWrap,
   dialog,
   dialogMoreButtonWrap,
+  circle,
+  swiperImgWrap,
+  swiperImg,
   swiperItem,
+  swiperItemKana,
   container,
   containerItem,
   itemTitle,

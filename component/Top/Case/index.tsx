@@ -1,5 +1,5 @@
-import { cssStyle } from "./gallery.css";
-import { Slide } from "@/component/Top/Gallery/Slide";
+import { cssStyle } from "./case.css";
+import { Slide } from "@/component/Top/Case/Slide";
 import { Title } from "@/component/common/Title";
 // import { galleryItems } from "@/const/galleryItems";
 import { client } from "@/libs/client";
@@ -21,16 +21,17 @@ const getCategoryContents = async () => {
   return response.contentBlock[0].categoryList;
 };
 
-export const Gallery: React.FC = async () => {
+export const Case: React.FC = async () => {
   const treatmentData = await getTreatmentContents();
   const categoryData = await getCategoryContents();
-  const categoryArray = categoryData.map((x) => x.categoryItem);
+  // const categoryArray = categoryData.map((x) => x.categoryItem);
+  // console.log(categoryData);
 
   return (
     <section className={cssStyle.section}>
       <div className={cssStyle.inner}>
         <Title text="施術例" />
-        <Slide items={treatmentData} category={categoryArray} />
+        <Slide items={treatmentData} category={categoryData} />
       </div>
     </section>
   );

@@ -19,8 +19,8 @@ export const metaShopInfo = {
 };
 
 export const metaReserve = {
-  title: "ご予約",
-  link: "/reserve/",
+  title: "ご利用の流れ",
+  link: "/flow/",
 };
 
 export const metaContact = {

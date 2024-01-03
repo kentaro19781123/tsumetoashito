@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
 import "normalize.css";
 import "./globals.css";
-
+import { Provider } from "jotai";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

@@ -11,6 +11,7 @@ export const vars = createGlobalTheme(":root", {
   },
   font: {
     base: "16px",
+    F10: "10px",
     F12: "12px",
     F14: "14px",
     F18: "18px",
@@ -19,7 +20,7 @@ export const vars = createGlobalTheme(":root", {
     F38: "38px",
   },
   padding: {
-    secSP: "24px 0",
+    secSP: "60px 0",
     secPC: "48px 0",
   },
 });

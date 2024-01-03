@@ -1,14 +1,14 @@
-import { cssStyle } from "./page.css";
+// import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { Header } from "@/component/Header";
 import { About } from "@/component/Top/About";
-import { ContactUs } from "@/component/Top/ContactUs";
-import { Gallery } from "@/component/Top/Gallery";
-import { Menu } from "@/component/Top/Menu";
+// import { ContactUs } from "@/component/Top/ContactUs";
+import { Case } from "@/component/Top/Case";
+// import { Menu } from "@/component/Top/Menu";
 import { Mv } from "@/component/Top/Mv";
-import { News } from "@/component/Top/News";
-import { Reserve } from "@/component/Top/Reserved";
-import { ShopInfo } from "@/component/Top/ShopInfo";
+// import { News } from "@/component/Top/News";
+// import { Reserve } from "@/component/Top/Reserved";
+// import { ShopInfo } from "@/component/Top/ShopInfo";
 
 export default function Home() {
   return (
@@ -16,16 +16,16 @@ export default function Home() {
       <main>
         <Header pageId="top" />
         <Mv />
-        <News />
+        {/* <News /> */}
         <About />
-        <Gallery />
-        <div className={cssStyle.menuWrap}>
+        <Case />
+        {/* <div className={cssStyle.menuWrap}>
           <Menu />
           <ShopInfo />
           <Reserve />
           <ContactUs />
-        </div>
-        <Footer />
+        </div> */}
+        <Footer pageId="top" />
       </main>
     </>
   );

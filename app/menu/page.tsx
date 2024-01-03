@@ -55,9 +55,9 @@ export default async function Menu() {
                 />
                 {x.photo && (
                   <div className={cssStyle.imageArea}>
-                    {x.photoTitle && (
+                    {/* {x.photoTitle && (
                       <h3 className={cssStyle.title}>{x.photoTitle}</h3>
-                    )}
+                    )} */}
                     <Image
                       src="/img/flow.jpg"
                       alt="ケアの流れ"
@@ -71,7 +71,7 @@ export default async function Menu() {
             ))}
           </div>
         </div>
-        <Footer />
+        <Footer pageId="menu" />
       </main>
     </>
   );

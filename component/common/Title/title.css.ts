@@ -5,7 +5,7 @@ import { vars } from "@/app/styles/var.css";
 export const title = style([
   {
     fontSize: vars.font.F24,
-    fontWeight: "normal",
+    // fontWeight: "normal",
     // fontFamily: "Josefin Sans",
     marginBottom: "16px",
   },

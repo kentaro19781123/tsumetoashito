@@ -38,13 +38,13 @@ export default async function GalleryList() {
   return (
     <>
       <main>
-        <Header pageId="menu" />
+        <Header pageId="case" />
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <CategoryContents itemsArray={itemsArray} />
           </div>
         </div>
-        <Footer />
+        <Footer pageId="case" />
       </main>
     </>
   );

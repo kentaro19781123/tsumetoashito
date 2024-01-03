@@ -6,15 +6,15 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 // import { Circle } from "./circle";
-import { cssStyle } from "./gallery.css";
+import { cssStyle } from "./case.css";
 import { ButtonBorder } from "@/component/common/ButtonBorder";
 import { metaCase } from "@/const/menu";
 import { useOverflow } from "@/hooks/useOverflow";
-import { treatmentContentsType } from "@/types";
+import { treatmentContentsType, categoryItem } from "@/types";
 
 type Props = {
   items: treatmentContentsType[];
-  category: string[];
+  category: categoryItem[];
 };
 
 export const Slide: React.FC<Props> = ({ items, category }) => {
@@ -22,13 +22,13 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
   // カテゴリを抽出
   const itemsCategory = items.map((x) => x.treatmentCategory);
   const itemsCategoryFix = Array.from(new Set(itemsCategory));
-  const itemsArray = category
-    .map((categoryName) =>
-      items.filter((x) => x.treatmentCategory === categoryName)
-    )
-    .filter((x) => x.length != 0);
+  // const itemsArray = category
+  //   .map((categoryDetail) =>
+  //     items.filter((x) => x.treatmentCategory === categoryDetail.categoryItem)
+  //   )
+  //   .filter((x) => x.length != 0);
 
-  const dummyArray = Array(5 - itemsArray.length).fill("dummy");
+  // const dummyArray = Array(5 - itemsArray.length).fill("dummy");
 
   useOverflow(isOpen);
   const modalOpen = (id: string) => {
@@ -79,21 +79,42 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
             spaceBetween: 40,
           },
         }}
-        spaceBetween={20}
+        spaceBetween={15}
         className={cssStyle.swiper}
       >
-        {category.map((categoryName, index) =>
-          itemsCategoryFix.includes(categoryName) ? (
+        {category.map((categoryDetail, index) =>
+          itemsCategoryFix.includes(categoryDetail.categoryItem) ? (
             <SwiperSlide key={index} className={cssStyle.swiperSlide}>
-              {/* <Circle categoryName={categoryName} index={index} /> */}
-              <h3
-                className={cssStyle.swiperItem}
-                id={`galleryItem${index + 1}`}
+              {/* <Circle categoryDetail={categoryDetail} index={index} /> */}
+
+              <div
+                className={cssStyle.circle}
                 onClick={() => modalOpen(`galleryItem${index + 1}`)}
               >
-                {categoryName}
-                {index}
-              </h3>
+                {categoryDetail.categoryPhoto && (
+                  <div className={cssStyle.swiperImgWrap}>
+                    <img
+                      className={cssStyle.swiperImg}
+                      src={categoryDetail.categoryPhoto.url}
+                      alt={categoryDetail.categoryItem}
+                      width={categoryDetail.categoryPhoto.width}
+                      height={categoryDetail.categoryPhoto.height}
+                    />
+                  </div>
+                )}
+                <h3
+                  className={cssStyle.swiperItem}
+                  id={`galleryItem${index + 1}`}
+                >
+                  {categoryDetail.categoryItem}
+                </h3>
+                {categoryDetail.categoryKana && (
+                  <p className={cssStyle.swiperItemKana}>
+                    {categoryDetail.categoryKana}
+                  </p>
+                )}
+              </div>
+
               <div className={cssStyle.ButtonWrap}>
                 <ButtonBorder
                   buttonText="もっと見る"
@@ -110,7 +131,9 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                   data-gallery-container={`galleryItem${index + 1}`}
                 >
                   {items
-                    .filter((z) => z.treatmentCategory === categoryName)
+                    .filter(
+                      (z) => z.treatmentCategory === categoryDetail.categoryItem
+                    )
                     .map((y, index) =>
                       index < 3 ? (
                         <div className={cssStyle.containerItem} key={index}>
@@ -156,11 +179,13 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
             ""
           )
         )}
-        {dummyArray.map((_, index) => (
+        {/* {dummyArray.map((_, index) => (
           <SwiperSlide className={cssStyle.swiperSlideNoEvent} key={index}>
-            <h3 className={cssStyle.swiperItem}></h3>
+            <div className={cssStyle.circle}>
+              <h3 className={cssStyle.swiperItem}></h3>
+            </div>
           </SwiperSlide>
-        ))}
+        ))} */}
       </Swiper>
     </div>
   );

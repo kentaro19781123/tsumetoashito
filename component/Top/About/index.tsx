@@ -19,12 +19,42 @@ export const About: React.FC = async () => {
     <section className={cssStyle.section} id="about">
       <div className={cssStyle.inner}>
         <Title text={data.title} />
-        <div
-          className="richEditor"
-          dangerouslySetInnerHTML={{
-            __html: data.contentBlock[0].aboutText,
-          }}
-        />
+        <div className={cssStyle.aboutContent}>
+          <div
+            className="richEditor"
+            dangerouslySetInnerHTML={{
+              __html: data.contentBlock[0].aboutText,
+            }}
+          />
+          <div className={cssStyle.photoContent}>
+            <div className={cssStyle.photo}>
+              <img
+                className={cssStyle.photoImg}
+                src={data.contentBlock[0].photoLeft.url}
+                alt=""
+              />
+              <div
+                className="richEditor"
+                dangerouslySetInnerHTML={{
+                  __html: data.contentBlock[0].captionLeft,
+                }}
+              />
+            </div>
+            <div className={cssStyle.photo}>
+              <img
+                className={cssStyle.photoImg}
+                src={data.contentBlock[0].photoRight.url}
+                alt=""
+              />
+              <div
+                className="richEditor"
+                dangerouslySetInnerHTML={{
+                  __html: data.contentBlock[0].captionRight,
+                }}
+              />
+            </div>
+          </div>
+        </div>
         {/* <ButtonBox button={["ボタン", "ボタン"]} /> */}
       </div>
     </section>

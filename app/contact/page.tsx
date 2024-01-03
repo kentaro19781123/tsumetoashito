@@ -7,13 +7,13 @@ export default async function Contact() {
   return (
     <>
       <main>
-        <Header pageId="shopInfo" />
-        <div className={cssStyle.section} id="shopInfo">
+        <Header pageId="contact" />
+        <div className={cssStyle.section} id="contact">
           <div className={cssStyle.inner}>
             <Title text="お問合せ" />
           </div>
         </div>
-        <Footer />
+        <Footer pageId="contact" />
       </main>
     </>
   );

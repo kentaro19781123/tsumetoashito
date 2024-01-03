@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { cssStyle } from "./page.css";
 import { Title } from "@/component/common/Title";
-import { useOverflow } from "@/hooks/useOverflow";
+// import { useOverflow } from "@/hooks/useOverflow";
 import { treatmentContentsType } from "@/types";
 
 type Props = {
@@ -11,42 +11,42 @@ type Props = {
 };
 export const CategoryContents: React.FC<Props> = ({ itemsArray }) => {
   // モーダル（後で共通化する）
-  const [isOpen, setIsOpen] = useState(false);
-  useOverflow(isOpen);
-  const modalOpen = (id: string) => {
-    const dialogEl = document.querySelector<HTMLDialogElement>(
-      `[data-gallery-item=${id}]`
-    );
-    const containerEl = document.querySelector<HTMLDivElement>(
-      `[data-gallery-container=${id}]`
-    );
-    dialogEl?.showModal();
-    if (containerEl) containerEl.scrollTop = 0;
+  // const [isOpen, setIsOpen] = useState(false);
+  // useOverflow(isOpen);
+  // const modalOpen = (id: string) => {
+  //   const dialogEl = document.querySelector<HTMLDialogElement>(
+  //     `[data-gallery-item=${id}]`
+  //   );
+  //   const containerEl = document.querySelector<HTMLDivElement>(
+  //     `[data-gallery-container=${id}]`
+  //   );
+  //   dialogEl?.showModal();
+  //   if (containerEl) containerEl.scrollTop = 0;
 
-    setIsOpen(true);
-  };
+  //   setIsOpen(true);
+  // };
 
-  const modalClose = (
-    e: React.MouseEvent<HTMLDialogElement, MouseEvent>,
-    id: string
-  ) => {
-    const dialogEl = document.querySelector<HTMLDialogElement>(
-      `[data-gallery-item=${id}]`
-    );
-    if (!(e.target instanceof HTMLDialogElement)) return null;
-    if (e.target.closest(`[data-gallery-container=${id}]`) === null) {
-      dialogEl?.close();
-      setIsOpen(false);
-    }
-  };
+  // const modalClose = (
+  //   e: React.MouseEvent<HTMLDialogElement, MouseEvent>,
+  //   id: string
+  // ) => {
+  //   const dialogEl = document.querySelector<HTMLDialogElement>(
+  //     `[data-gallery-item=${id}]`
+  //   );
+  //   if (!(e.target instanceof HTMLDialogElement)) return null;
+  //   if (e.target.closest(`[data-gallery-container=${id}]`) === null) {
+  //     dialogEl?.close();
+  //     setIsOpen(false);
+  //   }
+  // };
 
-  const modalCloseButton = (id: string) => {
-    const dialogEl = document.querySelector<HTMLDialogElement>(
-      `[data-gallery-item=${id}]`
-    );
-    dialogEl?.close();
-    setIsOpen(false);
-  };
+  // const modalCloseButton = (id: string) => {
+  //   const dialogEl = document.querySelector<HTMLDialogElement>(
+  //     `[data-gallery-item=${id}]`
+  //   );
+  //   dialogEl?.close();
+  //   setIsOpen(false);
+  // };
 
   return (
     <>
@@ -60,11 +60,12 @@ export const CategoryContents: React.FC<Props> = ({ itemsArray }) => {
           <div className={cssStyle.caseContent}>
             {byCategoryArray.map((item, index) => (
               <React.Fragment key={index}>
-                <div
+                {/* <div
                   className={cssStyle.caseItem}
                   id={`galleryItem${index + 1}`}
                   onClick={() => modalOpen(`galleryItem${index + 1}`)}
-                >
+                > */}
+                <a href={`./${item.id}/`} className={cssStyle.caseItem}>
                   <div className={cssStyle.casePhotoWrap}>
                     <img
                       src={item.treatmentPhoto.url}
@@ -78,17 +79,18 @@ export const CategoryContents: React.FC<Props> = ({ itemsArray }) => {
                     <h3 className={cssStyle.caseDetailTitle}>
                       {item.treatmentTitle}
                     </h3>
-                    <div
+                    {/* <div
                       className={`${cssStyle.caseDetail} richEditor caseTextEllipsis`}
                       dangerouslySetInnerHTML={{
                         __html: item.treatmentText,
                       }}
-                    />
+                    /> */}
                   </div>
-                </div>
+                </a>
+                {/* </div> */}
 
                 {/* モーダル（あとで共通化する） */}
-                <dialog
+                {/* <dialog
                   className={cssStyle.dialog}
                   data-gallery-item={`galleryItem${index + 1}`}
                   onClick={(e) => modalClose(e, `galleryItem${index + 1}`)}
@@ -126,7 +128,7 @@ export const CategoryContents: React.FC<Props> = ({ itemsArray }) => {
                       }
                     ></div>
                   </div>
-                </dialog>
+                </dialog> */}
               </React.Fragment>
             ))}
           </div>

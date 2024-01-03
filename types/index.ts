@@ -25,19 +25,22 @@ export type aboutType = {
 type aboutcontentType = {
   fieldId: "about";
   aboutText: string;
+  photoLeft: MicroCMSImage;
+  captionLeft: string;
+  photoRight: MicroCMSImage;
+  captionRight: string;
 };
 
 export type treatmentType = {
   contents: treatmentContentsType[];
-} & MicroCMSContentId &
-  MicroCMSDate;
+} & MicroCMSDate;
 
 export type treatmentContentsType = {
   treatmentTitle: string;
   treatmentCategory: string;
   treatmentPhoto: MicroCMSImage;
   treatmentText: string;
-};
+} & MicroCMSContentId;
 
 export type treatmentCategoryType = {
   contentBlock: categoryContentType[];
@@ -48,9 +51,11 @@ type categoryContentType = {
   categoryList: categoryItem[];
 };
 
-type categoryItem = {
+export type categoryItem = {
   fieldId: "category";
   categoryItem: string;
+  categoryKana?: string;
+  categoryPhoto?: MicroCMSImage;
 };
 
 export type menuType = {
@@ -63,7 +68,6 @@ type menuContentsType = {
   price: string;
   caption: string;
   text: string;
-  photoTitle: string;
   photo: MicroCMSImage;
 };
 
