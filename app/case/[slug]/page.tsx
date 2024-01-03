@@ -61,8 +61,12 @@ export default async function Page({ params }: Props) {
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={data.treatmentTitle} />
-            <div className={cssStyle.photo}>
-              <img src={data.treatmentPhoto.url} alt={data.treatmentTitle} />
+            <div className={cssStyle.photoWrap}>
+              <img
+                src={data.treatmentPhoto.url}
+                alt={data.treatmentTitle}
+                className={cssStyle.photo}
+              />
             </div>
             <div
               className={cssStyle.text}

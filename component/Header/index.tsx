@@ -3,7 +3,7 @@
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { useAtom } from "jotai";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { cssStyle } from "./header.css";
@@ -63,9 +63,9 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                         {x.title}
                       </div>
                     ) : (
-                      <Link href={x.link} className={cssStyle.pcMenuA}>
+                      <a href={x.link} className={cssStyle.pcMenuA}>
                         {x.title}
-                      </Link>
+                      </a>
                     )}
                   </li>
                 ))}
@@ -111,13 +111,13 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                             {x.title}
                           </div>
                         ) : (
-                          <Link
+                          <a
                             href={x.link}
                             className={cssStyle.spMenuItemsA}
                             onClick={() => setIsOpen(!isOpen)}
                           >
                             {x.title}
-                          </Link>
+                          </a>
                         )}
                       </li>
                     ))}

@@ -34,9 +34,18 @@ export const caseSection = style([
   pcStyle({}),
 ]);
 
+export const photoWrap = style([
+  {
+    marginBottom: "16px",
+    width: "100%",
+  },
+  pcStyle({
+    maxWidth: "500px",
+  }),
+]);
+
 export const photo = style({
-  // fontSize: `${vars.font.F18}`,
-  marginBottom: "16px",
+  width: "100%",
 });
 
 export const text = style({
@@ -52,6 +61,7 @@ export const cssStyle = {
   inner,
   section,
   caseSection,
+  photoWrap,
   photo,
   text,
   buttonWrap,
