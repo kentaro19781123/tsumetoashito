@@ -28,8 +28,8 @@ export const Mv: React.FC = () => {
         className={cssStyle.image}
       /> */}
       <picture>
-        <source media="(min-width: 769px)" srcSet="img/mv_pc.png" />
-        <img src="img/mv_sp.png" alt="爪と足と" className={cssStyle.image} />
+        <source media="(min-width: 769px)" srcSet="/img/mv_pc.png" />
+        <img src="/img/mv_sp.png" alt="爪と足と" className={cssStyle.image} />
       </picture>
     </div>
   );
