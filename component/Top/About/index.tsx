@@ -1,7 +1,7 @@
 import React from "react";
 import { cssStyle } from "./about.css";
 // import { TextBox } from "@/component/common/TextBox";
-import { Title } from "@/component/common/Title";
+// import { Title } from "@/component/common/Title";
 import { client } from "@/libs/client";
 import { aboutType } from "@/types";
 
@@ -18,7 +18,7 @@ export const About: React.FC = async () => {
   return (
     <section className={cssStyle.section} id="about">
       <div className={cssStyle.inner}>
-        <Title text={data.title} />
+        <h2 className={cssStyle.title}>{data.title}</h2>
         <div className={cssStyle.aboutContent}>
           <div
             className="richEditor"

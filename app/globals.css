@@ -86,8 +86,8 @@ a {
 .richEditor .name {
   text-align: center;
   font-weight: bold;
-  font-size: 16px;
-  display: block;
+  font-size: 12px;
+  display: inline-block;
 }
 
 .richEditor .pink {

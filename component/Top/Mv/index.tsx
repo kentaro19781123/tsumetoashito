@@ -18,19 +18,64 @@ export const Mv: React.FC = () => {
     setMvInView(inView);
   }, [inView, setMvInView]);
   return (
-    <div className={cssStyle.mvWrap} ref={ref} data-ref={mvInView}>
-      {/* <Image
-        alt="mv"
-        src="/img/mv.jpg"
-        width={1100}
-        height={724}
-        loading="eager"
-        className={cssStyle.image}
-      /> */}
-      <picture>
-        <source media="(min-width: 769px)" srcSet="/img/mv_pc.png" />
-        <img src="/img/mv_sp.png" alt="爪と足と" className={cssStyle.image} />
-      </picture>
-    </div>
+    <>
+      <div className={cssStyle.mvWrap} data-ref={mvInView} ref={ref}>
+        <div className={cssStyle.logoWrap}>
+          <img
+            alt="爪甲鉤彎症（そうこうこうわんしょう）の経験者が開いたフットケアサロン 爪と足と"
+            className={cssStyle.image}
+            src="/img/logo.png"
+            width="207"
+          />
+        </div>
+        <div className={cssStyle.read}>
+          <img
+            alt="このような足爪トラブルで悩んでいませんか？ぜーんぶ爪甲鉤彎症（そうこうこうわんしょう）です。"
+            className={cssStyle.image}
+            src="/img/mv_bottom.png"
+            width="340"
+          />
+        </div>
+
+        <div className={cssStyle.bubble1}>
+          <img
+            alt="足の爪が厚くて爪切りで爪が切れない"
+            className={cssStyle.image}
+            src="/img/bubble_1.png"
+            width="348"
+          />
+        </div>
+
+        <div className={cssStyle.bubble2}>
+          <img
+            alt="皮膚科を廻ったけど治らないと言われた。諦めなきゃダメなの？"
+            className={cssStyle.image}
+            src="/img/bubble_2.png"
+            width="355"
+          />
+        </div>
+
+        <div className={cssStyle.bubble3}>
+          <img
+            alt="足の爪が痛くて靴が履けない。どうしたらいいの？"
+            className={cssStyle.image}
+            src="/img/bubble_3.png"
+            width="360"
+          />
+        </div>
+      </div>
+      {/* <div className={cssStyle.mvBg}>
+        <picture>
+          <source media="(min-width: 769px)" srcSet="/img/pc_mv_bg.jpg" />
+          <img
+            alt="爪と足と"
+            className={cssStyle.bgImage}
+            height="489"
+            src="/img/sp_mv_bg.jpg"
+            width="390"
+          />
+        </picture>
+      </div> */}
+    </>
   );
 };

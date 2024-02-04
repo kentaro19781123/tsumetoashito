@@ -1,16 +1,79 @@
 import { style } from "@vanilla-extract/css";
-import { innerStyle } from "@/app/styles/styles.css";
+import { innerStyle, pcStyle } from "@/app/styles/styles.css";
 
-export const mvWrap = style({
+const mvWrap = style({
   ...innerStyle,
+  background: "url('/img/sp_mv_bg.webp') no-repeat",
+  backgroundSize: "100% auto",
+  // height: "720px",
+  position: "relative",
+  marginBottom: "20px",
 });
 
-export const image = style({
+const logoWrap = style({
+  width: "55%",
+  padding: "13% 0 0 8%",
+});
+
+const image = style({
   width: "100%",
   height: "auto",
 });
 
+const read = style({
+  width: "91%",
+  margin: "0 auto",
+  paddingTop: "34%",
+});
+
+const mvBg = style({
+  height: "4895px",
+  position: "absolute",
+  top: "0",
+  zIndex: "-1",
+  width: "100%",
+});
+
+const bgImage = style({
+  objectFit: "cover",
+  height: "489px",
+  width: "100%",
+});
+
+const bubble1 = style([
+  {
+    width: "93%",
+    padding: "5% 0 0 4%",
+  },
+  pcStyle({}),
+]);
+
+const bubble2 = style([
+  {
+    width: "96%",
+    padding: "3% 0 0 4%",
+  },
+  pcStyle({}),
+]);
+
+const bubble3 = style([
+  {
+    width: "97%",
+    padding: "4% 0 0 2.5%",
+  },
+  pcStyle({}),
+]);
+
+const temp = style([{}, pcStyle({})]);
+
 export const cssStyle = {
   mvWrap,
+  logoWrap,
   image,
+  read,
+  mvBg,
+  bgImage,
+  bubble1,
+  bubble2,
+  bubble3,
 };

@@ -126,7 +126,7 @@ const spanProp = {
   height: "3px",
   width: "25px",
   borderRadius: "3px",
-  backgroundColor: vars.color.base,
+  backgroundColor: vars.color.primary,
   position: "absolute",
 } as const;
 

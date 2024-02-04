@@ -19,9 +19,9 @@ const inner = style({
   ...innerStyle,
 });
 
-globalStyle(`${inner} h2`, {
-  paddingLeft: "16px",
-});
+// globalStyle(`${inner} h2`, {
+//   paddingLeft: "16px",
+// });
 
 globalStyle(
   `${inner} h2`,
@@ -114,7 +114,9 @@ const circle = style([
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    backgroundColor: "#eee",
+    // backgroundColor: "#eee",
+    background: "url('/img/case_bg.png')  no-repeat",
+    backgroundSize: "180px",
     cursor: "pointer",
     padding: "16px",
   },
@@ -149,7 +151,8 @@ const swiperItem = style([
   {
     whiteSpace: "pre-wrap",
     textAlign: "center",
-    fontWeight: "normal",
+    // fontWeight: "normal",
+    fontSize: `${vars.font.F16}`,
   },
 ]);
 
