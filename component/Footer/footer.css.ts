@@ -3,8 +3,8 @@ import { vars } from "@/app/styles/var.css";
 
 export const section = style([
   {
-    // borderTop: `1px solid ${vars.color.grayLight}`,
-    padding: "32px 0",
+    borderTop: `1px solid ${vars.color.grayLight}`,
+    padding: "16px 0 80px",
   },
 ]);
 
@@ -18,23 +18,25 @@ export const linkUl = style({
   flexWrap: "wrap",
   alignItems: "center",
   justifyContent: "center",
-  marginBottom: "24px",
+  marginBottom: "16px",
 });
+
 export const linkLi = style({
-  borderLeft: "1px solid #ccc",
+  borderLeft: `1px solid ${vars.color.primary}`,
   marginBottom: "8px",
   selectors: {
-    "&:last-child": {
-      borderRight: "1px solid #ccc",
+    "&:first-child": {
+      borderLeft: "none",
     },
   },
 });
 export const link = style({
-  padding: "0 8px",
-  margin: "0 8px",
+  padding: "0 4px",
+  margin: "0 4px",
   cursor: "pointer",
   fontSize: `${vars.font.F12}`,
 });
+
 export const cssStyle = {
   section,
   inner,

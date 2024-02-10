@@ -19,23 +19,23 @@ export const Mv: React.FC = () => {
   }, [inView, setMvInView]);
   return (
     <>
-      <div className={cssStyle.mvWrap} data-ref={mvInView} ref={ref}>
-        <div className={cssStyle.logoWrap}>
+      <section className={cssStyle.mvWrap} data-ref={mvInView} ref={ref}>
+        <h2 className={cssStyle.logoWrap}>
           <img
             alt="爪甲鉤彎症（そうこうこうわんしょう）の経験者が開いたフットケアサロン 爪と足と"
             className={cssStyle.image}
             src="/img/logo.png"
             width="207"
           />
-        </div>
-        <div className={cssStyle.read}>
+        </h2>
+        <h3 className={cssStyle.read}>
           <img
             alt="このような足爪トラブルで悩んでいませんか？ぜーんぶ爪甲鉤彎症（そうこうこうわんしょう）です。"
             className={cssStyle.image}
             src="/img/mv_bottom.png"
             width="340"
           />
-        </div>
+        </h3>
 
         <div className={cssStyle.bubble1}>
           <img
@@ -63,7 +63,7 @@ export const Mv: React.FC = () => {
             width="360"
           />
         </div>
-      </div>
+      </section>
       {/* <div className={cssStyle.mvBg}>
         <picture>
           <source media="(min-width: 769px)" srcSet="/img/pc_mv_bg.jpg" />

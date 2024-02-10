@@ -14,7 +14,7 @@ export const inner = style([
 
 export const section = style([
   {
-    borderBottom: "1px solid #ccc",
+    // borderBottom: "1px solid #ccc",
     padding: vars.padding.secSP,
   },
   pcStyle({

@@ -9,7 +9,7 @@ export const metaCase = {
 };
 
 export const metaMenu = {
-  title: "メニュー",
+  title: "メニュー料金",
   link: "/menu/",
 };
 
@@ -18,9 +18,9 @@ export const metaShopInfo = {
   link: "/shopinfo/",
 };
 
-export const metaReserve = {
-  title: "ご利用の流れ",
-  link: "/flow/",
+export const metaTerms = {
+  title: "ご利用に当たって",
+  link: "/terms/",
 };
 
 export const metaContact = {
@@ -33,6 +33,6 @@ export const menuList = [
   metaCase,
   metaMenu,
   metaShopInfo,
-  metaReserve,
+  metaTerms,
   metaContact,
 ];

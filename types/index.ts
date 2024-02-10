@@ -69,6 +69,7 @@ type menuContentsType = {
   caption: string;
   text: string;
   photo: MicroCMSImage;
+  photoCaption: string;
 };
 
 export type shopInfoType = {
@@ -80,6 +81,7 @@ export type shopInfoType = {
 type shopInfoContentType = {
   fieldId: "shop";
   shopAddress: string;
+  shopPhoto: MicroCMSImage;
   shopMapUrl: string;
 };
 
@@ -90,5 +92,23 @@ export type reserveType = {
 
 type reserveContentType = {
   fieldId: "reserve";
-  calendar: string;
+  text: string;
+  button: reserveButtonType[];
+};
+
+type reserveButtonType = {
+  fieldId: "reserveBtn";
+  type: string[];
+  text: string;
+  link: string;
+};
+
+export type termsType = {
+  contentBlock: termsContentType[];
+  title: string;
+};
+
+type termsContentType = {
+  fieldId: "terms";
+  text: string;
 };

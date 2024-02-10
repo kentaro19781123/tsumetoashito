@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
+import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { ButtonBorder } from "@/component/common/ButtonBorder";
 import { Title } from "@/component/common/Title";
@@ -63,9 +64,9 @@ export default async function Page({ params }: Props) {
             <Title text={data.treatmentTitle} />
             <div className={cssStyle.photoWrap}>
               <img
-                src={data.treatmentPhoto.url}
                 alt={data.treatmentTitle}
                 className={cssStyle.photo}
+                src={data.treatmentPhoto.url}
               />
             </div>
             <div
@@ -81,6 +82,7 @@ export default async function Page({ params }: Props) {
           </div>
         </div>
         <Footer pageId="case" />
+        <FooterButton pageId="case" />
       </main>
     </>
   );

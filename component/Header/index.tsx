@@ -2,7 +2,7 @@
 
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { useAtom } from "jotai";
-import Image from "next/image";
+// import Image from "next/image";
 // import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -15,6 +15,7 @@ import { anchorScroll } from "@/utils/anchorScroll";
 type Props = {
   pageId: string;
 };
+
 export const Header: React.FC<Props> = ({ pageId }) => {
   const [mvInView] = useAtom(mvInViewAtom);
   const [isOpen, setIsOpen] = useState(false);
@@ -40,16 +41,23 @@ export const Header: React.FC<Props> = ({ pageId }) => {
           <div className={cssStyle.logoWrap}>
             <h1 className={cssStyle.logo}>
               <a href="/">
-                <Image
-                  src="/img/logo.jpg"
-                  alt="ロゴ"
-                  width="108"
-                  height="60"
+                <img
+                  src="/img/head_logo.png"
+                  alt=""
+                  width="128"
+                  height="42"
                   className={cssStyle.logoImage}
                 />
               </a>
             </h1>
           </div>
+          {pageId !== "top" && (
+            <div className={cssStyle.lineBtn}>
+              <a href="">
+                <img alt="LINEで予約" src="/img/line_btn.png" width="110" />
+              </a>
+            </div>
+          )}
           <div className={cssStyle.pcMenu}>
             {menuList && (
               <ul className={cssStyle.pcMenuUl}>

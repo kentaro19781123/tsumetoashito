@@ -26,7 +26,7 @@ const buttonStyle = style([
     color: vars.color.base,
     border: `1px solid ${vars.color.base}`,
     borderRadius: "4px",
-    padding: "16px",
+    padding: "12px 16px",
     textAlign: "center",
     width: "100%",
   },

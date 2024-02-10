@@ -1,6 +1,7 @@
 body {
   font-family: "Noto Sans Japanese", "YuGothic", "Yu Gothic", "游ゴシック",
     "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo";
+  color: #333;
 }
 h1,
 h2,
@@ -91,7 +92,13 @@ a {
 }
 
 .richEditor .pink {
-  color: #ff69b4;
+  color: #e46ca3;
+}
+.richEditor .green {
+  color: #06c755;
+}
+.richEditor .orange {
+  color: #ff9231;
 }
 /* case */
 .caseTextEllipsis {

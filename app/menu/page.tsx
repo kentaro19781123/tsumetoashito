@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
+import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { client } from "@/libs/client";
 import { menuType } from "@/types";
@@ -58,20 +58,29 @@ export default async function Menu() {
                     {/* {x.photoTitle && (
                       <h3 className={cssStyle.title}>{x.photoTitle}</h3>
                     )} */}
-                    <Image
-                      src="/img/flow.jpg"
-                      alt="ケアの流れ"
-                      width="852"
-                      height="424"
+                    <img
+                      alt={x.title}
                       className={cssStyle.menuImage}
+                      height="424"
+                      src={x.photo.url}
+                      width={x.photo.width}
                     />
                   </div>
+                )}
+                {x.photoCaption && (
+                  <div
+                    className={`${cssStyle.photoCaption} richEditor`}
+                    dangerouslySetInnerHTML={{
+                      __html: x.photoCaption,
+                    }}
+                  />
                 )}
               </section>
             ))}
           </div>
         </div>
         <Footer pageId="menu" />
+        <FooterButton pageId="menu" />
       </main>
     </>
   );

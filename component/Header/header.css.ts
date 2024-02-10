@@ -24,7 +24,7 @@ const headerWrap = style([
 ]);
 
 globalStyle(`#top${headerWrap}`, {
-  top: "-60px",
+  top: "-61px",
 });
 globalStyle(`#top${headerWrap}[data-mvinview="false"]`, {
   top: 0,
@@ -32,20 +32,26 @@ globalStyle(`#top${headerWrap}[data-mvinview="false"]`, {
 
 const header = style({
   ...innerStyle,
-  display: "flex",
-  flexDirection: "column",
+  // display: "flex",
+  // flexDirection: "column",
+  // justifyContent: "center",
+  padding: "0 16px",
+  // height: "60px",
 });
 
 const headerMain = style({
   display: "flex",
+  alignItems: "center",
   justifyContent: "space-between",
-  alignItems: "flex-end",
-  order: 2,
+  height: "60px",
+  // justifyContent: "space-between",
+  // alignItems: "flex-end",
+  // order: 2,
 });
 
 const logoWrap = style([
   {
-    width: "200px",
+    width: "120px",
     // display: "none",
     selectors: {
       '&[data-mvInView="false"]': {
@@ -60,8 +66,8 @@ const logoWrap = style([
 
 const logo = style({
   fontWeight: "normal",
-  width: "110px",
-  height: "60px",
+  width: "128px",
+  height: "42px",
   fontSize: "18px",
   margin: 0,
 });
@@ -69,6 +75,12 @@ const logo = style({
 const logoImage = style({
   height: "auto",
   width: "108px",
+});
+
+const lineBtn = style({
+  height: "38px",
+  width: "110px",
+  marginRight: "-24px",
 });
 
 const pcMenu = style([
@@ -235,6 +247,7 @@ export const cssStyle = {
   logoWrap,
   logo,
   logoImage,
+  lineBtn,
   pcMenu,
   pcMenuUl,
   pcMenuLi,

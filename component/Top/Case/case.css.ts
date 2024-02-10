@@ -5,13 +5,12 @@ import { vars } from "@/app/styles/var.css";
 /* index */
 const section = style([
   {
-    padding: vars.padding.secSP,
-    borderBottom: "1px solid #ccc",
-    marginBottom: "24px",
+    paddingTop: "48px",
+    // padding: vars.padding.secSP,
+    // borderBottom: "1px solid #ccc",
   },
   pcStyle({
     padding: vars.padding.secPC,
-    marginBottom: "0",
   }),
 ]);
 
@@ -78,7 +77,7 @@ const dialog = style([
   {
     border: "none",
     overflow: "visible",
-    borderRadius: "initial",
+    borderRadius: "6px",
     appearance: "none",
     width: "90%",
     height: "80%",
@@ -98,7 +97,7 @@ const dialog = style([
 const dialogMoreButtonWrap = style([
   {
     width: "60%",
-    margin: "16px auto 24px",
+    margin: "40px auto 16px",
   },
   pcStyle({
     margin: "24px auto",
@@ -191,6 +190,9 @@ globalStyle(`${containerItem} + ${containerItem}`, {
 const itemTitle = style({
   fontSize: vars.font.F18,
   marginBottom: "16px",
+  background: "url('/img/icon_plus.png') left center no-repeat",
+  backgroundSize: "18px",
+  paddingLeft: "24px",
 });
 
 const itemImage = style({

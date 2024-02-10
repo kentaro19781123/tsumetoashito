@@ -2,6 +2,7 @@ import React from "react";
 import { CategoryContents } from "./categoryContents";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
+import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { client } from "@/libs/client";
 import { treatmentCategoryType, treatmentType } from "@/types";
@@ -45,6 +46,7 @@ export default async function GalleryList() {
           </div>
         </div>
         <Footer pageId="case" />
+        <FooterButton pageId="case" />
       </main>
     </>
   );

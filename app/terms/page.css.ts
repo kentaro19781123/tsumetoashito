@@ -21,35 +21,9 @@ const section = style([
   }),
 ]);
 
-const mapText = style([
+const textWrap = style([
   {
-    marginTop: "16px",
-  },
-  pcStyle({}),
-]);
-
-const shopInfo = style([
-  {
-    display: "flex",
-    flexDirection: "column",
-    gap: "16px",
-  },
-  pcStyle({}),
-]);
-
-const shopPhoto = style([
-  {
-    width: "100%",
-  },
-  pcStyle({
-    width: "200px",
-  }),
-]);
-
-const shopPhotoImage = style([
-  {
-    width: "100%",
-    height: "auto",
+    margin: "0 0 24px",
   },
   pcStyle({}),
 ]);
@@ -57,8 +31,5 @@ const shopPhotoImage = style([
 export const cssStyle = {
   inner,
   section,
-  mapText,
-  shopInfo,
-  shopPhoto,
-  shopPhotoImage,
+  textWrap,
 };

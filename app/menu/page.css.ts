@@ -14,7 +14,7 @@ export const inner = style([
 
 export const section = style([
   {
-    borderBottom: "1px solid #ccc",
+    // borderBottom: "1px solid #ccc",
     padding: vars.padding.secSP,
   },
   pcStyle({
@@ -25,7 +25,7 @@ export const section = style([
 export const menuItem = style([
   {
     borderBottom: "1px solid #ccc",
-    padding: vars.padding.secSP,
+    padding: "32px 0",
     ":first-child": {
       paddingTop: "0",
     },
@@ -54,7 +54,10 @@ export const titleArea = style([
 
 export const title = style([
   {
-    fontWeight: "normal",
+    // fontWeight: "normal",
+    background: "url('/img/icon_plus.png') left center no-repeat",
+    backgroundSize: "24px",
+    paddingLeft: "30px",
   },
   pcStyle({}),
 ]);
@@ -101,10 +104,10 @@ export const price = style([
 
 export const contentArea = style([
   {
-    marginTop: "8px",
-    border: `1px solid ${vars.color.grayLight}`,
+    marginTop: "12px",
+    // border: `1px solid ${vars.color.grayLight}`,
     // backgroundColor: vars.color.gray,
-    padding: "16px",
+    // padding: "16px",
     lineHeight: "1.5",
     // borderRadius: "4px",
   },
@@ -129,6 +132,13 @@ export const menuImage = style([
   }),
 ]);
 
+export const photoCaption = style([
+  {
+    marginTop: "16px",
+  },
+  pcStyle({}),
+]);
+
 export const cssStyle = {
   inner,
   section,
@@ -143,4 +153,5 @@ export const cssStyle = {
   menuItem,
   imageArea,
   menuImage,
+  photoCaption,
 };

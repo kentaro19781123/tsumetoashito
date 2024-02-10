@@ -14,7 +14,6 @@ export const inner = style([
 
 export const section = style([
   {
-    borderBottom: "1px solid #ccc",
     padding: vars.padding.secSP,
   },
   pcStyle({
@@ -24,8 +23,8 @@ export const section = style([
 
 export const caseSection = style([
   {
-    paddingBottom: "40px",
-    marginBottom: "40px",
+    paddingBottom: "32px",
+    marginBottom: "32px",
     borderBottom: "1px solid #ccc",
     ":last-child": {
       borderBottom: "none",
@@ -86,7 +85,9 @@ globalStyle(`${caseDetail} strong`, {
 
 export const caseDetailTitle = style([
   {
-    marginTop: "16px",
+    marginTop: "8px",
+    fontSize: vars.font.F16,
+    fontWeight: "normal",
   },
   pcStyle({}),
 ]);

@@ -1,5 +1,6 @@
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
+import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 
@@ -14,6 +15,7 @@ export default async function Contact() {
           </div>
         </div>
         <Footer pageId="contact" />
+        <FooterButton pageId="contact" />
       </main>
     </>
   );

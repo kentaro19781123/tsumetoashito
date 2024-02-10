@@ -69,24 +69,20 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
   return (
     <div>
       <Swiper
-        navigation
-        // loop
-        modules={[Navigation, Pagination]}
-        // pagination={{ clickable: true }}
-        slidesPerView="auto"
         breakpoints={{
           769: {
             spaceBetween: 40,
           },
         }}
-        spaceBetween={15}
         className={cssStyle.swiper}
+        modules={[Navigation, Pagination]}
+        navigation
+        slidesPerView="auto"
+        spaceBetween={15}
       >
         {category.map((categoryDetail, index) =>
           itemsCategoryFix.includes(categoryDetail.categoryItem) ? (
-            <SwiperSlide key={index} className={cssStyle.swiperSlide}>
-              {/* <Circle categoryDetail={categoryDetail} index={index} /> */}
-
+            <SwiperSlide className={cssStyle.swiperSlide} key={index}>
               <div
                 className={cssStyle.circle}
                 onClick={() => modalOpen(`galleryItem${index + 1}`)}
@@ -94,11 +90,11 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                 {categoryDetail.categoryPhoto && (
                   <div className={cssStyle.swiperImgWrap}>
                     <img
-                      className={cssStyle.swiperImg}
-                      src={categoryDetail.categoryPhoto.url}
                       alt={categoryDetail.categoryItem}
-                      width={categoryDetail.categoryPhoto.width}
+                      className={cssStyle.swiperImg}
                       height={categoryDetail.categoryPhoto.height}
+                      src={categoryDetail.categoryPhoto.url}
+                      width={categoryDetail.categoryPhoto.width}
                     />
                   </div>
                 )}
@@ -143,10 +139,10 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                           {y.treatmentPhoto && (
                             <p className={cssStyle.itemImage}>
                               <Image
-                                src={y.treatmentPhoto.url}
                                 alt={y.treatmentTitle}
-                                width={y.treatmentPhoto.width}
                                 height={y.treatmentPhoto.height}
+                                src={y.treatmentPhoto.url}
+                                width={y.treatmentPhoto.width}
                               />
                             </p>
                           )}

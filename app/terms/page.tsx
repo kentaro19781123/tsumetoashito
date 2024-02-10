@@ -4,35 +4,36 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { client } from "@/libs/client";
-import { reserveType } from "@/types";
+import { termsType } from "@/types";
 
 const getContents = async () => {
-  const response = await client.get<reserveType>({
+  const response = await client.get<termsType>({
     endpoint: "shopinfo",
-    contentId: "rheo-e4tj7m1",
+    contentId: "4ssadc3g4",
   });
   return response;
 };
 
-export default async function Flow() {
+export default async function Terms() {
   const { title, contentBlock } = await getContents();
+
   return (
     <>
       <main>
-        <Header pageId="flow" />
-        <div className={cssStyle.section} id="flow">
+        <Header pageId="contact" />
+        <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={title} />
             <div
-              className="richEditor"
+              className={`richEditor ${cssStyle.textWrap}`}
               dangerouslySetInnerHTML={{
                 __html: contentBlock[0].text,
               }}
             />
           </div>
         </div>
-        <Footer pageId="flow" />
-        <FooterButton pageId="flow" />
+        <Footer pageId="terms" />
+        <FooterButton pageId="terms" />
       </main>
     </>
   );

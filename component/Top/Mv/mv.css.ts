@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { innerStyle, pcStyle } from "@/app/styles/styles.css";
+import { vars } from "@/app/styles/var.css";
 
 const mvWrap = style({
   ...innerStyle,
@@ -7,7 +8,8 @@ const mvWrap = style({
   backgroundSize: "100% auto",
   // height: "720px",
   position: "relative",
-  marginBottom: "20px",
+  marginBottom: "24px",
+  borderTop: `3px solid ${vars.color.primary}`,
 });
 
 const logoWrap = style({

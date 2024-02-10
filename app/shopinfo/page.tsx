@@ -1,5 +1,6 @@
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
+import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { client } from "@/libs/client";
@@ -30,15 +31,29 @@ export default async function ShopInfo() {
                 __html: zoomMap,
               }}
             />
-            <div
-              className={`richEditor ${cssStyle.mapText}`}
-              dangerouslySetInnerHTML={{
-                __html: contentBlock[0].shopAddress,
-              }}
-            />
+            <div className={cssStyle.shopInfo}>
+              <div
+                className={`richEditor ${cssStyle.mapText}`}
+                dangerouslySetInnerHTML={{
+                  __html: contentBlock[0].shopAddress,
+                }}
+              />
+              {contentBlock[0].shopPhoto && (
+                <div className={cssStyle.shopPhoto}>
+                  <img
+                    className={cssStyle.shopPhotoImage}
+                    alt="店舗写真"
+                    height="424"
+                    src={contentBlock[0].shopPhoto.url}
+                    width={contentBlock[0].shopPhoto.width}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <Footer pageId="shopinfo" />
+        <FooterButton pageId="shopinfo" />
       </main>
     </>
   );
