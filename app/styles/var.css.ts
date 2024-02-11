@@ -22,12 +22,14 @@ export const vars = createGlobalTheme(":root", {
     F14: "14px",
     F16: "16px",
     F18: "18px",
+    F20: "20px",
     F24: "24px",
+    F28: "28px",
     F32: "32px",
     F38: "38px",
   },
   padding: {
-    secSP: "68px 0 0",
-    secPC: "48px 0",
+    secSP: "60px 0 0",
+    secPC: "74px 0",
   },
 });

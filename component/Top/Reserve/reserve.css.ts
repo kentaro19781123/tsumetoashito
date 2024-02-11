@@ -1,17 +1,19 @@
 import { style } from "@vanilla-extract/css";
-import { pcStyle } from "@/app/styles/styles.css";
-import { vars } from "@/app/styles/var.css";
+import { innerStyle, pcStyle } from "@/app/styles/styles.css";
+// import { vars } from "@/app/styles/var.css";
 
 const section = style([
   {
-    paddingTop: "48px",
+    padding: "48px 0",
   },
   pcStyle({
-    padding: vars.padding.secPC,
+    // paddingTop: "72px",
+    // padding: vars.padding.secPC,
   }),
 ]);
 
 const inner = style({
+  ...innerStyle,
   padding: "0 16px",
 });
 
@@ -24,7 +26,9 @@ const buttonWrap = style([
     marginTop: "20px",
   },
   pcStyle({
-    padding: vars.padding.secPC,
+    padding: "24px 0 72px",
+    flexDirection: "row",
+    gap: "90px",
   }),
 ]);
 
@@ -37,10 +41,24 @@ const button = style([
   },
   pcStyle({}),
 ]);
-const buttonText = style({
-  marginBottom: "8px",
-});
-const buttonLink = style({});
+
+const buttonText = style([
+  {
+    marginBottom: "8px",
+  },
+  pcStyle({
+    marginBottom: "16px",
+  }),
+]);
+
+const buttonLink = style([
+  {
+    width: "130px",
+  },
+  pcStyle({
+    width: "230px",
+  }),
+]);
 
 export const cssStyle = {
   section,

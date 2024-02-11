@@ -114,7 +114,8 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
               <div className={cssStyle.ButtonWrap}>
                 <ButtonBorder
                   buttonText="もっと見る"
-                  url={`${metaCase.link}?pageId=list${index + 1}`}
+                  // url={`${metaCase.link}?pageId=list${index + 1}`}
+                  url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
                 />
               </div>
               <dialog
@@ -137,14 +138,14 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                             {y.treatmentTitle}
                           </h4>
                           {y.treatmentPhoto && (
-                            <p className={cssStyle.itemImage}>
+                            <div className={cssStyle.itemImage}>
                               <Image
                                 alt={y.treatmentTitle}
                                 height={y.treatmentPhoto.height}
                                 src={y.treatmentPhoto.url}
                                 width={y.treatmentPhoto.width}
                               />
-                            </p>
+                            </div>
                           )}
                           {y.treatmentText && (
                             <div
@@ -161,7 +162,8 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                   <div className={cssStyle.dialogMoreButtonWrap}>
                     <ButtonBorder
                       buttonText="もっと見る"
-                      url={`${metaCase.link}?pageId=list${index + 1}`}
+                      // url={`${metaCase.link}?pageId=list${index + 1}`}
+                      url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
                     />
                   </div>
                   <div

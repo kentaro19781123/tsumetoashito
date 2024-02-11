@@ -2,6 +2,7 @@ import { cssStyle } from "./case.css";
 import { Slide } from "@/component/Top/Case/Slide";
 import { Title } from "@/component/common/Title";
 // import { galleryItems } from "@/const/galleryItems";
+import { metaCase } from "@/const/menu";
 import { client } from "@/libs/client";
 import { treatmentContentsType, treatmentCategoryType } from "@/types";
 
@@ -30,8 +31,10 @@ export const Case: React.FC = async () => {
   return (
     <section className={cssStyle.section}>
       <div className={cssStyle.inner}>
-        <Title text="施術例" />
-        <Slide items={treatmentData} category={categoryData} />
+        <div className={cssStyle.titleWrap}>
+          <Title text={metaCase.title} />
+        </div>
+        <Slide category={categoryData} items={treatmentData} />
       </div>
     </section>
   );

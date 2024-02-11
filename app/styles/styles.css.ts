@@ -14,8 +14,10 @@ const innerStyleSP = {
 };
 
 const innerStylePC = {
-  width: "90%",
-  maxWidth: "1100px",
+  // width: "90%",
+  // maxWidth: "1000px",
+  width: "1000px",
+  maxWidth: "1000px",
 };
 
 export const innerStyle = {

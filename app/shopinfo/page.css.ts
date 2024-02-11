@@ -8,7 +8,7 @@ const inner = style([
     padding: "16px",
   },
   pcStyle({
-    padding: 0,
+    // padding: 0,
   }),
 ]);
 
@@ -21,20 +21,26 @@ const section = style([
   }),
 ]);
 
-const mapText = style([
-  {
-    marginTop: "16px",
-  },
-  pcStyle({}),
-]);
-
 const shopInfo = style([
   {
     display: "flex",
     flexDirection: "column",
     gap: "16px",
   },
-  pcStyle({}),
+  pcStyle({
+    flexDirection: "row",
+    marginTop: "16px",
+  }),
+]);
+
+const mapText = style([
+  {
+    marginTop: "16px",
+  },
+  pcStyle({
+    width: "50%",
+    marginTop: "0",
+  }),
 ]);
 
 const shopPhoto = style([
@@ -42,7 +48,7 @@ const shopPhoto = style([
     width: "100%",
   },
   pcStyle({
-    width: "200px",
+    width: "50%",
   }),
 ]);
 

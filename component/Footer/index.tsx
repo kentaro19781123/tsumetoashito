@@ -16,7 +16,7 @@ export const Footer: React.FC<Props> = ({ pageId }) => {
       {menuList && (
         <ul className={cssStyle.linkUl}>
           {menuList.map((x) => (
-            <li key={x.title} className={cssStyle.linkLi}>
+            <li className={cssStyle.linkLi} key={x.title}>
               {pageId === "top" && x.title === "サロンについて" ? (
                 <div
                   className={cssStyle.link}
@@ -25,7 +25,7 @@ export const Footer: React.FC<Props> = ({ pageId }) => {
                   {x.title}
                 </div>
               ) : (
-                <Link href={x.link} className={cssStyle.link}>
+                <Link className={cssStyle.link} href={x.link}>
                   {x.title}
                 </Link>
               )}
@@ -33,7 +33,7 @@ export const Footer: React.FC<Props> = ({ pageId }) => {
           ))}
         </ul>
       )}
-      <div className={cssStyle.inner}>&copy;爪と足と</div>
+      <div className={cssStyle.copy}>&copy;爪と足と</div>
     </section>
   );
 };

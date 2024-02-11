@@ -8,13 +8,13 @@ export const inner = style([
     padding: "16px",
   },
   pcStyle({
-    padding: 0,
+    // padding: 0,
   }),
 ]);
 
 export const section = style([
   {
-    borderBottom: "1px solid #ccc",
+    // borderBottom: "1px solid #ccc",
     padding: vars.padding.secSP,
   },
   pcStyle({

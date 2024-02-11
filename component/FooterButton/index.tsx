@@ -2,6 +2,8 @@
 
 import { useAtom } from "jotai";
 import { cssStyle } from "./footer-button.css";
+import { ReserveLine } from "@/component/common/ReserveButton/ReserveLine";
+import { ReserveMail } from "@/component/common/ReserveButton/ReserveMail";
 import { mvInViewAtom } from "@/store/atom";
 
 type Props = {
@@ -13,14 +15,16 @@ export const FooterButton: React.FC<Props> = ({ pageId }) => {
   return (
     <div className={cssStyle.section} data-id={pageId} data-mvinview={mvInView}>
       <div className={cssStyle.buttonLink}>
-        <a href="">
+        <ReserveLine />
+        {/* <a href="">
           <img alt="LINEで予約" src="/img/line_btn.png" width="110" />
-        </a>
+        </a> */}
       </div>
       <div className={cssStyle.buttonLink}>
-        <a href="">
+        <ReserveMail />
+        {/* <a href="">
           <img alt="MAILで予約" src="/img/mail_btn.png" width="110" />
-        </a>
+        </a> */}
       </div>
     </div>
   );

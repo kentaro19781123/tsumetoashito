@@ -19,13 +19,22 @@ const headerWrap = style([
     // },
   },
   pcStyle({
-    position: "sticky",
+    borderTop: `3px solid ${vars.color.primary}`,
+    boxShadow: "0px 4px 4px rgba(194,194,194,.3)",
+    borderBottom: "none",
+    // position: "sticky",
   }),
 ]);
 
 globalStyle(`#top${headerWrap}`, {
+  "@media": {
+    "screen and (min-width: 769px)": {
+      top: "-74px",
+    },
+  },
   top: "-61px",
 });
+
 globalStyle(`#top${headerWrap}[data-mvinview="false"]`, {
   top: 0,
 });
@@ -39,15 +48,21 @@ const header = style({
   // height: "60px",
 });
 
-const headerMain = style({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  height: "60px",
-  // justifyContent: "space-between",
-  // alignItems: "flex-end",
-  // order: 2,
-});
+const headerMain = style([
+  {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    height: "60px",
+    position: "relative",
+    // justifyContent: "space-between",
+    // alignItems: "flex-end",
+    // order: 2,
+  },
+  pcStyle({
+    height: "70px",
+  }),
+]);
 
 const logoWrap = style([
   {
@@ -60,28 +75,34 @@ const logoWrap = style([
     },
   },
   pcStyle({
-    display: "block",
+    width: "150px",
   }),
 ]);
 
 const logo = style({
-  fontWeight: "normal",
-  width: "128px",
-  height: "42px",
-  fontSize: "18px",
-  margin: 0,
+  // fontWeight: "normal",
+  // width: "128px",
+  // height: "42px",
+  // fontSize: "18px",
+  // margin: 0,
 });
 
 const logoImage = style({
   height: "auto",
-  width: "108px",
+  width: "100%",
 });
 
-const lineBtn = style({
-  height: "38px",
-  width: "110px",
-  marginRight: "-24px",
-});
+const lineBtn = style([
+  {
+    width: "120px",
+    position: "absolute",
+    right: "40px",
+    top: "11px",
+  },
+  pcStyle({
+    display: "none",
+  }),
+]);
 
 const pcMenu = style([
   {
@@ -96,7 +117,6 @@ const pcMenu = style([
 
 const pcMenuUl = style({
   display: "flex",
-  gap: "4px",
 });
 
 const pcMenuLi = style({
@@ -105,21 +125,21 @@ const pcMenuLi = style({
 });
 
 const pcMenuA = style({
-  width: "120px",
+  width: "auto",
   height: "60px",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: vars.color.base,
+  // color: vars.color.base,
   textDecoration: "none",
-  padding: "8px",
+  padding: "8px 16px",
   cursor: "pointer",
   ":hover": {
     // opacity: 0.8,
     // background: vars.color.grayLight,
-    background: "rgba(0,0,0,.3)",
-    border: `1px solid ${vars.color.white}`,
-    color: vars.color.white,
+    // background: "rgba(0,0,0,.3)",
+    // border: `1px solid ${vars.color.white}`,
+    color: vars.color.primary,
   },
 });
 
@@ -223,6 +243,9 @@ const spMenuItemsA = style({
   textDecoration: "none",
   padding: "16px",
   display: "block",
+  background: "url('/img/icon_plus.png') 16px center no-repeat",
+  backgroundSize: "10px",
+  paddingLeft: "32px",
 });
 
 const displayProp = createVar();

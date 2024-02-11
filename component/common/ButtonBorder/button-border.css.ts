@@ -1,4 +1,4 @@
-import { style, globalStyle } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
@@ -29,17 +29,23 @@ const buttonStyle = style([
     padding: "12px 16px",
     textAlign: "center",
     width: "100%",
+    selectors: {
+      "&:hover": {
+        border: `1px solid ${vars.color.primary}`,
+        color: vars.color.primary,
+      },
+    },
   },
   pcStyle({
     width: "100%",
   }),
 ]);
 
-globalStyle(`${buttonStyle}:hover`, {
-  background: "rgba(0,0,0,.3)",
-  border: `1px solid ${vars.color.white}`,
-  color: vars.color.white,
-});
+// globalStyle(`${buttonStyle}:hover`, {
+//   background: "rgba(0,0,0,.3)",
+//   border: `1px solid ${vars.color.primary}`,
+//   color: vars.color.primary,
+// });
 
 export const cssStyle = {
   wrap,

@@ -41,8 +41,8 @@ export default async function ShopInfo() {
               {contentBlock[0].shopPhoto && (
                 <div className={cssStyle.shopPhoto}>
                   <img
-                    className={cssStyle.shopPhotoImage}
                     alt="店舗写真"
+                    className={cssStyle.shopPhotoImage}
                     height="424"
                     src={contentBlock[0].shopPhoto.url}
                     width={contentBlock[0].shopPhoto.width}

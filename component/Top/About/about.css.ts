@@ -7,7 +7,8 @@ const section = style([
     padding: "0 16px",
   },
   pcStyle({
-    padding: vars.padding.secPC,
+    padding: "0",
+    // padding: vars.padding.secPC,
   }),
 ]);
 
@@ -49,6 +50,7 @@ const photoContent = style([
     marginTop: "16px",
   },
   pcStyle({
+    gap: "10px",
     marginTop: 0,
   }),
 ]);

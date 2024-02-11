@@ -8,7 +8,7 @@ const inner = style([
     padding: "16px",
   },
   pcStyle({
-    padding: 0,
+    // padding: 0,
   }),
 ]);
 

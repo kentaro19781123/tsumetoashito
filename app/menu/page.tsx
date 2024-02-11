@@ -2,6 +2,8 @@ import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
+import { Title } from "@/component/common/Title";
+import { metaMenu } from "@/const/menu";
 import { client } from "@/libs/client";
 import { menuType } from "@/types";
 
@@ -31,15 +33,18 @@ export default async function Menu() {
         <Header pageId="menu" />
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
+            <Title text={metaMenu.title} />
             {data.map((x) => (
               <section className={cssStyle.menuItem} key={x.title}>
                 <div className={cssStyle.titleArea}>
-                  <h2
-                    className={cssStyle.title}
-                    dangerouslySetInnerHTML={{
-                      __html: rubyReplace(x.title),
-                    }}
-                  />
+                  <div>
+                    <h2
+                      className={cssStyle.title}
+                      dangerouslySetInnerHTML={{
+                        __html: rubyReplace(x.title),
+                      }}
+                    />
+                  </div>
                   <div className={cssStyle.priceArea}>
                     {x.caption && (
                       <p className={cssStyle.priceCaution}>{x.caption}</p>
@@ -47,34 +52,38 @@ export default async function Menu() {
                     <p className={cssStyle.price}>{x.price}</p>
                   </div>
                 </div>
-                <div
-                  className={`${cssStyle.contentArea} richEditor`}
-                  dangerouslySetInnerHTML={{
-                    __html: x.text,
-                  }}
-                />
-                {x.photo && (
-                  <div className={cssStyle.imageArea}>
-                    {/* {x.photoTitle && (
-                      <h3 className={cssStyle.title}>{x.photoTitle}</h3>
-                    )} */}
-                    <img
-                      alt={x.title}
-                      className={cssStyle.menuImage}
-                      height="424"
-                      src={x.photo.url}
-                      width={x.photo.width}
-                    />
-                  </div>
-                )}
-                {x.photoCaption && (
+                <div className={cssStyle.contentArea}>
                   <div
-                    className={`${cssStyle.photoCaption} richEditor`}
+                    className={`${cssStyle.contentText} richEditor`}
                     dangerouslySetInnerHTML={{
-                      __html: x.photoCaption,
+                      __html: x.text,
                     }}
                   />
-                )}
+                  <div className={cssStyle.imageAreaWrap}>
+                    {x.photo && (
+                      <div className={cssStyle.imageArea}>
+                        {/* {x.photoTitle && (
+                      <h3 className={cssStyle.title}>{x.photoTitle}</h3>
+                    )} */}
+                        <img
+                          alt={x.title}
+                          className={cssStyle.menuImage}
+                          height="424"
+                          src={x.photo.url}
+                          width={x.photo.width}
+                        />
+                      </div>
+                    )}
+                    {x.photoCaption && (
+                      <div
+                        className={`${cssStyle.photoCaption} richEditor`}
+                        dangerouslySetInnerHTML={{
+                          __html: x.photoCaption,
+                        }}
+                      />
+                    )}
+                  </div>
+                </div>
               </section>
             ))}
           </div>

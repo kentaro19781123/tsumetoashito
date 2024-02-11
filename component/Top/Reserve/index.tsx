@@ -1,4 +1,6 @@
 import { cssStyle } from "./reserve.css";
+import { ReserveLine } from "@/component/common/ReserveButton/ReserveLine";
+import { ReserveMail } from "@/component/common/ReserveButton/ReserveMail";
 import { Title } from "@/component/common/Title";
 import { client } from "@/libs/client";
 import { reserveType } from "@/types";
@@ -16,8 +18,8 @@ export const Reserve: React.FC = async () => {
 
   return (
     <section className={cssStyle.section}>
-      <Title text={title} />
       <div className={cssStyle.inner}>
+        <Title text={title} />
         <div
           className="richEditor"
           dangerouslySetInnerHTML={{
@@ -36,13 +38,14 @@ export const Reserve: React.FC = async () => {
                 />
               </div>
               <div className={cssStyle.buttonLink}>
-                <a href={item.link}>
+                {item.type[0] === "line" ? <ReserveLine /> : <ReserveMail />}
+                {/* <a href={item.link}>
                   <img
                     alt={item.type[0]}
                     src={`/img/${item.type[0]}_btn.png`}
                     width="110"
                   />
-                </a>
+                </a> */}
               </div>
             </div>
           ))}

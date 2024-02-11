@@ -4,6 +4,8 @@ import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
+import { Title } from "@/component/common/Title";
+import { metaCase } from "@/const/menu";
 import { client } from "@/libs/client";
 import { treatmentCategoryType, treatmentType } from "@/types";
 
@@ -42,6 +44,7 @@ export default async function GalleryList() {
         <Header pageId="case" />
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
+            <Title text={metaCase.title} />
             <CategoryContents itemsArray={itemsArray} />
           </div>
         </div>

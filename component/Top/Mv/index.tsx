@@ -20,14 +20,14 @@ export const Mv: React.FC = () => {
   return (
     <>
       <section className={cssStyle.mvWrap} data-ref={mvInView} ref={ref}>
-        <h2 className={cssStyle.logoWrap}>
+        <h1 className={cssStyle.logoWrap}>
           <img
             alt="爪甲鉤彎症（そうこうこうわんしょう）の経験者が開いたフットケアサロン 爪と足と"
             className={cssStyle.image}
             src="/img/logo.png"
             width="207"
           />
-        </h2>
+        </h1>
         <h3 className={cssStyle.read}>
           <img
             alt="このような足爪トラブルで悩んでいませんか？ぜーんぶ爪甲鉤彎症（そうこうこうわんしょう）です。"

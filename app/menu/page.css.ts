@@ -2,19 +2,8 @@ import { style } from "@vanilla-extract/css";
 import { innerStyle, pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
-export const inner = style([
+const section = style([
   {
-    ...innerStyle,
-    padding: "16px",
-  },
-  pcStyle({
-    padding: 0,
-  }),
-]);
-
-export const section = style([
-  {
-    // borderBottom: "1px solid #ccc",
     padding: vars.padding.secSP,
   },
   pcStyle({
@@ -22,29 +11,37 @@ export const section = style([
   }),
 ]);
 
-export const menuItem = style([
+const inner = style([
+  {
+    ...innerStyle,
+    padding: "16px",
+  },
+  pcStyle({
+    // padding: 0,
+  }),
+]);
+
+const menuItem = style([
   {
     borderBottom: "1px solid #ccc",
-    padding: "32px 0",
-    ":first-child": {
-      paddingTop: "0",
-    },
+    paddingBottom: "32px",
+    marginBottom: "32px",
     ":last-child": {
-      paddingBottom: "0",
+      marginBottom: "0",
       borderBottom: "none",
     },
   },
   pcStyle({
-    padding: vars.padding.secPC,
+    // padding: vars.padding.secPC,
   }),
 ]);
 
-// export const menuItem = style({});
+// const menuItem = style({});
 // globalStyle(`${menuItem} + ${menuItem}`, {
 //   paddingTop: "48px",
 // });
 
-export const titleArea = style([
+const titleArea = style([
   {},
   pcStyle({
     display: "flex",
@@ -52,31 +49,31 @@ export const titleArea = style([
   }),
 ]);
 
-export const title = style([
+const title = style([
   {
-    // fontWeight: "normal",
+    fontSize: vars.font.F20,
     background: "url('/img/icon_plus.png') left center no-repeat",
-    backgroundSize: "24px",
-    paddingLeft: "30px",
+    backgroundSize: "16px",
+    paddingLeft: "20px",
   },
   pcStyle({}),
 ]);
 
-export const titleCircle = style([
+const titleCircle = style([
   {
     fontSize: vars.font.F18,
   },
   pcStyle({}),
 ]);
 
-export const titleRuby = style([
+const titleRuby = style([
   {
     transform: "translateY(-.5em)",
   },
   pcStyle({}),
 ]);
 
-export const priceArea = style([
+const priceArea = style([
   {
     marginTop: "8px",
     textAlign: "right",
@@ -86,7 +83,7 @@ export const priceArea = style([
   }),
 ]);
 
-export const priceCaution = style([
+const priceCaution = style([
   {
     fontSize: vars.font.F12,
     marginBottom: "8px",
@@ -94,7 +91,7 @@ export const priceCaution = style([
   pcStyle({}),
 ]);
 
-export const price = style([
+const price = style([
   {
     fontSize: vars.font.F18,
     fontWeight: "bold",
@@ -102,7 +99,14 @@ export const price = style([
   pcStyle({}),
 ]);
 
-export const contentArea = style([
+const contentArea = style([
+  {},
+  pcStyle({
+    display: "flex",
+    gap: "16px",
+  }),
+]);
+const contentText = style([
   {
     marginTop: "12px",
     // border: `1px solid ${vars.color.grayLight}`,
@@ -111,16 +115,28 @@ export const contentArea = style([
     lineHeight: "1.5",
     // borderRadius: "4px",
   },
-  pcStyle({}),
+  pcStyle({
+    width: "50%",
+    paddingLeft: "20px",
+  }),
 ]);
 
-export const imageArea = style([
+const imageAreaWrap = style([
+  {},
+  pcStyle({
+    width: "50%",
+  }),
+]);
+
+const imageArea = style([
   {
     marginTop: "16px",
   },
-  pcStyle({}),
+  pcStyle({
+    marginTop: "0",
+  }),
 ]);
-export const menuImage = style([
+const menuImage = style([
   {
     width: "100%",
     height: "100%",
@@ -132,11 +148,14 @@ export const menuImage = style([
   }),
 ]);
 
-export const photoCaption = style([
+const photoCaption = style([
   {
     marginTop: "16px",
   },
-  pcStyle({}),
+  pcStyle({
+    marginTop: "8px",
+    fontSize: vars.font.F14,
+  }),
 ]);
 
 export const cssStyle = {
@@ -150,7 +169,9 @@ export const cssStyle = {
   priceCaution,
   price,
   contentArea,
+  contentText,
   menuItem,
+  imageAreaWrap,
   imageArea,
   menuImage,
   photoCaption,

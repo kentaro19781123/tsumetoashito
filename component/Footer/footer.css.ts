@@ -1,19 +1,18 @@
 import { style } from "@vanilla-extract/css";
+import { pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
-export const section = style([
+const section = style([
   {
     borderTop: `1px solid ${vars.color.grayLight}`,
     padding: "16px 0 80px",
   },
+  pcStyle({
+    paddingBottom: "90px",
+  }),
 ]);
 
-export const inner = style({
-  textAlign: "center",
-  fontSize: vars.font.F12,
-});
-
-export const linkUl = style({
+const linkUl = style({
   display: "flex",
   flexWrap: "wrap",
   alignItems: "center",
@@ -21,7 +20,7 @@ export const linkUl = style({
   marginBottom: "16px",
 });
 
-export const linkLi = style({
+const linkLi = style({
   borderLeft: `1px solid ${vars.color.primary}`,
   marginBottom: "8px",
   selectors: {
@@ -30,17 +29,37 @@ export const linkLi = style({
     },
   },
 });
-export const link = style({
-  padding: "0 4px",
-  margin: "0 4px",
-  cursor: "pointer",
-  fontSize: `${vars.font.F12}`,
-});
+
+const link = style([
+  {
+    padding: "0 4px",
+    margin: "0 4px",
+    cursor: "pointer",
+    fontSize: `${vars.font.F12}`,
+    selectors: {
+      "&:hover": {
+        color: vars.color.primary,
+      },
+    },
+  },
+  pcStyle({
+    padding: "0 8px",
+    margin: "0 8px",
+    fontSize: vars.font.F14,
+  }),
+]);
+
+const copy = style([
+  {
+    textAlign: "center",
+    fontSize: vars.font.F12,
+  },
+]);
 
 export const cssStyle = {
   section,
-  inner,
   linkUl,
   linkLi,
   link,
+  copy,
 };

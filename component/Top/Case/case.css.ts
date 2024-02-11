@@ -6,11 +6,10 @@ import { vars } from "@/app/styles/var.css";
 const section = style([
   {
     paddingTop: "48px",
-    // padding: vars.padding.secSP,
-    // borderBottom: "1px solid #ccc",
   },
   pcStyle({
-    padding: vars.padding.secPC,
+    // paddingTop: "72px",
+    // padding: vars.padding.secPC,
   }),
 ]);
 
@@ -18,16 +17,18 @@ const inner = style({
   ...innerStyle,
 });
 
-// globalStyle(`${inner} h2`, {
-//   paddingLeft: "16px",
-// });
-
-globalStyle(
-  `${inner} h2`,
-  pcStyle({
-    paddingLeft: 0,
-  })
-);
+// globalStyle(
+//   `${inner} h2`,
+//   pcStyle({
+//     paddingLeft: 0,
+//   })
+// );
+const titleWrap = style([
+  {
+    padding: "0 16px",
+  },
+  pcStyle({}),
+]);
 
 /* slider */
 const swiper = style([
@@ -89,7 +90,7 @@ const dialog = style([
     },
   },
   pcStyle({
-    width: "500px",
+    width: "700px",
     height: "80%",
   }),
 ]);
@@ -195,9 +196,15 @@ const itemTitle = style({
   paddingLeft: "24px",
 });
 
-const itemImage = style({
-  marginBottom: "16px",
-});
+const itemImage = style([
+  {
+    marginBottom: "16px",
+  },
+  pcStyle({
+    width: "500px",
+    margin: "0 auto 16px",
+  }),
+]);
 
 const closeButtonPseudo = {
   content: "",
@@ -230,6 +237,7 @@ const closeButton = style({
 export const cssStyle = {
   section,
   inner,
+  titleWrap,
   swiper,
   swiperSlide,
   swiperSlideNoEvent,

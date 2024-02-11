@@ -5,6 +5,7 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { ButtonBorder } from "@/component/common/ButtonBorder";
 import { Title } from "@/component/common/Title";
+import { metaCase } from "@/const/menu";
 import { client } from "@/libs/client";
 import { treatmentContentsType, treatmentType } from "@/types";
 
@@ -61,7 +62,8 @@ export default async function Page({ params }: Props) {
         <Header pageId="case" />
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
-            <Title text={data.treatmentTitle} />
+            <Title text={metaCase.title} />
+            <Title Tag="h2" level={2} text={data.treatmentTitle} />
             <div className={cssStyle.photoWrap}>
               <img
                 alt={data.treatmentTitle}
@@ -70,14 +72,18 @@ export default async function Page({ params }: Props) {
               />
             </div>
             <div
-              className={cssStyle.text}
+              className="richEditor"
               dangerouslySetInnerHTML={{
                 __html: data.treatmentText,
               }}
             ></div>
 
             <div className={cssStyle.buttonWrap}>
-              <ButtonBorder buttonText="一覧へ戻る" url="../" />
+              {/* <ButtonBorder buttonText="一覧へ戻る" url="../" /> */}
+              <ButtonBorder
+                buttonText="一覧へ戻る"
+                url={`../?pageId=${data.treatmentCategory}`}
+              />
             </div>
           </div>
         </div>

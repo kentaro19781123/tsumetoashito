@@ -7,7 +7,10 @@ import { useAtom } from "jotai";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { cssStyle } from "./header.css";
+import { ReserveLine } from "@/component/common/ReserveButton/ReserveLine";
 import { menuList } from "@/const/menu";
+import { useDocumentLoadCompleted } from "@/hooks/useDocumentLoadCompleted";
+import { useIsPc } from "@/hooks/useIsPc";
 import { useOverflow } from "@/hooks/useOverflow";
 import { mvInViewAtom } from "@/store/atom";
 import { anchorScroll } from "@/utils/anchorScroll";
@@ -21,14 +24,18 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   const [isOpen, setIsOpen] = useState(false);
   const searchParams = useSearchParams();
   const search = searchParams.get("pageId");
+  const isLoaded = useDocumentLoadCompleted();
+  const isPc = useIsPc();
   // const pathname = usePathname();
   useOverflow(isOpen);
 
+  const offset = isPc ? 85 : 70;
+
   useEffect(() => {
-    if (search) {
-      anchorScroll(`#${search}`, 60);
+    if (search && isLoaded) {
+      anchorScroll(`#${search}`, offset);
     }
-  }, [search]);
+  }, [search, isLoaded]);
 
   return (
     <header
@@ -39,30 +46,31 @@ export const Header: React.FC<Props> = ({ pageId }) => {
       <div className={cssStyle.header}>
         <div className={cssStyle.headerMain}>
           <div className={cssStyle.logoWrap}>
-            <h1 className={cssStyle.logo}>
+            <div className={cssStyle.logo}>
               <a href="/">
                 <img
-                  src="/img/head_logo.png"
                   alt=""
-                  width="128"
-                  height="42"
                   className={cssStyle.logoImage}
+                  height="42"
+                  src="/img/head_logo.png"
+                  width="128"
                 />
               </a>
-            </h1>
+            </div>
           </div>
           {pageId !== "top" && (
             <div className={cssStyle.lineBtn}>
-              <a href="">
+              <ReserveLine />
+              {/* <a href="">
                 <img alt="LINEで予約" src="/img/line_btn.png" width="110" />
-              </a>
+              </a> */}
             </div>
           )}
           <div className={cssStyle.pcMenu}>
             {menuList && (
               <ul className={cssStyle.pcMenuUl}>
                 {menuList.map((x) => (
-                  <li key={x.title} className={cssStyle.pcMenuLi}>
+                  <li className={cssStyle.pcMenuLi} key={x.title}>
                     {pageId === "top" && x.title === "サロンについて" ? (
                       <div
                         className={cssStyle.pcMenuA}
@@ -71,7 +79,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                         {x.title}
                       </div>
                     ) : (
-                      <a href={x.link} className={cssStyle.pcMenuA}>
+                      <a className={cssStyle.pcMenuA} href={x.link}>
                         {x.title}
                       </a>
                     )}
@@ -83,8 +91,8 @@ export const Header: React.FC<Props> = ({ pageId }) => {
           <div className={cssStyle.spMenu}>
             <div
               className={cssStyle.menuBtn}
-              onClick={() => setIsOpen(!isOpen)}
               data-open={isOpen}
+              onClick={() => setIsOpen(!isOpen)}
             >
               <span className={cssStyle.menuBtnSpan} data-open={isOpen}></span>
             </div>
@@ -106,8 +114,13 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                   })}
                 >
                   <ul className={cssStyle.spMenuItemsUl}>
+                    <li className={cssStyle.spMenuItemsLi}>
+                      <a className={cssStyle.spMenuItemsA} href="/">
+                        HOME
+                      </a>
+                    </li>
                     {menuList.map((x) => (
-                      <li key={x.title} className={cssStyle.spMenuItemsLi}>
+                      <li className={cssStyle.spMenuItemsLi} key={x.title}>
                         {pageId === "top" && x.title === "サロンについて" ? (
                           <div
                             className={cssStyle.spMenuItemsA}
@@ -120,8 +133,8 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                           </div>
                         ) : (
                           <a
-                            href={x.link}
                             className={cssStyle.spMenuItemsA}
+                            href={x.link}
                             onClick={() => setIsOpen(!isOpen)}
                           >
                             {x.title}

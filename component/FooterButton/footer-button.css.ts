@@ -1,4 +1,5 @@
 import { globalStyle, style } from "@vanilla-extract/css";
+import { pcStyle } from "@/app/styles/styles.css";
 // import { vars } from "@/app/styles/var.css";
 
 const section = style([
@@ -27,10 +28,31 @@ const section = style([
   },
 ]);
 
-const buttonLink = style({});
-globalStyle(`${buttonLink} + ${buttonLink}`, {
-  marginLeft: "8px",
+globalStyle(`${section}[data-id="top"][data-mvinview="true"]`, {
+  "@media": {
+    "screen and (min-width: 769px)": {
+      bottom: "-80px",
+    },
+  },
 });
+
+const buttonLink = style([
+  {
+    width: "130px",
+    selectors: {
+      "& + &": {
+        marginLeft: "16px",
+      },
+    },
+  },
+  pcStyle({
+    width: "230px",
+  }),
+]);
+
+// globalStyle(`${buttonLink} + ${buttonLink}`, {
+//   marginLeft: "8px",
+// });
 
 export const cssStyle = {
   section,
