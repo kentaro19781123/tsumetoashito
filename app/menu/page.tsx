@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
@@ -5,6 +6,7 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { metaMenu } from "@/const/menu";
+import { metaText } from "@/const/meta";
 import { client } from "@/libs/client";
 import { menuType } from "@/types";
 
@@ -13,6 +15,11 @@ const getContents = async () => {
     endpoint: "menu",
   });
   return response.contents;
+};
+
+export const metadata: Metadata = {
+  title: `${metaMenu.title} | ${metaText.title}`,
+  description: `${metaMenu.title} ${metaText.description}`,
 };
 
 export default async function Menu() {

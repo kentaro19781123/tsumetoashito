@@ -1,9 +1,12 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
+import { metaShopInfo } from "@/const/menu";
+import { metaText } from "@/const/meta";
 import { client } from "@/libs/client";
 import { shopInfoType } from "@/types";
 
@@ -13,6 +16,11 @@ const getContents = async () => {
     contentId: "6aabm9kpl1",
   });
   return response;
+};
+
+export const metadata: Metadata = {
+  title: `${metaShopInfo.title} | ${metaText.title}`,
+  description: `${metaShopInfo.title} ${metaText.description}`,
 };
 
 export default async function ShopInfo() {

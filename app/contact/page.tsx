@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
+import { metaContact } from "@/const/menu";
+import { metaText } from "@/const/meta";
+
+export const metadata: Metadata = {
+  title: `${metaContact.title} | ${metaText.title}`,
+  description: `${metaContact.title} ${metaText.description}`,
+};
 
 export default async function Contact() {
   return (

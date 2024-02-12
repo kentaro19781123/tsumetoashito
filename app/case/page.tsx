@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React, { Suspense } from "react";
 import { CategoryContents } from "./categoryContents";
 import { cssStyle } from "./page.css";
@@ -6,6 +7,7 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { metaCase } from "@/const/menu";
+import { metaText } from "@/const/meta";
 import { client } from "@/libs/client";
 import { treatmentCategoryType, treatmentType } from "@/types";
 
@@ -23,6 +25,11 @@ const getCategoryContents = async () => {
     queries: { fields: "contentBlock" },
   });
   return response.contentBlock[0].categoryList;
+};
+
+export const metadata: Metadata = {
+  title: `${metaCase.title} | ${metaText.title}`,
+  description: `${metaCase.title} ${metaText.description}`,
 };
 
 export default async function GalleryList() {

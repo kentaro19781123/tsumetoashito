@@ -7,6 +7,7 @@ import { Header } from "@/component/Header";
 import { ButtonBorder } from "@/component/common/ButtonBorder";
 import { Title } from "@/component/common/Title";
 import { metaCase } from "@/const/menu";
+import { metaText } from "@/const/meta";
 import { client } from "@/libs/client";
 import { treatmentContentsType, treatmentType } from "@/types";
 
@@ -21,8 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
   const data = await getCategoryContents(slug);
   return {
-    title: data.treatmentTitle,
-    description: data.treatmentText,
+    title: `${data.treatmentTitle} | ${metaText.title}`,
+    description: `${data.treatmentTitle}${metaText.description}`,
   };
 }
 
