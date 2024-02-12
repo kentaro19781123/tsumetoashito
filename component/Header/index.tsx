@@ -35,9 +35,8 @@ export const Header: React.FC<Props> = ({ pageId }) => {
     if (search && isLoaded) {
       const element = document.querySelector(`#${search}`);
       if (element) {
-        console.log(
-          element.getBoundingClientRect().top + window.scrollY - offset
-        );
+        console.log(element.getBoundingClientRect().top);
+        console.log(window.scrollY);
         window.scrollTo({
           behavior: "smooth",
           top: element.getBoundingClientRect().top + window.scrollY - offset,
