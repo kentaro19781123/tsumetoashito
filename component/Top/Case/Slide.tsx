@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-// import { Circle } from "./circle";
 import { cssStyle } from "./case.css";
 import { ButtonBorder } from "@/component/common/ButtonBorder";
 import { metaCase } from "@/const/menu";
@@ -22,13 +21,6 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
   // カテゴリを抽出
   const itemsCategory = items.map((x) => x.treatmentCategory);
   const itemsCategoryFix = Array.from(new Set(itemsCategory));
-  // const itemsArray = category
-  //   .map((categoryDetail) =>
-  //     items.filter((x) => x.treatmentCategory === categoryDetail.categoryItem)
-  //   )
-  //   .filter((x) => x.length != 0);
-
-  // const dummyArray = Array(5 - itemsArray.length).fill("dummy");
 
   useOverflow(isOpen);
   const modalOpen = (id: string) => {
@@ -114,7 +106,6 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
               <div className={cssStyle.ButtonWrap}>
                 <ButtonBorder
                   buttonText="もっと見る"
-                  // url={`${metaCase.link}?pageId=list${index + 1}`}
                   url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
                 />
               </div>
@@ -162,7 +153,6 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                   <div className={cssStyle.dialogMoreButtonWrap}>
                     <ButtonBorder
                       buttonText="もっと見る"
-                      // url={`${metaCase.link}?pageId=list${index + 1}`}
                       url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
                     />
                   </div>

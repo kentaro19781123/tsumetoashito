@@ -1,7 +1,5 @@
 import React from "react";
 import { cssStyle } from "./about.css";
-// import { TextBox } from "@/component/common/TextBox";
-// import { Title } from "@/component/common/Title";
 import { client } from "@/libs/client";
 import { aboutType } from "@/types";
 
@@ -55,7 +53,6 @@ export const About: React.FC = async () => {
             </div>
           </div>
         </div>
-        {/* <ButtonBox button={["ボタン", "ボタン"]} /> */}
       </div>
     </section>
   );

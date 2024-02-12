@@ -2,22 +2,6 @@ import { style } from "@vanilla-extract/css";
 import { pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
-// const title = style([
-//   {
-//     fontSize: vars.font.F24,
-//     // fontWeight: "normal",
-//     // fontFamily: "Josefin Sans",
-//     marginBottom: "16px",
-//     background: "url('/img/icon_plus.png') left center no-repeat",
-//     backgroundSize: "25px",
-//     paddingLeft: "30px",
-//   },
-//   pcStyle({
-//     fontSize: vars.font.F38,
-//     marginBottom: "24px",
-//   }),
-// ]);
-
 const h1 = style([
   {
     fontSize: vars.font.F24,
@@ -48,7 +32,6 @@ const h2 = style([
 ]);
 
 export const cssStyle = {
-  // title,
   h1,
   h2,
 };

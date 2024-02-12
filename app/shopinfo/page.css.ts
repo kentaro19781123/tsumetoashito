@@ -7,9 +7,7 @@ const inner = style([
     ...innerStyle,
     padding: "16px",
   },
-  pcStyle({
-    // padding: 0,
-  }),
+  pcStyle({}),
 ]);
 
 const section = style([

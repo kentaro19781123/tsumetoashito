@@ -7,22 +7,13 @@ const section = style([
   {
     paddingTop: "48px",
   },
-  pcStyle({
-    // paddingTop: "72px",
-    // padding: vars.padding.secPC,
-  }),
+  pcStyle({}),
 ]);
 
 const inner = style({
   ...innerStyle,
 });
 
-// globalStyle(
-//   `${inner} h2`,
-//   pcStyle({
-//     paddingLeft: 0,
-//   })
-// );
 const titleWrap = style([
   {
     padding: "0 16px",
@@ -52,7 +43,6 @@ const swiperSlide = style([
 export const swiperSlideNoEvent = composeStyles(
   swiperSlide,
   style([
-    // { display: "none !important" },
     pcStyle({
       pointerEvents: "none",
       display: "block !important",
@@ -114,7 +104,6 @@ const circle = style([
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    // backgroundColor: "#eee",
     background: "url('/img/case_bg.png')  no-repeat",
     backgroundSize: "180px",
     cursor: "pointer",
@@ -151,7 +140,6 @@ const swiperItem = style([
   {
     whiteSpace: "pre-wrap",
     textAlign: "center",
-    // fontWeight: "normal",
     fontSize: `${vars.font.F16}`,
   },
 ]);
@@ -256,28 +244,3 @@ export const cssStyle = {
   itemImage,
   closeButton,
 };
-
-/* */
-
-// const section = css`
-/* background: #d1eae6; */
-/* padding: 48px 0;
-  border-bottom: 1px solid #ccc; */
-
-/* .swiper-button-prev,
-  .swiper-button-next {
-    color: ${Color.base};
-  } */
-/* .swiper-button-prev.swiper-button-disabled,
-  .swiper-button-next.swiper-button-disabled {
-    color: ${Color.grayLight};
-  } */
-/* .swiper-button-prev:after,
-  .swiper-button-next:after {
-    font-size: ${Font.F24};
-  } */
-
-/* figure {
-    text-align: center;
-  } */
-// `;

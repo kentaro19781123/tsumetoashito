@@ -5,24 +5,17 @@ import { vars } from "@/app/styles/var.css";
 const headerWrap = style([
   {
     borderBottom: `1px solid ${vars.color.grayLight}`,
-    // position: "sticky",
     position: "fixed",
     top: "0",
     background: vars.color.white,
     zIndex: 999,
     width: "100%",
     transition: "top 0.2s ease",
-    // selectors: {
-    //   '&[data-mvinview="false"]': {
-    //     top: 0,
-    //   },
-    // },
   },
   pcStyle({
     borderTop: `3px solid ${vars.color.primary}`,
     boxShadow: "0px 4px 4px rgba(194,194,194,.3)",
     borderBottom: "none",
-    // position: "sticky",
   }),
 ]);
 
@@ -41,11 +34,7 @@ globalStyle(`#top${headerWrap}[data-mvinview="false"]`, {
 
 const header = style({
   ...innerStyle,
-  // display: "flex",
-  // flexDirection: "column",
-  // justifyContent: "center",
   padding: "0 16px",
-  // height: "60px",
 });
 
 const headerMain = style([
@@ -55,9 +44,6 @@ const headerMain = style([
     justifyContent: "space-between",
     height: "60px",
     position: "relative",
-    // justifyContent: "space-between",
-    // alignItems: "flex-end",
-    // order: 2,
   },
   pcStyle({
     height: "70px",
@@ -67,25 +53,13 @@ const headerMain = style([
 const logoWrap = style([
   {
     width: "120px",
-    // display: "none",
-    selectors: {
-      '&[data-mvInView="false"]': {
-        // display: "block",
-      },
-    },
   },
   pcStyle({
     width: "150px",
   }),
 ]);
 
-const logo = style({
-  // fontWeight: "normal",
-  // width: "128px",
-  // height: "42px",
-  // fontSize: "18px",
-  // margin: 0,
-});
+const logo = style({});
 
 const logoImage = style({
   height: "auto",
@@ -130,15 +104,10 @@ const pcMenuA = style({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  // color: vars.color.base,
   textDecoration: "none",
   padding: "8px 16px",
   cursor: "pointer",
   ":hover": {
-    // opacity: 0.8,
-    // background: vars.color.grayLight,
-    // background: "rgba(0,0,0,.3)",
-    // border: `1px solid ${vars.color.white}`,
     color: vars.color.primary,
   },
 });
@@ -204,14 +173,6 @@ const menuBtnSpan = style({
       opacity: 0,
     },
   },
-  // "::before": {
-  //   ...spanProp,
-  //   bottom: "8px",
-  // },
-  // "::after": {
-  //   ...spanProp,
-  //   top: "8px",
-  // },
 });
 
 const isOpenProp = createVar();
@@ -221,7 +182,6 @@ const spMenuItems = style({
   position: "fixed",
   width: "300px",
   height: "100vh",
-  // top: "60px",
   top: 0,
   right: 0,
   transform: isOpenProp,

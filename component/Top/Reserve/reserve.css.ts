@@ -1,15 +1,11 @@
 import { style } from "@vanilla-extract/css";
 import { innerStyle, pcStyle } from "@/app/styles/styles.css";
-// import { vars } from "@/app/styles/var.css";
 
 const section = style([
   {
     padding: "48px 0",
   },
-  pcStyle({
-    // paddingTop: "72px",
-    // padding: vars.padding.secPC,
-  }),
+  pcStyle({}),
 ]);
 
 const inner = style({

@@ -1,6 +1,5 @@
 "use client";
 
-// import Image from "next/image";
 import { useAtom } from "jotai";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -8,12 +7,11 @@ import { cssStyle } from "./mv.css";
 import { mvInViewAtom } from "@/store/atom";
 
 export const Mv: React.FC = () => {
-  // const refFirstRef = useRef(false);
   const [mvInView, setMvInView] = useAtom(mvInViewAtom);
   const { ref, inView } = useInView({
     initialInView: true,
   });
-  // console.log(inView);
+
   useEffect(() => {
     setMvInView(inView);
   }, [inView, setMvInView]);
@@ -64,18 +62,6 @@ export const Mv: React.FC = () => {
           />
         </div>
       </section>
-      {/* <div className={cssStyle.mvBg}>
-        <picture>
-          <source media="(min-width: 769px)" srcSet="/img/pc_mv_bg.jpg" />
-          <img
-            alt="爪と足と"
-            className={cssStyle.bgImage}
-            height="489"
-            src="/img/sp_mv_bg.jpg"
-            width="390"
-          />
-        </picture>
-      </div> */}
     </>
   );
 };

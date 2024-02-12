@@ -7,7 +7,6 @@ const mvWrap = style([
     ...innerStyle,
     background: "url('/img/sp_mv_bg.webp') no-repeat",
     backgroundSize: "100% auto",
-    // height: "720px",
     position: "relative",
     marginBottom: "24px",
     borderTop: `3px solid ${vars.color.primary}`,
@@ -96,8 +95,6 @@ const bubble3 = style([
     margin: "10px 0 0 170px",
   }),
 ]);
-
-const temp = style([{}, pcStyle({})]);
 
 export const cssStyle = {
   mvWrap,

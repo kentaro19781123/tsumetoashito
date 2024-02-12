@@ -6,7 +6,6 @@ const wrap = style([{}, pcStyle({})]);
 
 const button = style([
   {
-    // width: "130px",
     minHeight: "36px",
     borderRadius: "6px",
     display: "flex",
@@ -19,12 +18,14 @@ const button = style([
     minHeight: "60px",
   }),
 ]);
+
 const line = style([
   {
     backgroundColor: vars.color.green,
   },
   pcStyle({}),
 ]);
+
 const mail = style([
   {
     backgroundColor: vars.color.orange,
@@ -59,7 +60,6 @@ const text = style([
     fontSize: vars.font.F14,
     color: vars.color.white,
     fontWeight: "bold",
-    // paddingRight: "5px",
     paddingBottom: "2px",
   },
   pcStyle({

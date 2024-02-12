@@ -1,7 +1,6 @@
 import { cssStyle } from "./case.css";
 import { Slide } from "@/component/Top/Case/Slide";
 import { Title } from "@/component/common/Title";
-// import { galleryItems } from "@/const/galleryItems";
 import { metaCase } from "@/const/menu";
 import { client } from "@/libs/client";
 import { treatmentContentsType, treatmentCategoryType } from "@/types";
@@ -25,8 +24,6 @@ const getCategoryContents = async () => {
 export const Case: React.FC = async () => {
   const treatmentData = await getTreatmentContents();
   const categoryData = await getCategoryContents();
-  // const categoryArray = categoryData.map((x) => x.categoryItem);
-  // console.log(categoryData);
 
   return (
     <section className={cssStyle.section}>

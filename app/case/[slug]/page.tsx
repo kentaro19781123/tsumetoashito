@@ -83,7 +83,6 @@ export default async function Page({ params }: Props) {
             ></div>
 
             <div className={cssStyle.buttonWrap}>
-              {/* <ButtonBorder buttonText="一覧へ戻る" url="../" /> */}
               <ButtonBorder
                 buttonText="一覧へ戻る"
                 url={`../?pageId=${data.treatmentCategory}`}

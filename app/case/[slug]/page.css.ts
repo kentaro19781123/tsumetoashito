@@ -2,19 +2,16 @@ import { style } from "@vanilla-extract/css";
 import { innerStyle, pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
-export const inner = style([
+const inner = style([
   {
     ...innerStyle,
     padding: "16px",
   },
-  pcStyle({
-    // padding: 0,
-  }),
+  pcStyle({}),
 ]);
 
-export const section = style([
+const section = style([
   {
-    // borderBottom: "1px solid #ccc",
     padding: vars.padding.secSP,
   },
   pcStyle({
@@ -22,7 +19,7 @@ export const section = style([
   }),
 ]);
 
-export const caseSection = style([
+const caseSection = style([
   {
     paddingBottom: "40px",
     marginBottom: "40px",
@@ -34,7 +31,7 @@ export const caseSection = style([
   pcStyle({}),
 ]);
 
-export const photoWrap = style([
+const photoWrap = style([
   {
     marginBottom: "16px",
     width: "100%",
@@ -44,15 +41,15 @@ export const photoWrap = style([
   }),
 ]);
 
-export const photo = style({
+const photo = style({
   width: "100%",
 });
 
-export const text = style({
+const text = style({
   lineHeight: "1.5",
 });
 
-export const buttonWrap = style({
+const buttonWrap = style({
   margin: "80px auto 0",
   width: "300px",
 });

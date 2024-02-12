@@ -72,9 +72,6 @@ export default async function Menu() {
                   <div className={cssStyle.imageAreaWrap}>
                     {x.photo && (
                       <div className={cssStyle.imageArea}>
-                        {/* {x.photoTitle && (
-                      <h3 className={cssStyle.title}>{x.photoTitle}</h3>
-                    )} */}
                         <img
                           alt={x.title}
                           className={cssStyle.menuImage}

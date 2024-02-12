@@ -5,12 +5,9 @@ import { vars } from "@/app/styles/var.css";
 const section = style([
   {
     padding: "0 16px",
-    // marginTop: "-30px",
-    // paddingTop: "30px",
   },
   pcStyle({
     padding: "0",
-    // padding: vars.padding.secPC,
   }),
 ]);
 

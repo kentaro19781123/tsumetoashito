@@ -2,8 +2,6 @@
 
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { useAtom } from "jotai";
-// import Image from "next/image";
-// import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { cssStyle } from "./header.css";
@@ -26,7 +24,6 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   const search = searchParams.get("pageId");
   const isLoaded = useDocumentLoadCompleted();
   const isPc = useIsPc();
-  // const pathname = usePathname();
   useOverflow(isOpen);
 
   const offset = isPc ? 85 : 70;
@@ -61,9 +58,6 @@ export const Header: React.FC<Props> = ({ pageId }) => {
           {pageId !== "top" && (
             <div className={cssStyle.lineBtn}>
               <ReserveLine />
-              {/* <a href="">
-                <img alt="LINEで予約" src="/img/line_btn.png" width="110" />
-              </a> */}
             </div>
           )}
           <div className={cssStyle.pcMenu}>

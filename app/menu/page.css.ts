@@ -16,9 +16,7 @@ const inner = style([
     ...innerStyle,
     padding: "16px",
   },
-  pcStyle({
-    // padding: 0,
-  }),
+  pcStyle({}),
 ]);
 
 const menuItem = style([
@@ -31,15 +29,8 @@ const menuItem = style([
       borderBottom: "none",
     },
   },
-  pcStyle({
-    // padding: vars.padding.secPC,
-  }),
+  pcStyle({}),
 ]);
-
-// const menuItem = style({});
-// globalStyle(`${menuItem} + ${menuItem}`, {
-//   paddingTop: "48px",
-// });
 
 const titleArea = style([
   {},
@@ -109,11 +100,7 @@ const contentArea = style([
 const contentText = style([
   {
     marginTop: "12px",
-    // border: `1px solid ${vars.color.grayLight}`,
-    // backgroundColor: vars.color.gray,
-    // padding: "16px",
     lineHeight: "1.5",
-    // borderRadius: "4px",
   },
   pcStyle({
     width: "50%",
@@ -136,6 +123,7 @@ const imageArea = style([
     marginTop: "0",
   }),
 ]);
+
 const menuImage = style([
   {
     width: "100%",

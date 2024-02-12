@@ -37,8 +37,6 @@ export default async function GalleryList() {
   const categoryData = await getCategoryContents();
   const categoryArray = categoryData.map((x) => x.categoryItem);
 
-  // const itemsCategory = data.map((x) => x.treatmentCategory);
-  // const itemsCategoryFix = Array.from(new Set(itemsCategory));
   const itemsArray = categoryArray
     .map((categoryName) =>
       data.filter((x) => x.treatmentCategory === categoryName)

@@ -8,7 +8,6 @@ const section = style([
     padding: "10px 0",
     display: "flex",
     justifyContent: "center",
-
     boxShadow: "0px -2px 4px rgba(194,194,194,.3)",
     position: "fixed",
     zIndex: 2,
@@ -49,10 +48,6 @@ const buttonLink = style([
     width: "230px",
   }),
 ]);
-
-// globalStyle(`${buttonLink} + ${buttonLink}`, {
-//   marginLeft: "8px",
-// });
 
 export const cssStyle = {
   section,

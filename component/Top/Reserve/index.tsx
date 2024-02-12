@@ -39,13 +39,6 @@ export const Reserve: React.FC = async () => {
               </div>
               <div className={cssStyle.buttonLink}>
                 {item.type[0] === "line" ? <ReserveLine /> : <ReserveMail />}
-                {/* <a href={item.link}>
-                  <img
-                    alt={item.type[0]}
-                    src={`/img/${item.type[0]}_btn.png`}
-                    width="110"
-                  />
-                </a> */}
               </div>
             </div>
           ))}
