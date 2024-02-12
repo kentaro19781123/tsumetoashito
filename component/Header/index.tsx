@@ -32,7 +32,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   const offset = isPc ? 85 : 70;
 
   useEffect(() => {
-    if (isLoaded) {
+    if (search && isLoaded) {
       anchorScroll(`#${search}`, offset);
     }
   }, [isLoaded, offset, search]);

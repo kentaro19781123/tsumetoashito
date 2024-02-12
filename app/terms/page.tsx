@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
@@ -20,7 +21,9 @@ export default async function Terms() {
   return (
     <>
       <main>
-        <Header pageId="contact" />
+        <Suspense>
+          <Header pageId="contact" />
+        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={title} />

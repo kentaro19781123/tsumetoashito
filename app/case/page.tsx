@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { CategoryContents } from "./categoryContents";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
@@ -41,7 +41,9 @@ export default async function GalleryList() {
   return (
     <>
       <main>
-        <Header pageId="case" />
+        <Suspense>
+          <Header pageId="case" />
+        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={metaCase.title} />

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
@@ -30,7 +31,9 @@ export default async function Menu() {
   return (
     <>
       <main>
-        <Header pageId="menu" />
+        <Suspense>
+          <Header pageId="menu" />
+        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={metaMenu.title} />

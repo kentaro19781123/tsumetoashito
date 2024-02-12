@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
@@ -59,7 +60,9 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <main>
-        <Header pageId="case" />
+        <Suspense>
+          <Header pageId="case" />
+        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={metaCase.title} />

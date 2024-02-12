@@ -1,4 +1,5 @@
 // import { cssStyle } from "./page.css";
+import { Suspense } from "react";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
@@ -16,7 +17,9 @@ export default function Home() {
   return (
     <>
       <main>
-        <Header pageId="top" />
+        <Suspense>
+          <Header pageId="top" />
+        </Suspense>
         <Mv />
         {/* <News /> */}
         <About />

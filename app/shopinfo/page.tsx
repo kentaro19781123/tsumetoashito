@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
@@ -21,7 +22,9 @@ export default async function ShopInfo() {
   return (
     <>
       <main>
-        <Header pageId="shopInfo" />
+        <Suspense>
+          <Header pageId="shopInfo" />
+        </Suspense>
         <div className={cssStyle.section} id="shopInfo">
           <div className={cssStyle.inner}>
             <Title text={title} />

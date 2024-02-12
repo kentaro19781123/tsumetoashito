@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
@@ -8,7 +9,9 @@ export default async function Contact() {
   return (
     <>
       <main>
-        <Header pageId="contact" />
+        <Suspense>
+          <Header pageId="contact" />
+        </Suspense>
         <div className={cssStyle.section} id="contact">
           <div className={cssStyle.inner}>
             <Title text="お問合せ" />

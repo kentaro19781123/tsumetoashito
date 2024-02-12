@@ -1,7 +1,6 @@
 export const metaAbout = {
   title: "サロンについて",
-  // link: "/?pageId=about",
-  link: "/#about",
+  link: "/?pageId=about",
 };
 
 export const metaCase = {
