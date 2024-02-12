@@ -33,9 +33,19 @@ export const Header: React.FC<Props> = ({ pageId }) => {
 
   useEffect(() => {
     if (search && isLoaded) {
-      anchorScroll(`#${search}`, offset);
+      const element = document.querySelector(`#${search}`);
+      if (element) {
+        console.log(
+          element.getBoundingClientRect().top + window.scrollY - offset
+        );
+        window.scrollTo({
+          behavior: "smooth",
+          top: element.getBoundingClientRect().top + window.scrollY - offset,
+        });
+      }
+      // anchorScroll(`#${search}`, offset);
     }
-  }, [search, isLoaded]);
+  }, [search, isLoaded, offset]);
 
   return (
     <header
