@@ -32,20 +32,10 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   const offset = isPc ? 85 : 70;
 
   useEffect(() => {
-    if (search && isLoaded) {
-      const element = document.querySelector(`#${search}`);
-      if (element) {
-        console.log(element.getBoundingClientRect().top);
-        console.log(window.scrollY);
-        console.log(isLoaded);
-        window.scrollTo({
-          behavior: "smooth",
-          top: element.getBoundingClientRect().top + window.scrollY - offset,
-        });
-      }
-      // anchorScroll(`#${search}`, offset);
+    if (isLoaded) {
+      anchorScroll(`#${search}`, offset);
     }
-  }, [isLoaded]);
+  }, [isLoaded, offset, search]);
 
   return (
     <header
