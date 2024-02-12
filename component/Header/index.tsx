@@ -37,6 +37,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
       if (element) {
         console.log(element.getBoundingClientRect().top);
         console.log(window.scrollY);
+        console.log(isLoaded);
         window.scrollTo({
           behavior: "smooth",
           top: element.getBoundingClientRect().top + window.scrollY - offset,
@@ -44,7 +45,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
       }
       // anchorScroll(`#${search}`, offset);
     }
-  }, [search, isLoaded, offset]);
+  }, [isLoaded]);
 
   return (
     <header
