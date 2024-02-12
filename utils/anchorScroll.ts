@@ -13,6 +13,7 @@ export const anchorScroll = (
   if (element) {
     // for iOS & IE
     // smoothscroll.polyfill()
+    console.log(element.getBoundingClientRect().top + window.scrollY - offset);
 
     window.scrollTo({
       behavior: "smooth",
