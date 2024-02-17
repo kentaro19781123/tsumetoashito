@@ -29,10 +29,10 @@ export default async function ShopInfo() {
 
   return (
     <>
+      <Suspense>
+        <Header pageId="shopInfo" />
+      </Suspense>
       <main>
-        <Suspense>
-          <Header pageId="shopInfo" />
-        </Suspense>
         <div className={cssStyle.section} id="shopInfo">
           <div className={cssStyle.inner}>
             <Title text={title} />
@@ -63,9 +63,11 @@ export default async function ShopInfo() {
             </div>
           </div>
         </div>
-        <Footer pageId="shopinfo" />
-        <FooterButton pageId="shopinfo" />
       </main>
+      <Suspense>
+        <Footer pageId="shopinfo" />
+      </Suspense>
+      <FooterButton pageId="shopinfo" />
     </>
   );
 }

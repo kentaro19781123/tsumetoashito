@@ -60,10 +60,10 @@ export default async function Page({ params }: Props) {
   const data = await getCategoryContents(slug);
   return (
     <>
+      <Suspense>
+        <Header pageId="case" />
+      </Suspense>
       <main>
-        <Suspense>
-          <Header pageId="case" />
-        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={metaCase.title} />
@@ -90,9 +90,11 @@ export default async function Page({ params }: Props) {
             </div>
           </div>
         </div>
-        <Footer pageId="case" />
-        <FooterButton pageId="case" />
       </main>
+      <Suspense>
+        <Footer pageId="case" />
+      </Suspense>
+      <FooterButton pageId="case" />
     </>
   );
 }

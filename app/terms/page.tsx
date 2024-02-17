@@ -28,10 +28,10 @@ export default async function Terms() {
 
   return (
     <>
+      <Suspense>
+        <Header pageId="contact" />
+      </Suspense>
       <main>
-        <Suspense>
-          <Header pageId="contact" />
-        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={title} />
@@ -43,9 +43,11 @@ export default async function Terms() {
             />
           </div>
         </div>
-        <Footer pageId="terms" />
-        <FooterButton pageId="terms" />
       </main>
+      <Suspense>
+        <Footer pageId="terms" />
+      </Suspense>
+      <FooterButton pageId="terms" />
     </>
   );
 }

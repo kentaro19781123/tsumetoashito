@@ -17,17 +17,19 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <Suspense>
+        <Header pageId="top" />
+      </Suspense>
       <main>
-        <Suspense>
-          <Header pageId="top" />
-        </Suspense>
         <Mv />
         <About />
         <Case />
         <Reserve />
-        <Footer pageId="top" />
-        <FooterButton pageId="top" />
       </main>
+      <Suspense>
+        <Footer pageId="top" />
+      </Suspense>
+      <FooterButton pageId="top" />
     </>
   );
 }

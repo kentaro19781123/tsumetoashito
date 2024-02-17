@@ -8,5 +8,10 @@ type Props = {
 };
 
 export const Title: React.FC<Props> = ({ Tag = "h1", level = 1, text }) => {
-  return <Tag className={level === 1 ? cssStyle.h1 : cssStyle.h2}>{text}</Tag>;
+  return (
+    <Tag className={level === 1 ? cssStyle.h1 : cssStyle.h2}>
+      {level === 2 && <span className={cssStyle.circle}>●</span>}
+      {text}
+    </Tag>
+  );
 };

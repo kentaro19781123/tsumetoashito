@@ -16,18 +16,20 @@ export const metadata: Metadata = {
 export default async function Contact() {
   return (
     <>
+      <Suspense>
+        <Header pageId="contact" />
+      </Suspense>
       <main>
-        <Suspense>
-          <Header pageId="contact" />
-        </Suspense>
         <div className={cssStyle.section} id="contact">
           <div className={cssStyle.inner}>
             <Title text="お問合せ" />
           </div>
         </div>
-        <Footer pageId="contact" />
-        <FooterButton pageId="contact" />
       </main>
+      <Suspense>
+        <Footer pageId="contact" />
+      </Suspense>
+      <FooterButton pageId="contact" />
     </>
   );
 }

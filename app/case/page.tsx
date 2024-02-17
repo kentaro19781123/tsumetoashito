@@ -45,19 +45,21 @@ export default async function GalleryList() {
 
   return (
     <>
+      <Suspense>
+        <Header pageId="case" />
+      </Suspense>
       <main>
-        <Suspense>
-          <Header pageId="case" />
-        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={metaCase.title} />
             <CategoryContents itemsArray={itemsArray} />
           </div>
         </div>
-        <Footer pageId="case" />
-        <FooterButton pageId="case" />
       </main>
+      <Suspense>
+        <Footer pageId="case" />
+      </Suspense>
+      <FooterButton pageId="case" />
     </>
   );
 }

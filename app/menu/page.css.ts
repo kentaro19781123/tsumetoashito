@@ -43,16 +43,28 @@ const titleArea = style([
 const title = style([
   {
     fontSize: vars.font.F20,
-    background: "url('/img/icon_plus.png') left center no-repeat",
-    backgroundSize: "16px",
-    paddingLeft: "20px",
+    // background: "url('/img/icon_plus.png') left center no-repeat",
+    // backgroundSize: "16px",
+    // paddingLeft: "20px",
+  },
+  pcStyle({}),
+]);
+
+const titleWrap = style([
+  {
+    display: "flex",
+    alignItems: "center",
   },
   pcStyle({}),
 ]);
 
 const titleCircle = style([
   {
-    fontSize: vars.font.F18,
+    display: "inline-block",
+    color: vars.color.primary,
+    fontSize: vars.font.F16,
+    flexShrink: "0",
+    width: "20px",
   },
   pcStyle({}),
 ]);
@@ -150,6 +162,7 @@ export const cssStyle = {
   inner,
   section,
   titleArea,
+  titleWrap,
   title,
   titleCircle,
   titleRuby,

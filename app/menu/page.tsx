@@ -32,29 +32,30 @@ export default async function Menu() {
         .replace("]", "</rt>");
       return `<ruby>${rtText}</ruby>`;
     } else {
-      return `<span>${text}</span>`;
+      return `${text}`;
     }
   };
   return (
     <>
+      <Suspense>
+        <Header pageId="menu" />
+      </Suspense>
       <main>
-        <Suspense>
-          <Header pageId="menu" />
-        </Suspense>
         <div className={cssStyle.section}>
           <div className={cssStyle.inner}>
             <Title text={metaMenu.title} />
             {data.map((x) => (
               <section className={cssStyle.menuItem} key={x.title}>
                 <div className={cssStyle.titleArea}>
-                  <div>
-                    <h2
+                  <h2 className={cssStyle.titleWrap}>
+                    <span className={cssStyle.titleCircle}>●</span>
+                    <span
                       className={cssStyle.title}
                       dangerouslySetInnerHTML={{
                         __html: rubyReplace(x.title),
                       }}
                     />
-                  </div>
+                  </h2>
                   <div className={cssStyle.priceArea}>
                     {x.caption && (
                       <p className={cssStyle.priceCaution}>{x.caption}</p>
@@ -95,9 +96,11 @@ export default async function Menu() {
             ))}
           </div>
         </div>
-        <Footer pageId="menu" />
-        <FooterButton pageId="menu" />
       </main>
+      <Suspense>
+        <Footer pageId="menu" />
+      </Suspense>
+      <FooterButton pageId="menu" />
     </>
   );
 }
