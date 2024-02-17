@@ -1,7 +1,7 @@
 export const metaText = {
   title: "爪と足と 爪甲鉤彎症の経験者が開いたフットケアサロン",
   description: "descriptiondescriptiondescriptiondescription",
-  canonical: "https://tsumetoashito.com",
+  canonical: "https://tsumetoashito.com/",
 };
 
 export const ogpCommon = {
@@ -10,9 +10,9 @@ export const ogpCommon = {
   siteName: metaText.title,
   images: [
     {
-      url: `${metaText.canonical}img/logo.png`,
-      width: 1200,
-      height: 630,
+      url: `${metaText.canonical}img/og.png`,
+      width: 960,
+      height: 504,
     },
   ],
 };
