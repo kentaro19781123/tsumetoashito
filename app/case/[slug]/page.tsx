@@ -7,7 +7,7 @@ import { Header } from "@/component/Header";
 import { ButtonBorder } from "@/component/common/ButtonBorder";
 import { Title } from "@/component/common/Title";
 import { metaCase } from "@/const/menu";
-import { metaText, ogpCommon } from "@/const/meta";
+import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
 import { client } from "@/libs/client";
 import { treatmentContentsType, treatmentType } from "@/types";
 
@@ -65,30 +65,25 @@ export default async function Page({ params }: Props) {
   // APIにコンテンツID（slug）を渡してデータ取得
   const data = await getCategoryContents(slug);
 
-  const jsonLd = `{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "item": "${metaText.canonical}",
-        "name": "${metaText.title}",
-        "position": 1
-      },
-      {
-        "@type": "ListItem",
-        "item": "${metaText.canonical}${metaCase.link}",
-        "name": "${metaCase.title}",
-        "position": 2
-      }
-      {
-        "@type": "ListItem",
-        "item": "${metaText.canonical}${metaCase.link}${data.id}",
-        "name": "${data.treatmentTitle}",
-        "position": 3
-      }
-    ]
-  }`;
+  const jsonLdItems = [
+    {
+      "@type": "ListItem",
+      item: `${metaText.canonical}${metaCase.link}`,
+      name: `${metaCase.title}`,
+      position: 2,
+    },
+    {
+      "@type": "ListItem",
+      item: `${metaText.canonical}${metaCase.link}${data.id}`,
+      name: `${data.treatmentTitle}`,
+      position: 3,
+    },
+  ];
+
+  const jsonLd = JSON.stringify({
+    ...jsonLdBase,
+    ...{ itemListElement: [...jsonLdBase.itemListElement, ...jsonLdItems] },
+  });
 
   return (
     <>

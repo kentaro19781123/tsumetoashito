@@ -6,7 +6,7 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { metaShopInfo } from "@/const/menu";
-import { metaText, ogpCommon } from "@/const/meta";
+import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
 import { client } from "@/libs/client";
 import { shopInfoType } from "@/types";
 
@@ -29,24 +29,19 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = `{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "item": "${metaText.canonical}",
-      "name": "${metaText.title}",
-      "position": 1
-    },
-    {
-      "@type": "ListItem",
-      "item": "${metaText.canonical}${metaShopInfo.link}",
-      "name": "${metaShopInfo.title}",
-      "position": 2
-    }
-  ]
-}`;
+const jsonLdItems = [
+  {
+    "@type": "ListItem",
+    item: `${metaText.canonical}${metaShopInfo.link}`,
+    name: `${metaShopInfo.title}`,
+    position: 2,
+  },
+];
+
+const jsonLd = JSON.stringify({
+  ...jsonLdBase,
+  ...{ itemListElement: [...jsonLdBase.itemListElement, ...jsonLdItems] },
+});
 
 export default async function ShopInfo() {
   const { title, contentBlock } = await getContents();

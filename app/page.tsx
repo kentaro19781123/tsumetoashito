@@ -7,7 +7,7 @@ import { About } from "@/component/Top/About";
 import { Case } from "@/component/Top/Case";
 import { Mv } from "@/component/Top/Mv";
 import { Reserve } from "@/component/Top/Reserve";
-import { metaText, ogpCommon } from "@/const/meta";
+import { metaText, ogpCommon, jsonLdBase } from "@/const/meta";
 
 export const metadata: Metadata = {
   title: metaText.title,
@@ -20,18 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = `{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "item": "${metaText.canonical}",
-      "name": "${metaText.title}",
-      "position": 1
-    },
-  ]
-}`;
+const jsonLd = JSON.stringify(jsonLdBase);
 
 export default function Home() {
   return (

@@ -6,7 +6,7 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { metaMenu } from "@/const/menu";
-import { metaText, ogpCommon } from "@/const/meta";
+import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
 import { client } from "@/libs/client";
 import { menuType } from "@/types";
 
@@ -28,24 +28,19 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = `{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "item": "${metaText.canonical}",
-      "name": "${metaText.title}",
-      "position": 1
-    },
-    {
-      "@type": "ListItem",
-      "item": "${metaText.canonical}${metaMenu.link}",
-      "name": "${metaMenu.title}",
-      "position": 2
-    }
-  ]
-}`;
+const jsonLdItems = [
+  {
+    "@type": "ListItem",
+    item: `${metaText.canonical}${metaMenu.link}`,
+    name: `${metaMenu.title}`,
+    position: 2,
+  },
+];
+
+const jsonLd = JSON.stringify({
+  ...jsonLdBase,
+  ...{ itemListElement: [...jsonLdBase.itemListElement, ...jsonLdItems] },
+});
 
 export default async function Menu() {
   const data = await getContents();

@@ -16,3 +16,16 @@ export const ogpCommon = {
     },
   ],
 };
+
+export const jsonLdBase = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      item: metaText.canonical,
+      name: metaText.title,
+      position: 1,
+    },
+  ],
+};
