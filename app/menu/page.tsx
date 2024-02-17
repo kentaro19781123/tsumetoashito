@@ -6,7 +6,7 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { metaMenu } from "@/const/menu";
-import { metaText } from "@/const/meta";
+import { metaText, ogpCommon } from "@/const/meta";
 import { client } from "@/libs/client";
 import { menuType } from "@/types";
 
@@ -20,7 +20,32 @@ const getContents = async () => {
 export const metadata: Metadata = {
   title: `${metaMenu.title} | ${metaText.title}`,
   description: `${metaMenu.title} ${metaText.description}`,
+  openGraph: {
+    title: `${metaMenu.title} | ${metaText.title}`,
+    description: `${metaMenu.title} ${metaText.description}`,
+    url: `${metaMenu.link}`,
+    ...ogpCommon,
+  },
 };
+
+const jsonLd = `{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "${metaText.canonical}",
+      "name": "${metaText.title}",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "${metaText.canonical}${metaMenu.link}",
+      "name": "${metaMenu.title}",
+      "position": 2
+    }
+  ]
+}`;
 
 export default async function Menu() {
   const data = await getContents();
@@ -101,6 +126,12 @@ export default async function Menu() {
         <Footer pageId="menu" />
       </Suspense>
       <FooterButton pageId="menu" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: jsonLd,
+        }}
+        type="application/ld+json"
+      ></script>
     </>
   );
 }

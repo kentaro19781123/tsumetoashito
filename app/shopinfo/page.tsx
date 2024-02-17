@@ -6,7 +6,7 @@ import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
 import { Title } from "@/component/common/Title";
 import { metaShopInfo } from "@/const/menu";
-import { metaText } from "@/const/meta";
+import { metaText, ogpCommon } from "@/const/meta";
 import { client } from "@/libs/client";
 import { shopInfoType } from "@/types";
 
@@ -21,7 +21,32 @@ const getContents = async () => {
 export const metadata: Metadata = {
   title: `${metaShopInfo.title} | ${metaText.title}`,
   description: `${metaShopInfo.title} ${metaText.description}`,
+  openGraph: {
+    title: `${metaShopInfo.title} | ${metaText.title}`,
+    description: `${metaShopInfo.title} ${metaText.description}`,
+    url: `${metaShopInfo.link}`,
+    ...ogpCommon,
+  },
 };
+
+const jsonLd = `{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "${metaText.canonical}",
+      "name": "${metaText.title}",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "${metaText.canonical}${metaShopInfo.link}",
+      "name": "${metaShopInfo.title}",
+      "position": 2
+    }
+  ]
+}`;
 
 export default async function ShopInfo() {
   const { title, contentBlock } = await getContents();
@@ -68,6 +93,12 @@ export default async function ShopInfo() {
         <Footer pageId="shopinfo" />
       </Suspense>
       <FooterButton pageId="shopinfo" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: jsonLd,
+        }}
+        type="application/ld+json"
+      ></script>
     </>
   );
 }

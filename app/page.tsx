@@ -7,12 +7,31 @@ import { About } from "@/component/Top/About";
 import { Case } from "@/component/Top/Case";
 import { Mv } from "@/component/Top/Mv";
 import { Reserve } from "@/component/Top/Reserve";
-import { metaText } from "@/const/meta";
+import { metaText, ogpCommon } from "@/const/meta";
 
 export const metadata: Metadata = {
   title: metaText.title,
   description: metaText.description,
+  openGraph: {
+    title: metaText.title,
+    description: metaText.description,
+    url: "/",
+    ...ogpCommon,
+  },
 };
+
+const jsonLd = `{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "${metaText.canonical}",
+      "name": "${metaText.title}",
+      "position": 1
+    },
+  ]
+}`;
 
 export default function Home() {
   return (
@@ -30,6 +49,12 @@ export default function Home() {
         <Footer pageId="top" />
       </Suspense>
       <FooterButton pageId="top" />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: jsonLd,
+        }}
+        type="application/ld+json"
+      ></script>
     </>
   );
 }
