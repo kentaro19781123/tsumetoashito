@@ -30,9 +30,9 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
     const containerEl = document.querySelector<HTMLDivElement>(
       `[data-gallery-container=${id}]`
     );
+    // if (containerEl) containerEl.scrollTo({ top: 0 });
     dialogEl?.showModal();
-    if (containerEl) containerEl.scrollTop = 0;
-
+    if (containerEl) containerEl.scrollTo({ top: 0 });
     setIsOpen(true);
   };
 
