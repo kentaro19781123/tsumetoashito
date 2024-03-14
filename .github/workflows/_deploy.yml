@@ -16,7 +16,7 @@ jobs:
       - name: load dist
         uses: actions/download-artifact@v4
         with:
-          name: public
+          name: out
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
