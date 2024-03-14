@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  workflow_call:
+
+jobs:
+  Deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - run: echo ${{github.ref}}
+
+      - name: load dist
+        uses: actions/download-artifact@v4
+        with:
+          name: public
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_IAM_ROLE }}"
+
+      - name: s3 Deploy
+        run: aws s3 sync --exact-timestamp --delete ./ ${{ secrets.AWS_S3_BUCKET_NAME }}
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'

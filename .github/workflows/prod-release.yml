@@ -1,0 +1,28 @@
+name: Prod Build and Deploy
+
+on:
+  # 手動実行
+  workflow_dispatch:
+
+  # MicroCMS Webhook
+  repository_dispatch:
+    types: [update]
+
+jobs:
+  Build:
+    name: Build
+    uses: ./.github/workflows/_build.yml
+    with:
+      environment: production
+    secrets: inherit
+    concurrency:
+      group: production_rule_build
+      cancel-in-progress: true
+
+  Deploy:
+    name: Deploy
+    uses: ./.github/workflows/_deploy.yml
+    with:
+      environment: production
+    secrets: inherit
+    needs: Build
