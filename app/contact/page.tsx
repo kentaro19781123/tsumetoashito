@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { cssStyle } from "./page.css";
+import { cssStyle } from "./contact.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
@@ -34,6 +34,7 @@ const jsonLd = JSON.stringify({
 });
 
 export default async function Contact() {
+  const form = `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6M4-yh5SU6llauWtTiHbnR_iPMTUFBSqda5YCzpz7q6vmQg/viewform?embedded=true" width="640" height="1776" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>`;
   return (
     <>
       <Suspense>
@@ -43,6 +44,13 @@ export default async function Contact() {
         <div className={cssStyle.section} id="contact">
           <div className={cssStyle.inner}>
             <Title text="お問合せ" />
+
+            <div
+              className={cssStyle.formBox}
+              dangerouslySetInnerHTML={{
+                __html: form,
+              }}
+            />
           </div>
         </div>
       </main>

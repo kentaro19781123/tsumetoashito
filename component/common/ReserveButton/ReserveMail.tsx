@@ -4,7 +4,7 @@ import { cssStyle } from "./reserve-button.css";
 export const ReserveMail: React.FC = () => {
   return (
     <div className={cssStyle.wrap}>
-      <a className={`${cssStyle.button} ${cssStyle.mail}`} href="#">
+      <a className={`${cssStyle.button} ${cssStyle.mail}`} href="/contact/">
         <span className={cssStyle.iconMail}>
           <img
             alt="MAILで予約"

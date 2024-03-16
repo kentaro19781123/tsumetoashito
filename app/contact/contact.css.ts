@@ -19,7 +19,15 @@ const section = style([
   }),
 ]);
 
+const formBox = style([
+  {
+    textAlign: "center",
+  },
+  pcStyle({}),
+]);
+
 export const cssStyle = {
   inner,
   section,
+  formBox,
 };
