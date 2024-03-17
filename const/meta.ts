@@ -1,7 +1,8 @@
 export const metaText = {
   title: "爪と足と 爪甲鉤彎症の経験者が開いたフットケアサロン",
-  description: "descriptiondescriptiondescriptiondescription",
-  canonical: "https://tsumetoashito.com",
+  description:
+    "浜松市中央区上島にある、爪甲鉤彎症（そうこうこうわんしょう）を経験したフスフレーガーによるフットケアサロンです。爪甲鉤彎症、爪切り、足裏ケアもご相談ください。",
+  canonical: "https://tsumetoashito.com/",
 };
 
 export const ogpCommon = {
