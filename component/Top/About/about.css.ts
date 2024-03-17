@@ -51,6 +51,7 @@ const photoContent = style([
   pcStyle({
     gap: "10px",
     marginTop: 0,
+    flexShrink: 0,
   }),
 ]);
 const photo = style([
@@ -59,7 +60,7 @@ const photo = style([
     fontSize: `${vars.font.F14}`,
   },
   pcStyle({
-    maxWidth: "280px",
+    maxWidth: "210px",
   }),
 ]);
 
