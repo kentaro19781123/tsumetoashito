@@ -55,13 +55,23 @@ const photoContent = style([
 ]);
 const photo = style([
   {
-    width: "50%",
-    fontSize: `${vars.font.F10}`,
+    width: "100%",
+    fontSize: `${vars.font.F14}`,
   },
   pcStyle({
     maxWidth: "280px",
   }),
 ]);
+
+// const photo = style([
+//   {
+//     width: "50%",
+//     fontSize: `${vars.font.F10}`,
+//   },
+//   pcStyle({
+//     maxWidth: "280px",
+//   }),
+// ]);
 
 const photoImg = style({
   width: "100%",

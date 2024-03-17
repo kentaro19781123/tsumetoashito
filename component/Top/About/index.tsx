@@ -25,7 +25,7 @@ export const About: React.FC = async () => {
             }}
           />
           <div className={cssStyle.photoContent}>
-            <div className={cssStyle.photo}>
+            {/* <div className={cssStyle.photo}>
               <img
                 className={cssStyle.photoImg}
                 src={data.contentBlock[0].photoLeft.url}
@@ -37,7 +37,7 @@ export const About: React.FC = async () => {
                   __html: data.contentBlock[0].captionLeft,
                 }}
               />
-            </div>
+            </div> */}
             <div className={cssStyle.photo}>
               <img
                 className={cssStyle.photoImg}
