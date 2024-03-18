@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { style, globalStyle } from "@vanilla-extract/css";
 import { innerStyle, pcStyle } from "@/app/styles/styles.css";
 import { vars } from "@/app/styles/var.css";
 
@@ -25,6 +25,10 @@ const formBox = style([
   },
   pcStyle({}),
 ]);
+
+globalStyle(`${formBox} iframe`, {
+  width: "100%",
+});
 
 export const cssStyle = {
   inner,

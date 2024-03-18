@@ -7,13 +7,13 @@ export const ReserveMail: React.FC = () => {
       <a className={`${cssStyle.button} ${cssStyle.mail}`} href="/contact/">
         <span className={cssStyle.iconMail}>
           <img
-            alt="MAILで予約"
+            alt="MAILから予約"
             className={cssStyle.icon}
             src="/img/mail_logo.png"
             width="30"
           />
         </span>
-        <span className={cssStyle.text}>MAILで予約</span>
+        <span className={cssStyle.text}>MAILから予約</span>
       </a>
     </div>
   );

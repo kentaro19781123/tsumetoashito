@@ -11,13 +11,13 @@ export const ReserveLine: React.FC = () => {
       >
         <span className={cssStyle.iconLine}>
           <img
-            alt="LINEで予約"
+            alt="LINEから予約"
             className={cssStyle.icon}
             src="/img/line_logo.png"
             width="30"
           />
         </span>
-        <span className={cssStyle.text}>LINEで予約</span>
+        <span className={cssStyle.text}>LINEから予約</span>
       </a>
     </div>
   );
