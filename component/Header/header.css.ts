@@ -68,7 +68,7 @@ const logoImage = style({
 
 const lineBtn = style([
   {
-    width: "120px",
+    width: "140px",
     position: "absolute",
     right: "40px",
     top: "11px",
