@@ -24,6 +24,9 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   const search = searchParams.get("pageId");
   const isLoaded = useDocumentLoadCompleted();
   const isPc = useIsPc();
+  const headerMenuList = menuList.filter(
+    (x) => x.title !== "メディア掲載について"
+  );
   useOverflow(isOpen);
 
   const offset = isPc ? 85 : 70;
@@ -61,9 +64,9 @@ export const Header: React.FC<Props> = ({ pageId }) => {
             </div>
           )}
           <div className={cssStyle.pcMenu}>
-            {menuList && (
+            {headerMenuList && (
               <ul className={cssStyle.pcMenuUl}>
-                {menuList.map((x) => (
+                {headerMenuList.map((x) => (
                   <li className={cssStyle.pcMenuLi} key={x.title}>
                     {pageId === "top" && x.title === "サロンについて" ? (
                       <div
@@ -90,7 +93,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
             >
               <span className={cssStyle.menuBtnSpan} data-open={isOpen}></span>
             </div>
-            {menuList && (
+            {headerMenuList && (
               <>
                 <div
                   className={cssStyle.menuBg}
@@ -113,7 +116,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                         HOME
                       </a>
                     </li>
-                    {menuList.map((x) => (
+                    {headerMenuList.map((x) => (
                       <li className={cssStyle.spMenuItemsLi} key={x.title}>
                         {pageId === "top" && x.title === "サロンについて" ? (
                           <div

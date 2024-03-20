@@ -28,6 +28,11 @@ export const metaContact = {
   link: "/contact/",
 };
 
+export const metaForMedia = {
+  title: "メディア掲載について",
+  link: "/formedia/",
+};
+
 export const menuList = [
   metaAbout,
   metaCase,
@@ -35,4 +40,5 @@ export const menuList = [
   metaShopInfo,
   metaTerms,
   metaContact,
+  metaForMedia,
 ];
