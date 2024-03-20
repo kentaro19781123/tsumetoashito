@@ -34,7 +34,7 @@ const jsonLd = JSON.stringify({
 });
 
 export default async function ForMedia() {
-  const form = `<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSerqz4ykWtyDzhWczEdWCvw--nqjnBGi_c77eO23KUOSkVLzQ/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>`;
+  const form = `<iframe frameborder="no" src="https://docs.google.com/forms/d/e/1FAIpQLSerqz4ykWtyDzhWczEdWCvw--nqjnBGi_c77eO23KUOSkVLzQ/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>`;
   return (
     <>
       <Suspense>
