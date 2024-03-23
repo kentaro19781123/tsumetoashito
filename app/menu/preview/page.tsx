@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import MenuContents from "./contents";
-import { Footer } from "@/component/Footer";
-import { FooterButton } from "@/component/FooterButton";
-import { Header } from "@/component/Header";
+import { MenuPreview } from "./preview";
+// import { Footer } from "@/component/Footer";
+// import { FooterButton } from "@/component/FooterButton";
+// import { Header } from "@/component/Header";
 import { metaMenu } from "@/const/menu";
 import { metaText, ogpCommon } from "@/const/meta";
-import { client } from "@/libs/client";
-import { menuType } from "@/types";
-
-const getContents = async () => {
-  const response = await client.get<menuType>({
-    endpoint: "menu",
-  });
-  return response.contents;
-};
 
 export const metadata: Metadata = {
   title: `${metaMenu.title} | ${metaText.title}`,
@@ -28,18 +19,19 @@ export const metadata: Metadata = {
 };
 
 export default async function Menu() {
-  const data = await getContents();
-
   return (
     <>
-      <Suspense>
+      {/* <Suspense>
         <Header pageId="menu" />
-      </Suspense>
-      <MenuContents data={data} />
+      </Suspense> */}
       <Suspense>
+        <MenuPreview />
+      </Suspense>
+
+      {/* <Suspense>
         <Footer pageId="menu" />
       </Suspense>
-      <FooterButton pageId="menu" />
+      <FooterButton pageId="menu" /> */}
     </>
   );
 }

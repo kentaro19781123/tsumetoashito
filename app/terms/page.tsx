@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { cssStyle } from "./page.css";
+import { TermsContents } from "./contents";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
-import { Title } from "@/component/common/Title";
 import { metaTerms } from "@/const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
 import { client } from "@/libs/client";
@@ -44,7 +43,7 @@ const jsonLd = JSON.stringify({
 });
 
 export default async function Terms() {
-  const { title, contentBlock } = await getContents();
+  const data = await getContents();
 
   return (
     <>
@@ -52,17 +51,7 @@ export default async function Terms() {
         <Header pageId="contact" />
       </Suspense>
       <main>
-        <div className={cssStyle.section}>
-          <div className={cssStyle.inner}>
-            <Title text={title} />
-            <div
-              className={`richEditor ${cssStyle.textWrap}`}
-              dangerouslySetInnerHTML={{
-                __html: contentBlock[0].text,
-              }}
-            />
-          </div>
-        </div>
+        <TermsContents data={data} />
       </main>
       <Suspense>
         <Footer pageId="terms" />
