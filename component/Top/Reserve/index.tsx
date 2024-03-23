@@ -1,8 +1,4 @@
 import { ReserveContents } from "./contents";
-// import { cssStyle } from "./reserve.css";
-// import { ReserveLine } from "@/component/common/ReserveButton/ReserveLine";
-// import { ReserveMail } from "@/component/common/ReserveButton/ReserveMail";
-// import { Title } from "@/component/common/Title";
 import { client } from "@/libs/client";
 import { reserveType } from "@/types";
 
