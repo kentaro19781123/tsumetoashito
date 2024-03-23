@@ -29,7 +29,7 @@ export const metaContact = {
 };
 
 export const metaForMedia = {
-  title: "メディア掲載について",
+  title: "メディア関係の方",
   link: "/formedia/",
 };
 

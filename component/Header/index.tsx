@@ -24,9 +24,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   const search = searchParams.get("pageId");
   const isLoaded = useDocumentLoadCompleted();
   const isPc = useIsPc();
-  const headerMenuList = menuList.filter(
-    (x) => x.title !== "メディア掲載について"
-  );
+  const headerMenuList = menuList.filter((x) => x.title !== "メディア関係の方");
   useOverflow(isOpen);
 
   const offset = isPc ? 85 : 70;

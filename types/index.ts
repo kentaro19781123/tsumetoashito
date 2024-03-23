@@ -63,7 +63,7 @@ export type menuType = {
 } & MicroCMSContentId &
   MicroCMSDate;
 
-type menuContentsType = {
+export type menuContentsType = {
   title: string;
   price: string;
   caption: string;
@@ -90,7 +90,7 @@ export type reserveType = {
   title: string;
 };
 
-type reserveContentType = {
+export type reserveContentType = {
   fieldId: "reserve";
   text: string;
   button: reserveButtonType[];
