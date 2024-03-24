@@ -47,6 +47,7 @@ const photoContent = style([
     display: "flex",
     gap: "3px",
     marginTop: "16px",
+    justifyContent: "center",
   },
   pcStyle({
     gap: "10px",
@@ -56,10 +57,11 @@ const photoContent = style([
 ]);
 const photo = style([
   {
-    width: "100%",
+    width: "60%",
     fontSize: `${vars.font.F14}`,
   },
   pcStyle({
+    width: "100%",
     maxWidth: "210px",
   }),
 ]);
