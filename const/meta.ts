@@ -11,7 +11,7 @@ export const ogpCommon = {
   siteName: metaText.title,
   images: [
     {
-      url: `${metaText.canonical}/img/og.png`,
+      url: `${metaText.canonical}img/og.png`,
       width: 960,
       height: 504,
     },
