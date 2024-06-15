@@ -30,6 +30,9 @@ const getCategoryContents = async () => {
 export const metadata: Metadata = {
   title: `${metaCase.title} | ${metaText.title}`,
   description: `${metaCase.title} ${metaText.description}`,
+  alternates: {
+    canonical: `${metaCase.link}`,
+  },
   openGraph: {
     title: `${metaCase.title} | ${metaText.title}`,
     description: `${metaCase.title} ${metaText.description}`,
