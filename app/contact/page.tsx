@@ -11,6 +11,9 @@ import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
 export const metadata: Metadata = {
   title: `${metaContact.title} | ${metaText.title}`,
   description: `${metaContact.title} ${metaText.description}`,
+  alternates: {
+    canonical: `${metaContact.link}`,
+  },
   openGraph: {
     title: `${metaContact.title} | ${metaText.title}`,
     description: `${metaContact.title} ${metaText.description}`,

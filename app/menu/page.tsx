@@ -19,6 +19,9 @@ const getContents = async () => {
 export const metadata: Metadata = {
   title: `${metaMenu.title} | ${metaText.title}`,
   description: `${metaMenu.title} ${metaText.description}`,
+  alternates: {
+    canonical: `${metaMenu.link}`,
+  },
   openGraph: {
     title: `${metaMenu.title} | ${metaText.title}`,
     description: `${metaMenu.title} ${metaText.description}`,
