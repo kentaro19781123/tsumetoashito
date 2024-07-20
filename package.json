@@ -30,7 +30,7 @@
     "@vanilla-extract/next-plugin": "^2.3.1",
     "dayjs": "^1.11.10",
     "eslint": "^8.52.0",
-    "eslint-config-next": "14.0.1",
+    "eslint-config-next": "14.2.5",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
     "microcms-js-sdk": "^2.7.0",
