@@ -9,3 +9,17 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    groups:
+      react:
+        patterns:
+          - "*react*"
+      eslint:
+        patterns:
+          - "*eslint*"
+      vanilla:
+        patterns:
+          - "@vanilla-extract*"
+  - package-ecosystem: "github-actions" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
