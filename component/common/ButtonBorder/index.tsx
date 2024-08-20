@@ -10,7 +10,7 @@ type Props = {
 export const ButtonBorder: React.FC<Props> = ({ buttonText, url }) => {
   return (
     <div className={cssStyle.wrap}>
-      <Link href={url} className={cssStyle.buttonStyle}>
+      <Link href={url} className={cssStyle.buttonStyle} scroll={false}>
         {buttonText}
       </Link>
     </div>

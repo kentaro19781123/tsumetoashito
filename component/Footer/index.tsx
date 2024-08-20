@@ -25,7 +25,7 @@ export const Footer: React.FC<Props> = ({ pageId }) => {
                   {x.title}
                 </div>
               ) : (
-                <Link className={cssStyle.link} href={x.link}>
+                <Link className={cssStyle.link} href={x.link} scroll={false}>
                   {x.title}
                 </Link>
               )}
