@@ -11,7 +11,7 @@
   "dependencies": {
     "@vanilla-extract/css": "^1.15.5",
     "@vanilla-extract/dynamic": "^2.1.2",
-    "jotai": "^2.6.1",
+    "jotai": "^2.9.3",
     "next": "14.0.4",
     "normalize.css": "^8.0.1",
     "react": "^18",
