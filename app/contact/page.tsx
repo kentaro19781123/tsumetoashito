@@ -4,7 +4,7 @@ import { cssStyle } from "./contact.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
-import { Title } from "@/component/common/Title";
+import { Title } from "@/component/Title";
 import { metaContact } from "@/const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
 

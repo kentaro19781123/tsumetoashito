@@ -1,6 +1,6 @@
 import { cssStyle } from "./case.css";
 import { Slide } from "@/component/Top/Case/Slide";
-import { Title } from "@/component/common/Title";
+import { Title } from "@/component/Title";
 import { metaCase } from "@/const/menu";
 import { client } from "@/libs/client";
 import { treatmentContentsType, treatmentCategoryType } from "@/types";

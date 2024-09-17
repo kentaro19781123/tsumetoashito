@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { Title } from "@/component/common/Title";
+import { Title } from "@/component/Title";
 
 export const CasePreview: React.FC = async () => {
   const searchParams = useSearchParams();

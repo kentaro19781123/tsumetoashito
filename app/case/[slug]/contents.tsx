@@ -1,6 +1,6 @@
 import { cssStyle } from "./page.css";
-import { ButtonBorder } from "@/component/common/ButtonBorder";
-import { Title } from "@/component/common/Title";
+import { ButtonBorder } from "@/component/ButtonBorder";
+import { Title } from "@/component/Title";
 import { metaCase } from "@/const/menu";
 import { treatmentContentsType } from "@/types";
 

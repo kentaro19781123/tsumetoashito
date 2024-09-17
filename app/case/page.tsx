@@ -5,7 +5,7 @@ import { cssStyle } from "./page.css";
 import { Footer } from "@/component/Footer";
 import { FooterButton } from "@/component/FooterButton";
 import { Header } from "@/component/Header";
-import { Title } from "@/component/common/Title";
+import { Title } from "@/component/Title";
 import { metaCase } from "@/const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
 import { client } from "@/libs/client";

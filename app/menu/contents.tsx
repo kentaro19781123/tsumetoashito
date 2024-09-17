@@ -1,5 +1,5 @@
 import { cssStyle } from "./page.css";
-import { Title } from "@/component/common/Title";
+import { Title } from "@/component/Title";
 import { metaMenu } from "@/const/menu";
 import { jsonLdBase, metaText } from "@/const/meta";
 import { menuType } from "@/types";

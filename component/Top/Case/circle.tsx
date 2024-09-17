@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "swiper/swiper-bundle.css";
 import { cssStyle } from "./case.css";
-import { ButtonBorder } from "@/component/common/ButtonBorder";
+import { ButtonBorder } from "@/component/ButtonBorder";
 import { metaCase } from "@/const/menu";
 import { useOverflow } from "@/hooks/useOverflow";
 

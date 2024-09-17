@@ -2,8 +2,8 @@
 
 import { useAtom } from "jotai";
 import { cssStyle } from "./footer-button.css";
-import { ReserveLine } from "@/component/common/ReserveButton/ReserveLine";
-import { ReserveMail } from "@/component/common/ReserveButton/ReserveMail";
+import { ReserveLine } from "@/component/ReserveButton/ReserveLine";
+import { ReserveMail } from "@/component/ReserveButton/ReserveMail";
 import { mvInViewAtom } from "@/store/atom";
 
 type Props = {

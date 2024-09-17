@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { cssStyle } from "./header.css";
-import { ReserveLine } from "@/component/common/ReserveButton/ReserveLine";
+import { ReserveLine } from "@/component/ReserveButton/ReserveLine";
 import { menuList } from "@/const/menu";
 import { useDocumentLoadCompleted } from "@/hooks/useDocumentLoadCompleted";
 import { useIsPc } from "@/hooks/useIsPc";
