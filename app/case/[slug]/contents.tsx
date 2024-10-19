@@ -1,7 +1,7 @@
 import { cssStyle } from "./page.css";
-import { ButtonBorder } from "@/component/common/ButtonBorder";
-import { Title } from "@/component/common/Title";
-import { metaCase } from "@/const/menu";
+import { ButtonBorder } from "@/app/_component/ButtonBorder";
+import { Title } from "@/app/_component/Title";
+import { metaCase } from "@/app/_const/menu";
 import { treatmentContentsType } from "@/types";
 
 type Props = {

@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import React, { Suspense } from "react";
 import { CategoryContents } from "./categoryContents";
 import { cssStyle } from "./page.css";
-import { Footer } from "@/component/Footer";
-import { FooterButton } from "@/component/FooterButton";
-import { Header } from "@/component/Header";
-import { Title } from "@/component/common/Title";
-import { metaCase } from "@/const/menu";
-import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
-import { client } from "@/libs/client";
+import { Footer } from "@/app/_component/Footer";
+import { FooterButton } from "@/app/_component/FooterButton";
+import { Header } from "@/app/_component/Header";
+import { Title } from "@/app/_component/Title";
+import { metaCase } from "@/app/_const/menu";
+import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
+import { client } from "@/app/_libs/client";
 import { treatmentCategoryType, treatmentType } from "@/types";
 
 const getContents = async () => {

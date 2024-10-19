@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { cssStyle } from "./contact.css";
-import { Footer } from "@/component/Footer";
-import { FooterButton } from "@/component/FooterButton";
-import { Header } from "@/component/Header";
-import { Title } from "@/component/common/Title";
-import { metaForMedia } from "@/const/menu";
-import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
+import { Footer } from "@/app/_component/Footer";
+import { FooterButton } from "@/app/_component/FooterButton";
+import { Header } from "@/app/_component/Header";
+import { Title } from "@/app/_component/Title";
+import { metaForMedia } from "@/app/_const/menu";
+import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 
 export const metadata: Metadata = {
   title: `${metaForMedia.title} | ${metaText.title}`,

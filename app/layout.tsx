@@ -2,7 +2,7 @@ import { Provider } from "jotai";
 import "normalize.css";
 import "./globals.css";
 import { Metadata } from "next";
-import { metaText } from "@/const/meta";
+import { metaText } from "@/app/_const/meta";
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 import { cssStyle } from "./page.css";
-import { Title } from "@/component/common/Title";
-import { metaMenu } from "@/const/menu";
-import { jsonLdBase, metaText } from "@/const/meta";
+import { Title } from "@/app/_component/Title";
+import { metaMenu } from "@/app/_const/menu";
+import { jsonLdBase, metaText } from "@/app/_const/meta";
 import { menuType } from "@/types";
 
 type Props = {

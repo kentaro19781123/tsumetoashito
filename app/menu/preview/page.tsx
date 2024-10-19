@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { MenuPreview } from "./preview";
-import { metaMenu } from "@/const/menu";
-import { metaText, ogpCommon } from "@/const/meta";
+import { metaMenu } from "@/app/_const/menu";
+import { metaText, ogpCommon } from "@/app/_const/meta";
 
 export const metadata: Metadata = {
   title: `${metaMenu.title} | ${metaText.title}`,

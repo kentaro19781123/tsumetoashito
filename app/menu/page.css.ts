@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
-import { innerStyle, pcStyle } from "@/app/styles/styles.css";
-import { vars } from "@/app/styles/var.css";
+import { innerStyle, pcStyle } from "@/app/_styles/styles.css";
+import { vars } from "@/app/_styles/var.css";
 
 const section = style([
   {

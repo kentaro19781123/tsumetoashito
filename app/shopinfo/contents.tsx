@@ -1,5 +1,5 @@
 import { cssStyle } from "./page.css";
-import { Title } from "@/component/common/Title";
+import { Title } from "@/app/_component/Title";
 import { shopInfoType } from "@/types";
 
 type Props = {
