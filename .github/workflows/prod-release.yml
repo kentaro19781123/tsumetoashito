@@ -1,8 +1,11 @@
 name: Prod Build and Deploy
 
 on:
+  release:
+    types: [published]
+
   # 手動実行
-  workflow_dispatch:
+  # workflow_dispatch:
 
   # MicroCMS Webhook
   repository_dispatch:
