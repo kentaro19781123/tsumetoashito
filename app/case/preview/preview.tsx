@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import { SWRResponse } from "swr";
 import useSWRImmutable from "swr/immutable";
 import { CaseContents } from "../[slug]/contents";
-import { fetcher } from "@/libs/client";
+import { fetcher } from "@/app/_libs/client";
 import { treatmentContentsType } from "@/types";
 
 export const CasePreview: React.FC = () => {

@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
 import { cssStyle } from "./page.css";
-import { ButtonBorder } from "@/component/ButtonBorder";
-import { Footer } from "@/component/Footer";
-import { FooterButton } from "@/component/FooterButton";
-import { Header } from "@/component/Header";
-import { Title } from "@/component/Title";
-import { metaCase } from "@/const/menu";
-import { jsonLdBase, metaText, ogpCommon } from "@/const/meta";
-import { client } from "@/libs/client";
+import { ButtonBorder } from "@/app/_component/ButtonBorder";
+import { Footer } from "@/app/_component/Footer";
+import { FooterButton } from "@/app/_component/FooterButton";
+import { Header } from "@/app/_component/Header";
+import { Title } from "@/app/_component/Title";
+import { metaCase } from "@/app/_const/menu";
+import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
+import { client } from "@/app/_libs/client";
 import { treatmentContentsType, treatmentType } from "@/types";
 
 type Props = {

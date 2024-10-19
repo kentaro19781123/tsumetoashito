@@ -4,8 +4,8 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { SWRResponse } from "swr";
 import useSWRImmutable from "swr/immutable";
+import { fetcher } from "@/app/_libs/client";
 import MenuContents from "@/app/menu/contents";
-import { fetcher } from "@/libs/client";
 import { menuContentsType } from "@/types";
 
 export const MenuPreview: React.FC = () => {

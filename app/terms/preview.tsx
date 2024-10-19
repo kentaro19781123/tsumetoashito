@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { SWRResponse } from "swr";
 import useSWRImmutable from "swr/immutable";
 import { TermsContents } from "./contents";
-import { fetcher } from "@/libs/client";
+import { fetcher } from "@/app/_libs/client";
 import { termsType } from "@/types";
 
 export const TermsPreview: React.FC = () => {

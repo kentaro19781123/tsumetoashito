@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { SWRResponse } from "swr";
 import useSWRImmutable from "swr/immutable";
 import { ShopInfoContents } from "./contents";
-import { fetcher } from "@/libs/client";
+import { fetcher } from "@/app/_libs/client";
 import { shopInfoType } from "@/types";
 
 export const ShopInfoPreview: React.FC = () => {

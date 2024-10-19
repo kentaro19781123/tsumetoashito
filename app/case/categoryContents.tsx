@@ -2,7 +2,7 @@
 
 import React from "react";
 import { cssStyle } from "./page.css";
-import { Title } from "@/component/Title";
+import { Title } from "@/app/_component/Title";
 import { treatmentContentsType } from "@/types";
 
 type Props = {
