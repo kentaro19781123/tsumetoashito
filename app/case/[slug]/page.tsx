@@ -12,14 +12,14 @@ import { client } from "@/app/_libs/client";
 import { treatmentContentsType, treatmentType } from "@/types";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 // metaタグ生成
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const data = await getCategoryContents(slug);
   return {
     title: `${data.treatmentTitle} | ${metaText.title}`,
@@ -63,7 +63,7 @@ export async function generateStaticParams() {
 
 // ページ
 export default async function Page({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
 
   // APIにコンテンツID（slug）を渡してデータ取得
   const data = await getCategoryContents(slug);
