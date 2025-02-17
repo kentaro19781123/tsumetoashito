@@ -27,7 +27,7 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.19.1",
     "@typescript-eslint/parser": "^8.19.1",
-    "@vanilla-extract/next-plugin": "^2.4.9",
+    "@vanilla-extract/next-plugin": "^2.4.10",
     "dayjs": "^1.11.13",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.1.3",
