@@ -14,7 +14,7 @@ jobs:
       - run: echo ${{github.ref}}
 
       - name: load dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: out
 
