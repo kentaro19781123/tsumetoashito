@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { cssStyle } from "./page.css";
+// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
@@ -94,14 +94,14 @@ export default async function Page({ params }: Props) {
         <Header pageId="case" />
       </Suspense>
       <main>
-        <div className={cssStyle.section}>
-          <div className={cssStyle.inner}>
+        <div className="pt-[60px] pb-0 md:pt-[74px] md:pb-0">
+          <div className="w-full max-w-full mx-auto p-4 md:w-[1000px] md:max-w-[1000px]">
             <Title text={metaCase.title} />
             <Title Tag="h2" level={2} text={data.treatmentTitle} />
-            <div className={cssStyle.photoWrap}>
+            <div className="flex justify-center items-center my-8">
               <img
                 alt={data.treatmentTitle}
-                className={cssStyle.photo}
+                className="w-full max-w-md h-auto rounded-lg shadow-md"
                 src={data.treatmentPhoto.url}
               />
             </div>
@@ -112,7 +112,7 @@ export default async function Page({ params }: Props) {
               }}
             ></div>
 
-            <div className={cssStyle.buttonWrap}>
+            <div className="flex justify-center mt-8">
               <ButtonBorder
                 buttonText="一覧へ戻る"
                 url={`../?pageId=${data.treatmentCategory}`}

@@ -1,4 +1,4 @@
-import { cssStyle } from "./reserve.css";
+// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { ReserveLine } from "@/app/_component/ReserveButton/ReserveLine";
 import { ReserveMail } from "@/app/_component/ReserveButton/ReserveMail";
 import { Title } from "@/app/_component/Title";
@@ -11,8 +11,8 @@ type Props = {
 
 export const ReserveContents: React.FC<Props> = ({ title, contentBlock }) => {
   return (
-    <section className={cssStyle.section}>
-      <div className={cssStyle.inner}>
+    <section className="py-12">
+      <div className="w-full max-w-full mx-auto px-4">
         <Title text={title} />
         <div
           className="richEditor"
@@ -20,10 +20,10 @@ export const ReserveContents: React.FC<Props> = ({ title, contentBlock }) => {
             __html: contentBlock[0].text,
           }}
         />
-        <div className={cssStyle.buttonWrap}>
+        <div className="flex flex-col items-center justify-center mt-5 md:flex-row md:gap-[90px] md:py-6 md:pb-18">
           {contentBlock[0].button.map((item) => (
-            <div className={cssStyle.button} key={item.text}>
-              <div className={cssStyle.buttonText}>
+            <div className="flex flex-col items-center mb-4" key={item.text}>
+              <div className="mb-2 md:mb-4">
                 <div
                   className="richEditor"
                   dangerouslySetInnerHTML={{
@@ -31,7 +31,7 @@ export const ReserveContents: React.FC<Props> = ({ title, contentBlock }) => {
                   }}
                 />
               </div>
-              <div className={cssStyle.buttonLink}>
+              <div className="w-[130px] md:w-[230px]">
                 {item.type[0] === "line" ? <ReserveLine /> : <ReserveMail />}
               </div>
             </div>

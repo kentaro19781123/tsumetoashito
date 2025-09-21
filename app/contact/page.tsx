@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { cssStyle } from "./contact.css";
+// vanilla-extractからTailwind CSSへ移行
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
@@ -44,12 +44,12 @@ export default async function Contact() {
         <Header pageId="contact" />
       </Suspense>
       <main>
-        <div className={cssStyle.section} id="contact">
-          <div className={cssStyle.inner}>
+        <div className="py-6 md:py-12" id="contact">
+          <div className="px-4 md:px-8">
             <Title text="お問合せ" />
 
             <div
-              className={cssStyle.formBox}
+              className="text-center [&>iframe]:w-full mb-6"
               dangerouslySetInnerHTML={{
                 __html: form,
               }}

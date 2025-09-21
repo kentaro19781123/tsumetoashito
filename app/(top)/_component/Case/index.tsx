@@ -1,4 +1,4 @@
-import { cssStyle } from "./case.css";
+// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Slide } from "@/app/(top)/_component/Case/slide";
 import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
@@ -26,9 +26,9 @@ export const Case: React.FC = async () => {
   const categoryData = await getCategoryContents();
 
   return (
-    <section className={cssStyle.section}>
-      <div className={cssStyle.inner}>
-        <div className={cssStyle.titleWrap}>
+    <section className="pt-12">
+      <div className="w-full max-w-full mx-auto">
+        <div className="px-4">
           <Title text={metaCase.title} />
         </div>
         <Slide category={categoryData} items={treatmentData} />

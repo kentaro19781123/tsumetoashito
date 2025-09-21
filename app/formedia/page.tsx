@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { cssStyle } from "./contact.css";
+// Tailwind CSSへ移行のため、vanilla-extractのimportを削除
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
@@ -37,19 +37,19 @@ const jsonLd = JSON.stringify({
 });
 
 export default async function ForMedia() {
-  const form = `<iframe frameborder="no" src="https://docs.google.com/forms/d/e/1FAIpQLSerqz4ykWtyDzhWczEdWCvw--nqjnBGi_c77eO23KUOSkVLzQ/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>`;
+  const form = `<iframe class='w-full' frameborder="no" src="https://docs.google.com/forms/d/e/1FAIpQLSerqz4ykWtyDzhWczEdWCvw--nqjnBGi_c77eO23KUOSkVLzQ/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>`;
   return (
     <>
       <Suspense>
         <Header pageId="forMedia" />
       </Suspense>
       <main>
-        <div className={cssStyle.section} id="forMedia">
-          <div className={cssStyle.inner}>
+        <div className="py-8 px-4 md:py-16 md:px-32" id="forMedia">
+          <div className="max-w-3xl mx-auto p-4">
             <Title text="お問合せ（メディア関係の方）" />
 
             <div
-              className={cssStyle.formBox}
+              className="text-center"
               dangerouslySetInnerHTML={{
                 __html: form,
               }}

@@ -1,9 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #e46ca3;
+  --color-primary-bg: #ffe7f2;
+  --color-primary-font: #ff6699;
+  --color-primary-hover: #cc6699;
+  --color-secondary: #4a4e5a;
+  --color-base: #333;
+  --color-gray: #e9e9e9;
+  --color-gray-light: #c3c3c3;
+  --color-white: #fff;
+  --color-green: #06c755;
+  --color-orange: #ff9231;
+}
+
 /* @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap"); */
 /* "Zen Maru Gothic",  */
-body {
-  font-family: "YuGothic", "Yu Gothic", "游ゴシック", "ヒラギノ角ゴ Pro W3",
+/* body {
+  font-family:
+    "YuGothic", "Yu Gothic", "游ゴシック", "ヒラギノ角ゴ Pro W3",
     "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", serif;
-  color: #333;
+  color: var(--color-base);
 }
 h1,
 h2,
@@ -28,7 +45,7 @@ li {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
+} */
 
 a {
   color: inherit;
@@ -37,7 +54,7 @@ a {
 }
 
 a:hover {
-  color: #e46ca3;
+  color: var(--color-primary);
 }
 
 /* swiper setting */
@@ -47,7 +64,7 @@ a:hover {
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #333 !important;
+  color: var(--color-base) !important;
 }
 
 .swiper-button-prev:after,
@@ -102,13 +119,13 @@ a:hover {
 }
 
 .richEditor .pink {
-  color: #e46ca3;
+  color: var(--color-primary);
 }
 .richEditor .green {
-  color: #06c755;
+  color: var(--color-green);
 }
 .richEditor .orange {
-  color: #ff9231;
+  color: var(--color-orange);
 }
 /* case */
 .caseTextEllipsis {

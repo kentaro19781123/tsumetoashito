@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import React, { Suspense } from "react";
 import { CategoryContents } from "./categoryContents";
-import { cssStyle } from "./page.css";
+// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
@@ -72,8 +72,8 @@ export default async function GalleryList() {
         <Header pageId="case" />
       </Suspense>
       <main>
-        <div className={cssStyle.section}>
-          <div className={cssStyle.inner}>
+        <div className="pt-[60px] pb-0 md:pt-[74px] md:pb-0">
+          <div className="w-full max-w-full mx-auto p-4 md:w-[1000px] md:max-w-[1000px]">
             <Title text={metaCase.title} />
             <CategoryContents itemsArray={itemsArray} />
           </div>
