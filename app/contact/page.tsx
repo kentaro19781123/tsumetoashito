@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-// vanilla-extractからTailwind CSSへ移行
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";

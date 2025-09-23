@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import React from "react";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { menuList } from "@/app/_const/menu";
 import { anchorScroll } from "@/app/_utils/anchorScroll";
 

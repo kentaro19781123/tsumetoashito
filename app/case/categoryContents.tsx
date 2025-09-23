@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Title } from "@/app/_component/Title";
 import { treatmentContentsType } from "@/types";
 

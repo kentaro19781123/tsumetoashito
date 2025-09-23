@@ -1,4 +1,3 @@
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
@@ -31,7 +30,7 @@ export const CaseContents: React.FC<Props> = ({ data }) => {
               }}
             ></div>
 
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-20">
               <ButtonBorder
                 buttonText="一覧へ戻る"
                 url={`../?pageId=${data.treatmentCategory}`}

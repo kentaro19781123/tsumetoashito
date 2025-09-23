@@ -1,4 +1,3 @@
-// vanilla-extractからTailwind CSSへ移行
 import { Inner } from "../_component/Inner";
 import { Section } from "../_component/Section";
 import { Title } from "@/app/_component/Title";

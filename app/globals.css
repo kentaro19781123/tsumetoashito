@@ -60,41 +60,6 @@
     font-weight: bold;
   }
 
-  /* h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol,
-  p,
-  span,
-  figure {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    outline: none;
-  }
-
-  a:hover {
-    color: var(--color-primary);
-  } */
-
   /* swiper setting */
   .swiper {
     padding: 0 16px !important;

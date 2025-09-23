@@ -1,11 +1,9 @@
 "use client";
 
-// import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { useAtom } from "jotai";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
-import { Inner } from "../Inner";
+import { Inner } from "./Inner";
 import { ReserveLine } from "@/app/_component/ReserveButton/ReserveLine";
 import { menuList } from "@/app/_const/menu";
 import { useDocumentLoadCompleted } from "@/app/_hooks/useDocumentLoadCompleted";
@@ -38,7 +36,8 @@ export const Header: React.FC<Props> = ({ pageId }) => {
 
   return (
     <header
-      className="border-b border-gray-light fixed top-0 bg-white z-999 w-full transition-top duration-200 md:border-t-[3px] md:shadow-[0_4px_4px_rgba(194,194,194,0.3)] md:border-b-0"
+      className="border-b border-gray-light fixed top-0 bg-white z-999 w-full transition-top duration-200 md:border-t-[3px] md:border-primary md:shadow-[0_4px_4px_rgba(194,194,194,0.3)] md:border-b-0"
+      style={pageId === "top" && mvInView ? { top: "-74px" } : { top: 0 }}
       data-mvinview={mvInView}
       id={pageId}
     >

@@ -1,4 +1,3 @@
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Slide } from "@/app/(top)/_component/Case/slide";
 import { Inner } from "@/app/_component/Inner";
 import { Title } from "@/app/_component/Title";

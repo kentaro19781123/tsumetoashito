@@ -1,4 +1,3 @@
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Title } from "@/app/_component/Title";
 import { shopInfoType } from "@/types";
 import { Section } from "../_component/Section";

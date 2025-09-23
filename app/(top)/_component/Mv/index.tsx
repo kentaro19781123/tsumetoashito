@@ -3,7 +3,6 @@
 import { useAtom } from "jotai";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { mvInViewAtom } from "@/app/_store/atom";
 import { Inner } from "@/app/_component/Inner";
 

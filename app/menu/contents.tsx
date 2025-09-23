@@ -1,4 +1,3 @@
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Title } from "@/app/_component/Title";
 import { metaMenu } from "@/app/_const/menu";
 import { jsonLdBase, metaText } from "@/app/_const/meta";

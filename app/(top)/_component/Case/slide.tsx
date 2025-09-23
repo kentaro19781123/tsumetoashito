@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { metaCase } from "@/app/_const/menu";
 import { useOverflow } from "@/app/_hooks/useOverflow";

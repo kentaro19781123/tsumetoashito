@@ -1,11 +1,10 @@
 import React from "react";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 
 export const ReserveLine: React.FC = () => {
   return (
     <div>
       <a
-        className="min-h-[36px] md:min-h-[60px] rounded-lg flex items-center px-0 py-[6px] justify-center gap-1 bg-gree"
+        className="min-h-[36px] md:min-h-[60px] rounded-lg flex items-center px-0 py-[6px] justify-center gap-1 bg-green"
         href="https://lin.ee/D0Omvnr"
         target="_blank"
       >

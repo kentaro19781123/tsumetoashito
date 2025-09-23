@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 
 type Props = {
   buttonText: string;

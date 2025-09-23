@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import React, { Suspense } from "react";
 import { CategoryContents } from "./categoryContents";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";

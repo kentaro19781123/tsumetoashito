@@ -1,5 +1,4 @@
 import React from "react";
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 
 export const ReserveMail: React.FC = () => {
   return (

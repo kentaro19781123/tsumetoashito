@@ -1,4 +1,3 @@
-// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Inner } from "@/app/_component/Inner";
 import { ReserveLine } from "@/app/_component/ReserveButton/ReserveLine";
 import { ReserveMail } from "@/app/_component/ReserveButton/ReserveMail";
