@@ -74,7 +74,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
       >
         {category.map((categoryDetail, index) =>
           itemsCategoryFix.includes(categoryDetail.categoryItem) ? (
-            <SwiperSlide className="!w-[150px] md:!w-[180px]" key={index}>
+            <SwiperSlide className="w-[150px]! md:w-[180px]!" key={index}>
               <div
                 className="w-[150px] h-[150px] md:w-[180px] md:h-[180px] rounded-full flex flex-col items-center justify-center bg-[url('/img/case_bg.png')] bg-no-repeat bg-[length:180px] cursor-pointer p-4"
                 onClick={() => modalOpen(`galleryItem${index + 1}`)}
@@ -91,15 +91,13 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                   </div>
                 )}
                 <h3
-                  className="whitespace-pre-wrap text-center text-[16px]"
+                  className="whitespace-pre-wrap text-center text-16"
                   id={`galleryItem${index + 1}`}
                 >
                   {categoryDetail.categoryItem}
                 </h3>
                 {categoryDetail.categoryKana && (
-                  <p className="text-[10px] mt-1">
-                    {categoryDetail.categoryKana}
-                  </p>
+                  <p className="text-10 mt-1">{categoryDetail.categoryKana}</p>
                 )}
               </div>
 
@@ -110,7 +108,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                 />
               </div>
               <dialog
-                className="border-none overflow-visible rounded-lg appearance-none w-[90%] h-[80%] p-4 m-auto md:w-[700px] md:h-[80%]"
+                className="border-none overflow-visible rounded-lg appearance-none w-[90%] h-[80%] py-4 m-auto md:w-[700px] md:h-[80%]"
                 data-gallery-item={`galleryItem${index + 1}`}
                 onClick={(e) => modalClose(e, `galleryItem${index + 1}`)}
               >
@@ -128,7 +126,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                           className="mt-6 pt-6 border-t border-gray-300 first:mt-0 first:pt-0 first:border-t-0"
                           key={index}
                         >
-                          <h4 className="text-[18px] mb-4 bg-[url('/img/icon_plus.png')] bg-left bg-no-repeat bg-[length:18px] pl-6">
+                          <h4 className="text-18 mb-4 bg-[url('/img/icon_plus.png')] bg-left bg-no-repeat bg-[length:18px] pl-6">
                             {y.treatmentTitle}
                           </h4>
                           {y.treatmentPhoto && (
@@ -153,7 +151,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                         ""
                       )
                     )}
-                  <div className="w-3/5 mx-auto my-10 md:my-6">
+                  <div className="w-3/5 mx-auto mt-10 mb-4 md:my-6">
                     <ButtonBorder
                       buttonText="もっと見る"
                       url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
@@ -162,26 +160,9 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                   <div
                     className="block cursor-pointer absolute -top-6 right-0 w-5 h-5"
                     onClick={() => modalCloseButton(`galleryItem${index + 1}`)}
-                    style={{
-                      position: "absolute",
-                      top: "-23px",
-                      right: 0,
-                      width: "20px",
-                      height: "20px",
-                    }}
                   >
-                    <span
-                      className="absolute top-1/2 left-1/2 w-[3px] h-5 bg-white rotate-45"
-                      style={{
-                        transform: "translate(-50%, -50%) rotate(45deg)",
-                      }}
-                    ></span>
-                    <span
-                      className="absolute top-1/2 left-1/2 w-[3px] h-5 bg-white -rotate-45"
-                      style={{
-                        transform: "translate(-50%, -50%) rotate(-45deg)",
-                      }}
-                    ></span>
+                    <span className="absolute w-[3px] h-5 bg-white rotate-45 right-1/2" />
+                    <span className="absolute w-[3px] h-5 bg-white -rotate-45 right-1/2" />
                   </div>
                 </div>
               </dialog>

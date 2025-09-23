@@ -26,7 +26,7 @@ export const CategoryContents: React.FC<Props> = ({ itemsArray }) => {
             {byCategoryArray.map((item, index) => (
               <React.Fragment key={index}>
                 <a
-                  className="w-[calc((100%_-_16px)_/_2)] cursor-pointer mb-4 hover:opacity-80 md:min-w-[200px] md:w-[calc((100%_-_(32px_*_3))_/_4)]"
+                  className="w-[calc((100%_-_16px)_/_2)] cursor-pointer mb-4 hover:opacity-80 md:mb-0 md:min-w-[200px] md:w-[calc((100%_-_(32px_*_3))_/_4)]"
                   href={`./${item.id}/`}
                 >
                   <div>

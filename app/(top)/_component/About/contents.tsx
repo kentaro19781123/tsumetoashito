@@ -9,8 +9,8 @@ type Props = {
 export const AboutContents: React.FC<Props> = ({ data }) => {
   return (
     <section className="px-4 md:px-0" id="about">
-      <Inner className="p-4 md:p-12 bg-[var(--color-primary-bg)]">
-        <h2 className="text-[1.5rem] md:text-[2.375rem] mb-4 md:mb-6 text-[var(--color-primary-font)] font-bold">
+      <Inner className="md:p-12 bg-(--color-primary-bg)">
+        <h2 className="text-2xl md:text-38 mb-4 md:mb-6 text-(--color-primary-font) font-bold">
           {data.title}
         </h2>
         <div className="md:flex md:gap-6">
@@ -36,7 +36,7 @@ export const AboutContents: React.FC<Props> = ({ data }) => {
               />
             </div>
             */}
-            <div className="w-3/5 md:w-full md:max-w-[210px] text-[0.875rem]">
+            <div className="w-3/5 md:w-full md:max-w-[210px] text-14">
               <img
                 alt=""
                 className="w-full"

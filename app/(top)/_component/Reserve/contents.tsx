@@ -1,4 +1,5 @@
 // Tailwind CSSリファクタ: vanilla-extract参照を削除
+import { Inner } from "@/app/_component/Inner";
 import { ReserveLine } from "@/app/_component/ReserveButton/ReserveLine";
 import { ReserveMail } from "@/app/_component/ReserveButton/ReserveMail";
 import { Title } from "@/app/_component/Title";
@@ -12,7 +13,7 @@ type Props = {
 export const ReserveContents: React.FC<Props> = ({ title, contentBlock }) => {
   return (
     <section className="py-12">
-      <div className="w-full max-w-full mx-auto px-4">
+      <Inner className="py-0">
         <Title text={title} />
         <div
           className="richEditor"
@@ -37,7 +38,7 @@ export const ReserveContents: React.FC<Props> = ({ title, contentBlock }) => {
             </div>
           ))}
         </div>
-      </div>
+      </Inner>
     </section>
   );
 };

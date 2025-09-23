@@ -1,6 +1,8 @@
 // Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Title } from "@/app/_component/Title";
 import { shopInfoType } from "@/types";
+import { Section } from "../_component/Section";
+import { Inner } from "../_component/Inner";
 
 type Props = {
   data: shopInfoType;
@@ -12,8 +14,8 @@ export const ShopInfoContents: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <div className="pt-[60px] pb-0 md:pt-[74px] md:pb-0" id="shopInfo">
-        <div className="w-full max-w-full mx-auto p-4 md:w-[1000px] md:max-w-[1000px]">
+      <Section id="shopInfo">
+        <Inner>
           <Title text={title} />
           <div
             className="richEditor"
@@ -21,9 +23,9 @@ export const ShopInfoContents: React.FC<Props> = ({ data }) => {
               __html: zoomMap,
             }}
           />
-          <div className="md:flex md:gap-8 mt-8">
+          <div className="md:flex md:gap-8 mt-4">
             <div
-              className="richEditor text-base md:w-1/2 md:pl-5"
+              className="richEditor text-base md:w-1/2"
               dangerouslySetInnerHTML={{
                 __html: contentBlock[0].shopAddress,
               }}
@@ -40,8 +42,8 @@ export const ShopInfoContents: React.FC<Props> = ({ data }) => {
               </div>
             )}
           </div>
-        </div>
-      </div>
+        </Inner>
+      </Section>
     </>
   );
 };

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { cssStyle } from "./footer.css";
+// Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { menuList } from "@/app/_const/menu";
 import { anchorScroll } from "@/app/_utils/anchorScroll";
 
@@ -12,20 +12,27 @@ type Props = {
 
 export const Footer: React.FC<Props> = ({ pageId }) => {
   return (
-    <section className={cssStyle.section}>
+    <section className="border-t border-gray-light py-4 pb-20 md:pb-[90px]">
       {menuList && (
-        <ul className={cssStyle.linkUl}>
+        <ul className="flex flex-wrap items-center justify-center mb-4">
           {menuList.map((x) => (
-            <li className={cssStyle.linkLi} key={x.title}>
+            <li
+              className="border-l border-primary mb-2 first:border-l-0"
+              key={x.title}
+            >
               {pageId === "top" && x.title === "サロンについて" ? (
                 <div
-                  className={cssStyle.link}
+                  className="px-1 mx-1 cursor-pointer text-12 md:px-2 md:mx-2 md:text-14 hover:text-primary"
                   onClick={(event) => anchorScroll("#about", 60, event)}
                 >
                   {x.title}
                 </div>
               ) : (
-                <Link className={cssStyle.link} href={x.link} scroll={false}>
+                <Link
+                  className="px-1 mx-1 cursor-pointer text-12 md:px-2 md:mx-2 md:text-14 hover:text-primary"
+                  href={x.link}
+                  scroll={false}
+                >
                   {x.title}
                 </Link>
               )}
@@ -33,7 +40,7 @@ export const Footer: React.FC<Props> = ({ pageId }) => {
           ))}
         </ul>
       )}
-      <div className={cssStyle.copy}>&copy;爪と足と</div>
+      <div className="text-center text-12">&copy;爪と足と</div>
     </section>
   );
 };

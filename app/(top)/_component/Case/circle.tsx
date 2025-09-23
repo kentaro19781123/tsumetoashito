@@ -31,7 +31,7 @@ export const Circle: React.FC<Props> = ({ categoryName, index }) => {
   return (
     <>
       <h3
-        className="whitespace-pre-wrap text-center text-[16px]"
+        className="whitespace-pre-wrap text-center text-16"
         id={`galleryItem${index + 1}`}
         onClick={() => modalOpen(`galleryItem${index + 1}`)}
       >

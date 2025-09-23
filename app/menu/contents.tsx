@@ -3,6 +3,8 @@ import { Title } from "@/app/_component/Title";
 import { metaMenu } from "@/app/_const/menu";
 import { jsonLdBase, metaText } from "@/app/_const/meta";
 import { menuType } from "@/types";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 
 type Props = {
   data: menuType["contents"];
@@ -37,8 +39,8 @@ export default async function MenuContents({ data }: Props) {
   return (
     <>
       <main>
-        <div className="pt-[60px] pb-0 md:pt-[74px] md:pb-0">
-          <div className="w-full max-w-full mx-auto p-4 md:w-[1000px] md:max-w-[1000px]">
+        <Section>
+          <Inner>
             <Title text={metaMenu.title} />
             {data.map((x) => (
               <section
@@ -95,8 +97,8 @@ export default async function MenuContents({ data }: Props) {
                 </div>
               </section>
             ))}
-          </div>
-        </div>
+          </Inner>
+        </Section>
       </main>
       <script
         dangerouslySetInnerHTML={{

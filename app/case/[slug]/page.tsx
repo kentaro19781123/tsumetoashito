@@ -10,6 +10,7 @@ import { metaCase } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { client } from "@/app/_libs/client";
 import { treatmentContentsType, treatmentType } from "@/types";
+import { Section } from "@/app/_component/Section";
 
 type Props = {
   params: Promise<{
@@ -94,14 +95,14 @@ export default async function Page({ params }: Props) {
         <Header pageId="case" />
       </Suspense>
       <main>
-        <div className="pt-[60px] pb-0 md:pt-[74px] md:pb-0">
+        <Section>
           <div className="w-full max-w-full mx-auto p-4 md:w-[1000px] md:max-w-[1000px]">
             <Title text={metaCase.title} />
             <Title Tag="h2" level={2} text={data.treatmentTitle} />
-            <div className="flex justify-center items-center my-8">
+            <div className="mb-4 md:max-w-[500px] w-full">
               <img
                 alt={data.treatmentTitle}
-                className="w-full max-w-md h-auto rounded-lg shadow-md"
+                className="w-full"
                 src={data.treatmentPhoto.url}
               />
             </div>
@@ -112,14 +113,14 @@ export default async function Page({ params }: Props) {
               }}
             ></div>
 
-            <div className="flex justify-center mt-8">
+            <div className="mt-20 w-[300px] mx-auto">
               <ButtonBorder
                 buttonText="一覧へ戻る"
                 url={`../?pageId=${data.treatmentCategory}`}
               />
             </div>
           </div>
-        </div>
+        </Section>
       </main>
       <Suspense>
         <Footer pageId="case" />

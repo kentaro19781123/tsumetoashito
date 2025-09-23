@@ -16,7 +16,7 @@ export const Inner = ({
 } & React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={`w-full max-w-full mx-auto md:w-[1000px] md:max-w-[1000px] ${className}`.trim()}
+      className={`w-full max-w-full mx-auto md:w-[1000px] md:max-w-[1000px] p-4 ${className}`.trim()}
       {...props}
     >
       {children}

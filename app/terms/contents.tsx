@@ -1,4 +1,6 @@
 // vanilla-extractからTailwind CSSへ移行
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Title } from "@/app/_component/Title";
 import { termsType } from "@/types";
 
@@ -11,8 +13,8 @@ export const TermsContents: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <div className="py-6 md:py-12">
-        <div className="px-4 md:px-8">
+      <Section>
+        <Inner>
           <Title text={title} />
           <div
             className="richEditor mb-6"
@@ -20,8 +22,8 @@ export const TermsContents: React.FC<Props> = ({ data }) => {
               __html: contentBlock[0].text,
             }}
           />
-        </div>
-      </div>
+        </Inner>
+      </Section>
     </>
   );
 };

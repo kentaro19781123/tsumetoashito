@@ -1,5 +1,6 @@
 // Tailwind CSSリファクタ: vanilla-extract参照を削除
 import { Slide } from "@/app/(top)/_component/Case/slide";
+import { Inner } from "@/app/_component/Inner";
 import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
 import { client } from "@/app/_libs/client";
@@ -27,12 +28,12 @@ export const Case: React.FC = async () => {
 
   return (
     <section className="pt-12">
-      <div className="w-full max-w-full mx-auto">
+      <Inner className="p-0!">
         <div className="px-4">
           <Title text={metaCase.title} />
         </div>
         <Slide category={categoryData} items={treatmentData} />
-      </div>
+      </Inner>
     </section>
   );
 };
