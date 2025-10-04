@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { cssStyle } from "./case.css";
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { metaCase } from "@/app/_const/menu";
 import { useOverflow } from "@/app/_hooks/useOverflow";
@@ -66,7 +65,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
             spaceBetween: 40,
           },
         }}
-        className={cssStyle.swiper}
+        className="px-4 md:px-0"
         modules={[Navigation, Pagination]}
         navigation
         slidesPerView="auto"
@@ -74,16 +73,16 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
       >
         {category.map((categoryDetail, index) =>
           itemsCategoryFix.includes(categoryDetail.categoryItem) ? (
-            <SwiperSlide className={cssStyle.swiperSlide} key={index}>
+            <SwiperSlide className="w-[150px]! md:w-[180px]!" key={index}>
               <div
-                className={cssStyle.circle}
+                className="w-[150px] h-[150px] md:w-[180px] md:h-[180px] rounded-full flex flex-col items-center justify-center bg-[url('/img/case_bg.png')] bg-no-repeat bg-[length:180px] cursor-pointer p-4"
                 onClick={() => modalOpen(`galleryItem${index + 1}`)}
               >
                 {categoryDetail.categoryPhoto && (
-                  <div className={cssStyle.swiperImgWrap}>
+                  <div className="rounded-[35px] border-4 border-white overflow-hidden w-[70px] h-[70px] mb-1 md:rounded-[40px] md:w-[80px] md:h-[80px] md:mb-2">
                     <img
                       alt={categoryDetail.categoryItem}
-                      className={cssStyle.swiperImg}
+                      className="w-full h-auto"
                       height={categoryDetail.categoryPhoto.height}
                       src={categoryDetail.categoryPhoto.url}
                       width={categoryDetail.categoryPhoto.width}
@@ -91,31 +90,29 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                   </div>
                 )}
                 <h3
-                  className={cssStyle.swiperItem}
+                  className="whitespace-pre-wrap text-center text-16"
                   id={`galleryItem${index + 1}`}
                 >
                   {categoryDetail.categoryItem}
                 </h3>
                 {categoryDetail.categoryKana && (
-                  <p className={cssStyle.swiperItemKana}>
-                    {categoryDetail.categoryKana}
-                  </p>
+                  <p className="text-10 mt-1">{categoryDetail.categoryKana}</p>
                 )}
               </div>
 
-              <div className={cssStyle.ButtonWrap}>
+              <div className="w-4/5 mx-auto mt-4 md:mt-6">
                 <ButtonBorder
                   buttonText="もっと見る"
                   url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
                 />
               </div>
               <dialog
-                className={cssStyle.dialog}
+                className="border-none overflow-visible rounded-lg appearance-none w-[90%] h-[80%] py-4 m-auto md:w-[700px] md:h-[80%]"
                 data-gallery-item={`galleryItem${index + 1}`}
                 onClick={(e) => modalClose(e, `galleryItem${index + 1}`)}
               >
                 <div
-                  className={cssStyle.container}
+                  className="w-full h-full leading-[1.5] px-4 box-border overflow-scroll"
                   data-gallery-container={`galleryItem${index + 1}`}
                 >
                   {items
@@ -124,12 +121,15 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                     )
                     .map((y, index) =>
                       index < 3 ? (
-                        <div className={cssStyle.containerItem} key={index}>
-                          <h4 className={cssStyle.itemTitle}>
+                        <div
+                          className="mt-6 pt-6 border-t border-gray-300 first:mt-0 first:pt-0 first:border-t-0"
+                          key={index}
+                        >
+                          <h4 className="text-18 mb-4 bg-[url('/img/icon_plus.png')] bg-left bg-no-repeat bg-[length:18px] pl-6">
                             {y.treatmentTitle}
                           </h4>
                           {y.treatmentPhoto && (
-                            <div className={cssStyle.itemImage}>
+                            <div className="mb-4 md:w-[500px] md:mx-auto md:mb-4">
                               <Image
                                 alt={y.treatmentTitle}
                                 height={y.treatmentPhoto.height}
@@ -150,16 +150,19 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                         ""
                       )
                     )}
-                  <div className={cssStyle.dialogMoreButtonWrap}>
+                  <div className="w-3/5 mx-auto mt-10 mb-4 md:my-6">
                     <ButtonBorder
                       buttonText="もっと見る"
                       url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
                     />
                   </div>
                   <div
-                    className={cssStyle.closeButton}
+                    className="block cursor-pointer absolute -top-6 right-0 w-5 h-5"
                     onClick={() => modalCloseButton(`galleryItem${index + 1}`)}
-                  ></div>
+                  >
+                    <span className="absolute w-[3px] h-5 bg-white rotate-45 right-1/2" />
+                    <span className="absolute w-[3px] h-5 bg-white -rotate-45 right-1/2" />
+                  </div>
                 </div>
               </dialog>
             </SwiperSlide>

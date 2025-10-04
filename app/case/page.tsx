@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import React, { Suspense } from "react";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { CategoryContents } from "./categoryContents";
-import { cssStyle } from "./page.css";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
@@ -72,12 +73,12 @@ export default async function GalleryList() {
         <Header pageId="case" />
       </Suspense>
       <main>
-        <div className={cssStyle.section}>
-          <div className={cssStyle.inner}>
+        <Section>
+          <Inner>
             <Title text={metaCase.title} />
             <CategoryContents itemsArray={itemsArray} />
-          </div>
-        </div>
+          </Inner>
+        </Section>
       </main>
       <Suspense>
         <Footer pageId="case" />

@@ -1,4 +1,5 @@
-import { cssStyle } from "./page.css";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Title } from "@/app/_component/Title";
 import { shopInfoType } from "@/types";
 
@@ -12,8 +13,8 @@ export const ShopInfoContents: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <div className={cssStyle.section} id="shopInfo">
-        <div className={cssStyle.inner}>
+      <Section id="shopInfo">
+        <Inner>
           <Title text={title} />
           <div
             className="richEditor"
@@ -21,18 +22,18 @@ export const ShopInfoContents: React.FC<Props> = ({ data }) => {
               __html: zoomMap,
             }}
           />
-          <div className={cssStyle.shopInfo}>
+          <div className="md:flex md:gap-8 mt-4">
             <div
-              className={`richEditor ${cssStyle.mapText}`}
+              className="richEditor text-base md:w-1/2"
               dangerouslySetInnerHTML={{
                 __html: contentBlock[0].shopAddress,
               }}
             />
             {contentBlock[0].shopPhoto && (
-              <div className={cssStyle.shopPhoto}>
+              <div className="mt-4 md:mt-0 md:w-1/2">
                 <img
                   alt="店舗写真"
-                  className={cssStyle.shopPhotoImage}
+                  className="w-full h-full mt-4 md:h-auto"
                   height="424"
                   src={contentBlock[0].shopPhoto.url}
                   width={contentBlock[0].shopPhoto.width}
@@ -40,8 +41,8 @@ export const ShopInfoContents: React.FC<Props> = ({ data }) => {
               </div>
             )}
           </div>
-        </div>
-      </div>
+        </Inner>
+      </Section>
     </>
   );
 };

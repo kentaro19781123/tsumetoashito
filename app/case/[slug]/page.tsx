@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { cssStyle } from "./page.css";
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
+import { Section } from "@/app/_component/Section";
 import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
@@ -94,14 +94,14 @@ export default async function Page({ params }: Props) {
         <Header pageId="case" />
       </Suspense>
       <main>
-        <div className={cssStyle.section}>
-          <div className={cssStyle.inner}>
+        <Section>
+          <div className="w-full max-w-full mx-auto p-4 md:w-[1000px] md:max-w-[1000px]">
             <Title text={metaCase.title} />
             <Title Tag="h2" level={2} text={data.treatmentTitle} />
-            <div className={cssStyle.photoWrap}>
+            <div className="mb-4 md:max-w-[500px] w-full">
               <img
                 alt={data.treatmentTitle}
-                className={cssStyle.photo}
+                className="w-full"
                 src={data.treatmentPhoto.url}
               />
             </div>
@@ -112,14 +112,14 @@ export default async function Page({ params }: Props) {
               }}
             ></div>
 
-            <div className={cssStyle.buttonWrap}>
+            <div className="mt-20 w-[300px] mx-auto">
               <ButtonBorder
                 buttonText="一覧へ戻る"
                 url={`../?pageId=${data.treatmentCategory}`}
               />
             </div>
           </div>
-        </div>
+        </Section>
       </main>
       <Suspense>
         <Footer pageId="case" />

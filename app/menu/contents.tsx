@@ -1,4 +1,5 @@
-import { cssStyle } from "./page.css";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Title } from "@/app/_component/Title";
 import { metaMenu } from "@/app/_const/menu";
 import { jsonLdBase, metaText } from "@/app/_const/meta";
@@ -37,41 +38,46 @@ export default async function MenuContents({ data }: Props) {
   return (
     <>
       <main>
-        <div className={cssStyle.section}>
-          <div className={cssStyle.inner}>
+        <Section>
+          <Inner>
             <Title text={metaMenu.title} />
             {data.map((x) => (
-              <section className={cssStyle.menuItem} key={x.title}>
-                <div className={cssStyle.titleArea}>
-                  <h2 className={cssStyle.titleWrap}>
-                    <span className={cssStyle.titleCircle}>●</span>
+              <section
+                className="border-b border-gray-300 pb-8 mb-8 last:mb-0 last:border-b-0"
+                key={x.title}
+              >
+                <div className="md:flex md:justify-between">
+                  <h2 className="flex items-center">
+                    <span className="inline-block text-[#e46ca3] text-[16px] flex-shrink-0 w-5">
+                      ●
+                    </span>
                     <span
-                      className={cssStyle.title}
+                      className="text-[20px]"
                       dangerouslySetInnerHTML={{
                         __html: rubyReplace(x.title),
                       }}
                     />
                   </h2>
-                  <div className={cssStyle.priceArea}>
+                  <div className="mt-2 text-right md:mt-0">
                     {x.caption && (
-                      <p className={cssStyle.priceCaution}>{x.caption}</p>
+                      <p className="text-[12px] mb-2">{x.caption}</p>
                     )}
-                    <p className={cssStyle.price}>{x.price}</p>
+                    <p className="text-[18px] font-bold">{x.price}</p>
                   </div>
                 </div>
-                <div className={cssStyle.contentArea}>
+                <div className="md:flex md:gap-4">
                   <div
-                    className={`${cssStyle.contentText} richEditor`}
+                    className="mt-3 leading-[1.5] md:w-1/2 md:pl-5 richEditor"
                     dangerouslySetInnerHTML={{
                       __html: x.text,
                     }}
                   />
-                  <div className={cssStyle.imageAreaWrap}>
+                  <div className="md:w-1/2">
                     {x.photo && (
-                      <div className={cssStyle.imageArea}>
+                      <div className="mt-4 md:mt-0">
                         <img
                           alt={x.title}
-                          className={cssStyle.menuImage}
+                          className="w-full h-full mt-4 md:h-auto"
                           height="424"
                           src={x.photo.url}
                           width={x.photo.width}
@@ -80,7 +86,7 @@ export default async function MenuContents({ data }: Props) {
                     )}
                     {x.photoCaption && (
                       <div
-                        className={`${cssStyle.photoCaption} richEditor`}
+                        className="mt-4 md:mt-2 md:text-[14px] richEditor"
                         dangerouslySetInnerHTML={{
                           __html: x.photoCaption,
                         }}
@@ -90,8 +96,8 @@ export default async function MenuContents({ data }: Props) {
                 </div>
               </section>
             ))}
-          </div>
-        </div>
+          </Inner>
+        </Section>
       </main>
       <script
         dangerouslySetInnerHTML={{

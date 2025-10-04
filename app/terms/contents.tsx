@@ -1,4 +1,5 @@
-import { cssStyle } from "./page.css";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Title } from "@/app/_component/Title";
 import { termsType } from "@/types";
 
@@ -11,17 +12,17 @@ export const TermsContents: React.FC<Props> = ({ data }) => {
 
   return (
     <>
-      <div className={cssStyle.section}>
-        <div className={cssStyle.inner}>
+      <Section>
+        <Inner>
           <Title text={title} />
           <div
-            className={`richEditor ${cssStyle.textWrap}`}
+            className="richEditor mb-6"
             dangerouslySetInnerHTML={{
               __html: contentBlock[0].text,
             }}
           />
-        </div>
-      </div>
+        </Inner>
+      </Section>
     </>
   );
 };

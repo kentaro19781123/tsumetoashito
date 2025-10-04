@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { cssStyle } from "./contact.css";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
@@ -44,18 +45,18 @@ export default async function Contact() {
         <Header pageId="contact" />
       </Suspense>
       <main>
-        <div className={cssStyle.section} id="contact">
-          <div className={cssStyle.inner}>
+        <Section id="contact">
+          <Inner className="max-w-3xl mx-auto p-4">
             <Title text="お問合せ" />
 
             <div
-              className={cssStyle.formBox}
+              className="text-center [&>iframe]:w-full mb-6"
               dangerouslySetInnerHTML={{
                 __html: form,
               }}
             />
-          </div>
-        </div>
+          </Inner>
+        </Section>
       </main>
       <Suspense>
         <Footer pageId="contact" />

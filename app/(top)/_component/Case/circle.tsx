@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import "swiper/swiper-bundle.css";
-import { cssStyle } from "./case.css";
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { metaCase } from "@/app/_const/menu";
 import { useOverflow } from "@/app/_hooks/useOverflow";
@@ -31,13 +30,13 @@ export const Circle: React.FC<Props> = ({ categoryName, index }) => {
   return (
     <>
       <h3
-        className={cssStyle.swiperItem}
+        className="whitespace-pre-wrap text-center text-16"
         id={`galleryItem${index + 1}`}
         onClick={() => modalOpen(`galleryItem${index + 1}`)}
       >
         {categoryName}
       </h3>
-      <div className={cssStyle.ButtonWrap}>
+      <div className="w-4/5 mx-auto mt-4 md:mt-6">
         <ButtonBorder
           buttonText="もっと見る"
           url={`${metaCase.link}?pageId=list${index + 1}`}

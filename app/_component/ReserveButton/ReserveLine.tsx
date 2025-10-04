@@ -1,23 +1,24 @@
 import React from "react";
-import { cssStyle } from "./reserve-button.css";
 
 export const ReserveLine: React.FC = () => {
   return (
-    <div className={cssStyle.wrap}>
+    <div>
       <a
-        className={`${cssStyle.button} ${cssStyle.line}`}
+        className="min-h-[36px] md:min-h-[60px] rounded-lg flex items-center px-0 py-[6px] justify-center gap-1 bg-green"
         href="https://lin.ee/D0Omvnr"
         target="_blank"
       >
-        <span className={cssStyle.iconLine}>
+        <span className="w-[25px] md:w-[40px]">
           <img
             alt="LINEから"
-            className={cssStyle.icon}
+            className="w-full"
             src="/img/line_logo.png"
             width="30"
           />
         </span>
-        <span className={cssStyle.text}>LINEから</span>
+        <span className="text-14 md:text-24 text-white font-bold pb-[2px]">
+          LINEから
+        </span>
       </a>
     </div>
   );
