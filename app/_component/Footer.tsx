@@ -30,7 +30,6 @@ export const Footer: React.FC<Props> = ({ pageId }) => {
                 <Link
                   className="px-1 mx-1 cursor-pointer text-12 md:px-2 md:mx-2 md:text-14 hover:text-primary"
                   href={x.link}
-                  scroll={false}
                 >
                   {x.title}
                 </Link>

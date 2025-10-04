@@ -12,7 +12,6 @@ export const ButtonBorder: React.FC<Props> = ({ buttonText, url }) => {
       <Link
         className="block no-underline text-base border border-base rounded px-4 py-3 text-center w-full hover:border-primary hover:text-primary focus-visible:outline-none"
         href={url}
-        scroll={false}
       >
         {buttonText}
       </Link>
