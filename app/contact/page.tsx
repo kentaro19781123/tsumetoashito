@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
@@ -43,8 +45,8 @@ export default async function Contact() {
         <Header pageId="contact" />
       </Suspense>
       <main>
-        <div className="py-6 md:py-12" id="contact">
-          <div className="px-4 md:px-8">
+        <Section id="contact">
+          <Inner className="max-w-3xl mx-auto p-4">
             <Title text="お問合せ" />
 
             <div
@@ -53,8 +55,8 @@ export default async function Contact() {
                 __html: form,
               }}
             />
-          </div>
-        </div>
+          </Inner>
+        </Section>
       </main>
       <Suspense>
         <Footer pageId="contact" />
