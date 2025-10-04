@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
 import { Title } from "@/app/_component/Title";
 import { metaForMedia } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
-import { Section } from "../_component/Section";
-import { Inner } from "../_component/Inner";
 
 export const metadata: Metadata = {
   title: `${metaForMedia.title} | ${metaText.title}`,

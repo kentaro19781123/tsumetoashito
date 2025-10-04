@@ -1,9 +1,9 @@
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { Title } from "@/app/_component/Title";
 import { metaMenu } from "@/app/_const/menu";
 import { jsonLdBase, metaText } from "@/app/_const/meta";
 import { menuType } from "@/types";
-import { Inner } from "../_component/Inner";
-import { Section } from "../_component/Section";
 
 type Props = {
   data: menuType["contents"];

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import React, { Suspense } from "react";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
 import { CategoryContents } from "./categoryContents";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
@@ -9,8 +11,6 @@ import { metaCase } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { client } from "@/app/_libs/client";
 import { treatmentCategoryType, treatmentType } from "@/types";
-import { Section } from "../_component/Section";
-import { Inner } from "../_component/Inner";
 
 const getContents = async () => {
   const response = await client.get<treatmentType>({

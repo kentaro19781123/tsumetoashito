@@ -4,12 +4,12 @@ import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
+import { Section } from "@/app/_component/Section";
 import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { client } from "@/app/_libs/client";
 import { treatmentContentsType, treatmentType } from "@/types";
-import { Section } from "@/app/_component/Section";
 
 type Props = {
   params: Promise<{

@@ -3,8 +3,8 @@
 import { useAtom } from "jotai";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { mvInViewAtom } from "@/app/_store/atom";
 import { Inner } from "@/app/_component/Inner";
+import { mvInViewAtom } from "@/app/_store/atom";
 
 export const Mv: React.FC = () => {
   const [mvInView, setMvInView] = useAtom(mvInViewAtom);
