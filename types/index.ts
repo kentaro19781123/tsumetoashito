@@ -40,8 +40,7 @@ export type treatmentContentsType = {
   treatmentCategory: string;
   treatmentPhoto: MicroCMSImage;
   treatmentText: string;
-} & MicroCMSContentId &
-  MicroCMSDate;
+} & MicroCMSContentId;
 
 export type treatmentCategoryType = {
   contentBlock: categoryContentType[];
