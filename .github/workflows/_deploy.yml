@@ -25,6 +25,8 @@ jobs:
           role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_IAM_ROLE }}"
 
       - name: s3 Deploy
-        run: aws s3 sync --exact-timestamp --delete ./ ${{ secrets.AWS_S3_BUCKET_NAME }}
+        run: |
+          aws s3 sync --exact-timestamp --delete ./ ${{ secrets.AWS_S3_BUCKET_NAME }}
+          aws s3 cp ./llms.txt ${{ secrets.AWS_S3_BUCKET_NAME }} --content-type 'text/plain; charset=UTF-8'
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
