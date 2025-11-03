@@ -1,15 +1,13 @@
 "use client";
 
-import { useAtom } from "jotai";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Inner } from "./Inner";
 import { ReserveLine } from "@/app/_component/ReserveButton/ReserveLine";
 import { menuList } from "@/app/_const/menu";
 import { useDocumentLoadCompleted } from "@/app/_hooks/useDocumentLoadCompleted";
 import { useIsPc } from "@/app/_hooks/useIsPc";
 import { useOverflow } from "@/app/_hooks/useOverflow";
-import { mvInViewAtom } from "@/app/_store/atom";
 import { anchorScroll } from "@/app/_utils/anchorScroll";
 
 type Props = {
@@ -17,7 +15,7 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({ pageId }) => {
-  const [mvInView] = useAtom(mvInViewAtom);
+  const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const searchParams = useSearchParams();
   const search = searchParams.get("pageId");
@@ -28,6 +26,19 @@ export const Header: React.FC<Props> = ({ pageId }) => {
 
   const offset = isPc ? 85 : 70;
 
+  const handleScroll = useCallback(() => {
+    const shouldBeVisible = window.scrollY > 100;
+    setIsVisible(shouldBeVisible);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    // 初期スクロール位置をチェック
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
   useEffect(() => {
     if (search && isLoaded) {
       anchorScroll(`#${search}`, offset);
@@ -37,9 +48,9 @@ export const Header: React.FC<Props> = ({ pageId }) => {
   return (
     <header
       className="border-b border-gray-light fixed top-0 bg-white z-999 w-full transition-top duration-200 md:border-t-[3px] md:border-primary md:shadow-[0_4px_4px_rgba(194,194,194,0.3)] md:border-b-0"
-      data-mvinview={mvInView}
+      data-mvinview={isVisible}
       id={pageId}
-      style={pageId === "top" && mvInView ? { top: "-74px" } : { top: 0 }}
+      style={{ top: pageId === "top" && !isVisible ? "-74px" : 0 }}
     >
       <Inner className="py-0!">
         <div className="flex items-center justify-between h-[60px] relative md:h-[70px]">
