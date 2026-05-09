@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { About } from "@/app/(top)/_component/About";
 import { Case } from "@/app/(top)/_component/Case";
+import { Menu } from "@/app/(top)/_component/Menu";
 import { Mv } from "@/app/(top)/_component/Mv";
 import { Reserve } from "@/app/(top)/_component/Reserve";
 import { Footer } from "@/app/_component/Footer";
@@ -32,6 +33,7 @@ export default function Home() {
         <Mv />
         <About />
         <Case />
+        <Menu />
         <Reserve />
       </main>
       <Suspense>
