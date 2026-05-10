@@ -1,7 +1,7 @@
-import React from "react";
-import { AboutContents } from "./contents";
+import type React from "react";
 import { client } from "@/app/_libs/client";
-import { aboutType } from "@/types";
+import type { aboutType } from "@/types";
+import { AboutContents } from "./contents";
 
 const getContents = async () => {
   const response = await client.get<aboutType>({

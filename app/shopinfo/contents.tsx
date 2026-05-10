@@ -1,7 +1,7 @@
+import { Title } from "@/app/_component/Title";
+import type { shopInfoType } from "@/types";
 import { Inner } from "../_component/Inner";
 import { Section } from "../_component/Section";
-import { Title } from "@/app/_component/Title";
-import { shopInfoType } from "@/types";
 
 type Props = {
   data: shopInfoType;
@@ -12,37 +12,35 @@ export const ShopInfoContents: React.FC<Props> = ({ data }) => {
   const zoomMap = contentBlock[0].shopMapUrl.replace("4f13.1", "4f100");
 
   return (
-    <>
-      <Section id="shopInfo">
-        <Inner>
-          <Title text={title} />
+    <Section id="shopInfo">
+      <Inner>
+        <Title text={title} />
+        <div
+          className="richEditor"
+          dangerouslySetInnerHTML={{
+            __html: zoomMap,
+          }}
+        />
+        <div className="md:flex md:gap-8 mt-4">
           <div
-            className="richEditor"
+            className="richEditor text-base md:w-1/2"
             dangerouslySetInnerHTML={{
-              __html: zoomMap,
+              __html: contentBlock[0].shopAddress,
             }}
           />
-          <div className="md:flex md:gap-8 mt-4">
-            <div
-              className="richEditor text-base md:w-1/2"
-              dangerouslySetInnerHTML={{
-                __html: contentBlock[0].shopAddress,
-              }}
-            />
-            {contentBlock[0].shopPhoto && (
-              <div className="mt-4 md:mt-0 md:w-1/2">
-                <img
-                  alt="店舗写真"
-                  className="w-full h-full mt-4 md:h-auto"
-                  height="424"
-                  src={contentBlock[0].shopPhoto.url}
-                  width={contentBlock[0].shopPhoto.width}
-                />
-              </div>
-            )}
-          </div>
-        </Inner>
-      </Section>
-    </>
+          {contentBlock[0].shopPhoto && (
+            <div className="mt-4 md:mt-0 md:w-1/2">
+              <img
+                alt="店舗写真"
+                className="w-full h-full mt-4 md:h-auto"
+                height="424"
+                src={contentBlock[0].shopPhoto.url}
+                width={contentBlock[0].shopPhoto.width}
+              />
+            </div>
+          )}
+        </div>
+      </Inner>
+    </Section>
   );
 };

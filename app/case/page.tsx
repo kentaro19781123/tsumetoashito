@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import React, { Suspense } from "react";
-import { Inner } from "../_component/Inner";
-import { Section } from "../_component/Section";
-import { CategoryContents } from "./categoryContents";
+import { Suspense } from "react";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
@@ -10,7 +7,10 @@ import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { client } from "@/app/_libs/client";
-import { treatmentCategoryType, treatmentType } from "@/types";
+import type { treatmentCategoryType, treatmentType } from "@/types";
+import { Inner } from "../_component/Inner";
+import { Section } from "../_component/Section";
+import { CategoryContents } from "./categoryContents";
 
 const getContents = async () => {
   const response = await client.get<treatmentType>({
@@ -63,9 +63,9 @@ export default async function GalleryList() {
 
   const itemsArray = categoryArray
     .map((categoryName) =>
-      data.filter((x) => x.treatmentCategory === categoryName)
+      data.filter((x) => x.treatmentCategory === categoryName),
     )
-    .filter((x) => x.length != 0);
+    .filter((x) => x.length !== 0);
 
   return (
     <>
