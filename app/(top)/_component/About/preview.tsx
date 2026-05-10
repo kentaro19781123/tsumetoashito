@@ -1,11 +1,11 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { SWRResponse } from "swr";
+import type { SWRResponse } from "swr";
 import useSWRImmutable from "swr/immutable";
-import { AboutContents } from "./contents";
 import { fetcher } from "@/app/_libs/client";
-import { aboutType } from "@/types";
+import type { aboutType } from "@/types";
+import { AboutContents } from "./contents";
 
 export const AboutPreview: React.FC = () => {
   const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT_SHOPINFO || "";
@@ -16,7 +16,7 @@ export const AboutPreview: React.FC = () => {
 
   const { data, error }: SWRResponse<aboutType, unknown> = useSWRImmutable(
     [endpoint, id, { draftKey }],
-    ([url, articleId, queries]) => fetcher(url, articleId, queries)
+    ([url, articleId, queries]) => fetcher(url, articleId, queries),
   );
 
   if (error) return <p>指定されたデータは存在しません。</p>;

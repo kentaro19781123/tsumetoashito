@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Footer } from "@/app/_component/Footer";
+import { FooterButton } from "@/app/_component/FooterButton";
+import { Header } from "@/app/_component/Header";
+import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { About } from "@/app/(top)/_component/About";
 import { Case } from "@/app/(top)/_component/Case";
 import { Menu } from "@/app/(top)/_component/Menu";
 import { Mv } from "@/app/(top)/_component/Mv";
 import { Reserve } from "@/app/(top)/_component/Reserve";
-import { Footer } from "@/app/_component/Footer";
-import { FooterButton } from "@/app/_component/FooterButton";
-import { Header } from "@/app/_component/Header";
-import { metaText, ogpCommon, jsonLdBase } from "@/app/_const/meta";
 
 export const metadata: Metadata = {
   title: metaText.title,

@@ -1,6 +1,6 @@
 import { Provider } from "jotai";
 import "./globals.css";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { metaText } from "@/app/_const/meta";
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata

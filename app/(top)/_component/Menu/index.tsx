@@ -1,6 +1,6 @@
-import { MenuContents } from "./contents";
 import { client } from "@/app/_libs/client";
-import { menuType } from "@/types";
+import type { menuType } from "@/types";
+import { MenuContents } from "./contents";
 
 const getContents = async () => {
   const response = await client.get<menuType>({

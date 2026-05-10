@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { Footer } from "@/app/_component/Footer";
@@ -9,7 +9,7 @@ import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { client } from "@/app/_libs/client";
-import { treatmentContentsType, treatmentType } from "@/types";
+import type { treatmentContentsType, treatmentType } from "@/types";
 
 type Props = {
   params: Promise<{

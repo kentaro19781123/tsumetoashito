@@ -1,8 +1,9 @@
 // "use client";
 
 // import Link from "next/link";
-import React from "react";
+import type React from "react";
 import { menuList } from "@/app/_const/menu";
+
 // import { anchorScroll } from "@/app/_utils/anchorScroll";
 
 type Props = {

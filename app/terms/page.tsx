@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { TermsContents } from "./contents";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
 import { metaTerms } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { client } from "@/app/_libs/client";
-import { termsType } from "@/types";
+import type { termsType } from "@/types";
+import { TermsContents } from "./contents";
 
 const getContents = async () => {
   const response = await client.get<termsType>({

@@ -2,7 +2,7 @@
 
 import { Inner } from "@/app/_component/Inner";
 import { Title } from "@/app/_component/Title";
-import { menuType } from "@/types";
+import type { menuType } from "@/types";
 
 type Props = {
   data: menuType["contents"];
