@@ -1,14 +1,15 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
-import { Inner } from "./Inner";
+import type React from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ReserveLine } from "@/app/_component/ReserveButton/ReserveLine";
 import { menuList } from "@/app/_const/menu";
 import { useDocumentLoadCompleted } from "@/app/_hooks/useDocumentLoadCompleted";
 import { useIsPc } from "@/app/_hooks/useIsPc";
 import { useOverflow } from "@/app/_hooks/useOverflow";
 import { anchorScroll } from "@/app/_utils/anchorScroll";
+import { Inner } from "./Inner";
 
 type Props = {
   pageId: string;
@@ -78,6 +79,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                 {headerMenuList.map((x) => (
                   <li className="text-14 text-center" key={x.title}>
                     {pageId === "top" && x.title === "サロンについて" ? (
+                      // biome-ignore lint/a11y/noStaticElementInteractions: TODO
                       <div
                         className="flex items-center justify-center h-[60px] px-4 py-2 cursor-pointer hover:text-primary"
                         onClick={(event) => anchorScroll("#about", 60, event)}
@@ -103,6 +105,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
               className="fixed top-0 right-0 flex h-[60px] w-[60px] justify-center items-center z-90"
               data-open={isOpen}
               onClick={() => setIsOpen(!isOpen)}
+              type="button"
             >
               <span
                 className={`block h-[3px] w-[25px] rounded bg-primary absolute top-0 bottom-0 m-auto transition-opacity duration-400 ${isOpen ? "opacity-0" : ""}`}
@@ -117,6 +120,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
             </button>
             {headerMenuList && (
               <>
+                {/** biome-ignore lint/a11y/noStaticElementInteractions: TODO */}
                 <div
                   className={`fixed h-screen w-full bg-black opacity-80 top-0 left-0 transition-all duration-500 ${isOpen ? "block" : "hidden"}`}
                   onClick={() => setIsOpen(!isOpen)}
@@ -139,6 +143,7 @@ export const Header: React.FC<Props> = ({ pageId }) => {
                         key={x.title}
                       >
                         {pageId === "top" && x.title === "サロンについて" ? (
+                          // biome-ignore lint/a11y/noStaticElementInteractions: TODO
                           <div
                             className="block text-base no-underline p-4 pl-8 bg-[url('/img/icon_plus.png')] bg-[length:10px] bg-position-[16px] bg-no-repeat cursor-pointer"
                             onClick={(event) => {

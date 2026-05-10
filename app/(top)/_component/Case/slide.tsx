@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { metaCase } from "@/app/_const/menu";
 import { useOverflow } from "@/app/_hooks/useOverflow";
-import { treatmentContentsType, categoryItem } from "@/types";
+import type { categoryItem, treatmentContentsType } from "@/types";
 
 type Props = {
   items: treatmentContentsType[];
@@ -24,10 +25,10 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
   useOverflow(isOpen);
   const modalOpen = (id: string) => {
     const dialogEl = document.querySelector<HTMLDialogElement>(
-      `[data-gallery-item=${id}]`
+      `[data-gallery-item=${id}]`,
     );
     const containerEl = document.querySelector<HTMLDivElement>(
-      `[data-gallery-container=${id}]`
+      `[data-gallery-container=${id}]`,
     );
     // if (containerEl) containerEl.scrollTo({ top: 0 });
     dialogEl?.showModal();
@@ -37,10 +38,10 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
 
   const modalClose = (
     e: React.MouseEvent<HTMLDialogElement, MouseEvent>,
-    id: string
+    id: string,
   ) => {
     const dialogEl = document.querySelector<HTMLDialogElement>(
-      `[data-gallery-item=${id}]`
+      `[data-gallery-item=${id}]`,
     );
     if (!(e.target instanceof HTMLDialogElement)) return null;
     if (e.target.closest(`[data-gallery-container=${id}]`) === null) {
@@ -51,7 +52,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
 
   const modalCloseButton = (id: string) => {
     const dialogEl = document.querySelector<HTMLDialogElement>(
-      `[data-gallery-item=${id}]`
+      `[data-gallery-item=${id}]`,
     );
     dialogEl?.close();
     setIsOpen(false);
@@ -73,7 +74,9 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
       >
         {category.map((categoryDetail, index) =>
           itemsCategoryFix.includes(categoryDetail.categoryItem) ? (
+            // biome-ignore lint/suspicious/noArrayIndexKey: ユニークのキーが無いため
             <SwiperSlide className="w-[150px]! md:w-[180px]!" key={index}>
+              {/** biome-ignore lint/a11y/noStaticElementInteractions: TODO */}
               <div
                 className="w-[150px] h-[150px] md:w-[180px] md:h-[180px] rounded-full flex flex-col items-center justify-center bg-[url('/img/case_bg.png')] bg-no-repeat bg-[length:180px] cursor-pointer p-4"
                 onClick={() => modalOpen(`galleryItem${index + 1}`)}
@@ -117,12 +120,14 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                 >
                   {items
                     .filter(
-                      (z) => z.treatmentCategory === categoryDetail.categoryItem
+                      (z) =>
+                        z.treatmentCategory === categoryDetail.categoryItem,
                     )
                     .map((y, index) =>
                       index < 3 ? (
                         <div
                           className="mt-6 pt-6 border-t border-gray-300 first:mt-0 first:pt-0 first:border-t-0"
+                          // biome-ignore lint/suspicious/noArrayIndexKey: ユニークのキーが無いため
                           key={index}
                         >
                           <h4 className="text-18 mb-4 bg-[url('/img/icon_plus.png')] bg-left bg-no-repeat bg-[length:18px] pl-6">
@@ -148,7 +153,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                         </div>
                       ) : (
                         ""
-                      )
+                      ),
                     )}
                   <div className="w-3/5 mx-auto mt-10 mb-4 md:my-6">
                     <ButtonBorder
@@ -156,6 +161,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
                       url={`${metaCase.link}?pageId=${categoryDetail.categoryItem}`}
                     />
                   </div>
+                  {/** biome-ignore lint/a11y/noStaticElementInteractions: TODO */}
                   <div
                     className="block cursor-pointer absolute -top-6 right-0 w-5 h-5"
                     onClick={() => modalCloseButton(`galleryItem${index + 1}`)}
@@ -168,7 +174,7 @@ export const Slide: React.FC<Props> = ({ items, category }) => {
             </SwiperSlide>
           ) : (
             ""
-          )
+          ),
         )}
         {/* {dummyArray.map((_, index) => (
           <SwiperSlide className={cssStyle.swiperSlideNoEvent} key={index}>

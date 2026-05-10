@@ -2,7 +2,7 @@ import { Inner } from "@/app/_component/Inner";
 import { ReserveLine } from "@/app/_component/ReserveButton/ReserveLine";
 import { ReserveMail } from "@/app/_component/ReserveButton/ReserveMail";
 import { Title } from "@/app/_component/Title";
-import { reserveContentType } from "@/types";
+import type { reserveContentType } from "@/types";
 
 type Props = {
   contentBlock: reserveContentType[];
