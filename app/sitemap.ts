@@ -2,7 +2,7 @@ export const dynamic = "force-static";
 
 import type { MetadataRoute } from "next";
 import { client } from "@/app/_libs/client";
-import { treatmentType } from "@/types";
+import type { treatmentType } from "@/types";
 
 // microCMSから施術例のデータ取得
 const getContents = async () => {

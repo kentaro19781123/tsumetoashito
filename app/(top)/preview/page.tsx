@@ -7,16 +7,14 @@ import { TermsPreview } from "@/app/terms/preview";
 
 export default function Home() {
   return (
-    <>
-      <main>
-        <Suspense>
-          <AboutPreview />
-          <ReservePreview />
-          <ShopInfoPreview />
-          <TermsPreview />
-          <CasePreview />
-        </Suspense>
-      </main>
-    </>
+    <main>
+      <Suspense>
+        <AboutPreview />
+        <ReservePreview />
+        <ShopInfoPreview />
+        <TermsPreview />
+        <CasePreview />
+      </Suspense>
+    </main>
   );
 }

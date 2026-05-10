@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve out",
-    "lint": "next lint"
+    "lint": "biome check",
+    "format": "biome format --write"
   },
   "dependencies": {
     "jotai": "^2.15.0",
@@ -20,23 +21,17 @@
     "swr": "^2.3.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.15",
     "@tailwindcss/postcss": "^4.1.13",
     "@types/node": "^24",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.46.2",
-    "@typescript-eslint/parser": "^8.19.1",
     "@vitest/browser": "^3.2.4",
     "@vitest/coverage-v8": "^3.2.4",
     "dayjs": "^1.11.18",
-    "eslint": "^9.0.0",
-    "eslint-config-next": "16.2.6",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
     "microcms-js-sdk": "^3.2.0",
     "playwright": "^1.56.0",
     "postcss": "^8.5.10",
-    "prettier": "^3.6.2",
     "tailwindcss": "^4.1.13",
     "typescript": "^5",
     "vitest": "^3.2.4"

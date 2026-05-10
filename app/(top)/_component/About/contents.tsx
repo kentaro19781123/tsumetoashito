@@ -1,6 +1,6 @@
-import React from "react";
+import type React from "react";
 import { Inner } from "@/app/_component/Inner";
-import { aboutType } from "@/types";
+import type { aboutType } from "@/types";
 
 type Props = {
   data: aboutType;
