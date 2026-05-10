@@ -1,9 +1,9 @@
-import { Slide } from "@/app/(top)/_component/Case/slide";
 import { Inner } from "@/app/_component/Inner";
 import { Title } from "@/app/_component/Title";
 import { metaCase } from "@/app/_const/menu";
 import { client } from "@/app/_libs/client";
-import { treatmentContentsType, treatmentCategoryType } from "@/types";
+import { Slide } from "@/app/(top)/_component/Case/slide";
+import type { treatmentCategoryType, treatmentContentsType } from "@/types";
 
 const getTreatmentContents = async () => {
   const response = await client.getList<treatmentContentsType>({

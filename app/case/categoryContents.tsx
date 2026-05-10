@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Title } from "@/app/_component/Title";
-import { treatmentContentsType } from "@/types";
+import type { treatmentContentsType } from "@/types";
 
 type Props = {
   itemsArray: treatmentContentsType[][];
@@ -14,6 +14,7 @@ export const CategoryContents: React.FC<Props> = ({ itemsArray }) => {
         <section
           className="pb-8 mb-8 border-b border-gray-300 last:border-b-0"
           id={byCategoryArray[0].treatmentCategory}
+          // biome-ignore lint/suspicious/noArrayIndexKey: ユニークキーがないため
           key={index}
         >
           <Title
@@ -23,6 +24,7 @@ export const CategoryContents: React.FC<Props> = ({ itemsArray }) => {
           />
           <div className="flex flex-wrap gap-4 md:gap-8">
             {byCategoryArray.map((item, index) => (
+              // biome-ignore lint/suspicious/noArrayIndexKey: ユニークキーがないため
               <React.Fragment key={index}>
                 <a
                   className="w-[calc((100%_-_16px)_/_2)] cursor-pointer mb-4 hover:opacity-80 md:mb-0 md:min-w-[200px] md:w-[calc((100%_-_(32px_*_3))_/_4)]"

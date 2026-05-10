@@ -2,11 +2,11 @@
 
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { SWRResponse } from "swr";
+import type { SWRResponse } from "swr";
 import useSWRImmutable from "swr/immutable";
-import { CaseContents } from "../[slug]/contents";
 import { fetcher } from "@/app/_libs/client";
-import { treatmentContentsType } from "@/types";
+import type { treatmentContentsType } from "@/types";
+import { CaseContents } from "../[slug]/contents";
 
 export const CasePreview: React.FC = () => {
   const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT_TREATMENT || "";
@@ -17,17 +17,15 @@ export const CasePreview: React.FC = () => {
   const { data, error }: SWRResponse<treatmentContentsType, unknown> =
     useSWRImmutable(
       [endpoint, contentId, { draftKey }],
-      ([url, articleId, queries]) => fetcher(url, articleId, queries)
+      ([url, articleId, queries]) => fetcher(url, articleId, queries),
     );
 
   if (error) return <p>指定されたデータは存在しません。</p>;
   if (!data) return <p>Loading...</p>;
 
   return (
-    <>
-      <Suspense>
-        <CaseContents data={data} />
-      </Suspense>
-    </>
+    <Suspense>
+      <CaseContents data={data} />
+    </Suspense>
   );
 };

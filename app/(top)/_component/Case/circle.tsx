@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import "swiper/swiper-bundle.css";
 import { ButtonBorder } from "@/app/_component/ButtonBorder";
 import { metaCase } from "@/app/_const/menu";
@@ -16,10 +17,10 @@ export const Circle: React.FC<Props> = ({ categoryName, index }) => {
   useOverflow(isOpen);
   const modalOpen = (id: string) => {
     const dialogEl = document.querySelector<HTMLDialogElement>(
-      `[data-gallery-item=${id}]`
+      `[data-gallery-item=${id}]`,
     );
     const containerEl = document.querySelector<HTMLDivElement>(
-      `[data-gallery-container=${id}]`
+      `[data-gallery-container=${id}]`,
     );
     dialogEl?.showModal();
     if (containerEl) containerEl.scrollTop = 0;

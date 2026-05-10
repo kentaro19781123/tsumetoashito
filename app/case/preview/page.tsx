@@ -4,8 +4,8 @@ import { CasePreview } from "./preview";
 // ページ
 export default async function Page() {
   return (
-  <Suspense>
-    <CasePreview />
-  </Suspense>
-  )
+    <Suspense>
+      <CasePreview />
+    </Suspense>
+  );
 }

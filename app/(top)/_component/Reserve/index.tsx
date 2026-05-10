@@ -1,6 +1,6 @@
-import { ReserveContents } from "./contents";
 import { client } from "@/app/_libs/client";
-import { reserveType } from "@/types";
+import type { reserveType } from "@/types";
+import { ReserveContents } from "./contents";
 
 const getContents = async () => {
   const response = await client.get<reserveType>({

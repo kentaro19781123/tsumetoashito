@@ -17,7 +17,7 @@ export const client = createClient({
 export const fetcher = <T>(
   endpoint: string,
   contentId?: string,
-  queries?: { draftKey?: string; fields?: string }
+  queries?: { draftKey?: string; fields?: string },
 ): Promise<T> =>
   client.get({
     endpoint,

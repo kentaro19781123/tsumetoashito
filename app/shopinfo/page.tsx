@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ShopInfoContents } from "./contents";
 import { Footer } from "@/app/_component/Footer";
 import { FooterButton } from "@/app/_component/FooterButton";
 import { Header } from "@/app/_component/Header";
 import { metaShopInfo } from "@/app/_const/menu";
 import { jsonLdBase, metaText, ogpCommon } from "@/app/_const/meta";
 import { client } from "@/app/_libs/client";
-import { shopInfoType } from "@/types";
+import type { shopInfoType } from "@/types";
+import { ShopInfoContents } from "./contents";
 
 const getContents = async () => {
   const response = await client.get<shopInfoType>({
