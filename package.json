@@ -28,7 +28,7 @@
     "@types/react-dom": "19.2.3",
     "@vitest/browser": "^4.1.7",
     "@vitest/coverage-v8": "^4.1.8",
-    "dayjs": "^1.11.20",
+    "dayjs": "^1.11.21",
     "microcms-js-sdk": "^3.2.0",
     "playwright": "^1.60.0",
     "postcss": "8.4.31",
