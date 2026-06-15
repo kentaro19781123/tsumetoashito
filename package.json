@@ -10,7 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
-    "jotai": "^2.15.0",
+    "jotai": "^2.20.1",
     "next": "16.2.9",
     "normalize.css": "^8.0.1",
     "react": "19.2.7",
