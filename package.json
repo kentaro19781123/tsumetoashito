@@ -17,7 +17,7 @@
     "react-dom": "19.2.7",
     "react-intersection-observer": "^10.0.3",
     "react-use": "^17.6.1",
-    "swiper": "^12.2.0",
+    "swiper": "^14.0.6",
     "swr": "^2.3.6"
   },
   "devDependencies": {
