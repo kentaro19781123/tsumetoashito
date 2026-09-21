@@ -33,7 +33,7 @@
     "playwright": "^1.63.0",
     "postcss": "8.5.23",
     "tailwindcss": "^4.3.1",
-    "typescript": "^6",
+    "typescript": "^7",
     "vitest": "^4.1.11"
   }
 }
