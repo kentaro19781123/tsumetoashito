@@ -39,6 +39,7 @@ export type treatmentContentsType = {
   treatmentTitle: string;
   treatmentCategory: string;
   treatmentPhoto: MicroCMSImage;
+  treatmentImages: MicroCMSImage[];
   treatmentText: string;
 } & MicroCMSContentId &
   MicroCMSDate;
